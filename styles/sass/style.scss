@@ -83,6 +83,7 @@ main {
         top: 90px;
         left: calc(50% - 80px);
     }
+
 }
 
 .dropzone {
@@ -104,3 +105,7 @@ main {
 .eyes1 {
     @include makeCircle(75px, 75px, white, 10px, 10px);
 }
+.eyes1:after {
+        content: '';
+        @include makeCircle(15px, 15px, black, 10px, 10px);
+    }

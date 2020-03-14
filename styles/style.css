@@ -577,3 +577,14 @@ main {
   left: calc(50% - (75px / 2));
   border-radius: 50%;
 }
+
+.eyes1:after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  position: absolute;
+  top: calc(50% - (15px / 2));
+  left: calc(50% - (15px / 2));
+  border-radius: 50%;
+}
