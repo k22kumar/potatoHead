@@ -455,6 +455,12 @@ html {
   font-size: 62.5%;
 }
 
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* header styles */
 header h1 {
   font-size: 2rem;
@@ -495,8 +501,8 @@ main {
   height: 40px;
   background-color: green;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: calc(50% - (40px / 2));
+  left: calc(50% - (40px / 2));
 }
 
 .rectangle-template {
@@ -510,8 +516,8 @@ main {
   height: 50px;
   background-color: blue;
   position: absolute;
-  top: 70px;
-  left: 100px;
+  top: calc(50% - (50px / 2));
+  left: calc(50% - (50px / 2));
   border-radius: 50%;
 }
 
@@ -520,8 +526,8 @@ main {
   height: 50px;
   background-color: grey;
   position: absolute;
-  top: 90px;
-  left: 120px;
+  top: calc(50% - (50px / 2));
+  left: calc(50% - (50px / 2));
   border-radius: 50%;
   border-radius: 50% 50% 0 0;
 }
@@ -531,12 +537,40 @@ main {
   height: 60px;
   background-color: teal;
   position: absolute;
-  top: 90px;
-  left: 30px;
+  top: calc(50% - (60px / 2));
+  left: calc(50% - (60px / 2));
   border-radius: 50% 50% 60% 60% / 60% 60% 40% 40%;
   position: relative;
   top: 0;
   left: 0;
   width: 60%;
   height: 60%;
+  /* body part dropzone styles */
+}
+
+.body .eye {
+  top: 15%;
+  left: 50%;
+}
+
+.dropzone {
+  background-color: pink;
+  padding: 10px;
+}
+
+.eye {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  min-width: 50px;
+}
+
+.eyes1 {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: calc(50% - (50px / 2));
+  left: calc(50% - (50px / 2));
+  border-radius: 50%;
 }

@@ -4,8 +4,8 @@
     height: $height;
     background-color: $color;
     position: absolute;
-    top: $top;
-    left: $left;
+    top: calc(50% - (#{$width} / 2));
+    left: calc(50% - (#{$height} / 2));
 }
 
 @mixin makeCircle ($width, $height, $color, $top, $left){

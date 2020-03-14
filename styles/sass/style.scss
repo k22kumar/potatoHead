@@ -13,6 +13,10 @@ html {
     font-size: 62.5%;
 }
 
+main {
+    display: flex;
+}
+
 /* header styles */
 
 header {
@@ -27,6 +31,7 @@ header {
 main {
     background-color: blue;
     height: calc(100vh - 20px);
+
 }
 
 .canvas, .partsContainer {
@@ -72,4 +77,27 @@ main {
     left: 0;
     width: 60%;
     height: 60%;
+
+    /* body part dropzone styles */
+    .eye {
+        top: 15%;
+        left: 50%;
+    }
+}
+
+.dropzone {
+    background-color: pink;
+    padding: 10px;
+}
+
+.eye {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    min-width: 50px;
+    
+}
+
+.eyes1 {
+    @include makeCircle(50px, 50px, white, 10px, 10px);
 }
