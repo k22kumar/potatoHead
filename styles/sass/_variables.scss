@@ -1,0 +1,24 @@
+
+@mixin makeRectangle($width, $height, $color, $top ,$left) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin makeCircle ($width, $height, $color, $top, $left){
+    @include makeRectangle($width, $height, $color, $top, $left );
+    border-radius: 50%;
+}
+
+@mixin makeSemiCircle ($width, $height, $color, $top, $left){
+    @include makeCircle($width, $height, $color, $top, $left );
+    border-radius: 50% 50% 0 0;
+}
+
+@mixin makeEgg ($width, $height, $color, $top, $left) {
+    @include makeRectangle($width, $height, $color, $top, $left );
+     border-radius: 50% 50% 60% 60% / 60% 60% 40% 40%;
+}

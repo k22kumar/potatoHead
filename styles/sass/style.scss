@@ -1,0 +1,75 @@
+@import 'variables';
+@import 'setup';
+
+
+/* general styles */
+
+* {
+    border: 2px solid lime;
+    transition: all 0.3s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* header styles */
+
+header {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+/* header styles */
+
+main {
+    background-color: blue;
+    height: calc(100vh - 20px);
+}
+
+.canvas, .partsContainer {
+    width: 50%;
+    height: 100%;
+}
+
+.partsContainer {
+    background-color: slategrey;
+}
+
+.canvas {
+    position: relative;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.square {
+    @include makeRectangle(40px, 40px, green, 40px, 40px);
+}
+
+.rectangle-template {
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+}
+
+.circle {
+    @include makeCircle(50px, 50px, blue, 70px, 100px);
+}
+
+.moon {
+    @include makeSemiCircle(50px, 50px, grey, 90px, 120px);
+}
+
+.body {
+    @include makeEgg(60px, 60px, teal, 90px, 30px);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+}
