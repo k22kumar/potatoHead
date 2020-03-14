@@ -52,36 +52,17 @@ main {
 }
 
 
-.square {
-    @include makeRectangle(40px, 40px, green, 40px, 40px);
-}
-
-.rectangle-template {
-    height: 50px;
-    width: 50px;
-    background-color: yellow;
-}
-
-.circle {
-    @include makeCircle(50px, 50px, blue, 70px, 100px);
-}
-
-.moon {
-    @include makeSemiCircle(50px, 50px, grey, 90px, 120px);
-}
 
 .body {
-    @include makeEgg(60px, 60px, #db8336, 90px, 30px);
+    @include makeEgg($bodyWidth, $bodyHeight, #db8336, 90px, 30px);
     position: relative;
     top: 0;
     left: 0;
-    width: 310px;
-    height: 390px;
 
     /* body part dropzone styles  */
     .eye {
-        top: 90px;
-        left: calc(50% - 80px);
+        top: calc(0.23 * #{$bodyHeight});
+        left: calc(50% - (#{$eyeContainerWidth}));
     }
 
 }
@@ -96,14 +77,13 @@ main {
 
 .eye {
     position: relative;
-    width: 80px;
-    height: 80px;
-    min-width: 50px;
+    width: $eyeContainerWidth;
+    height: $eyeContainerWidth;
     
 }
 
 .eyes1 {
-    @include makeCircle(75px, 75px, white, 10px, 10px);
+    @include makeCircle($eyeWidth, $eyeWidth, white, 10px, 10px);
 }
 .eyes1:after {
         content: '';

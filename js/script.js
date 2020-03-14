@@ -6,6 +6,11 @@ const potatoHeadApp = {
 
 potatoHeadApp.init = function () {
 
+    potatoHeadApp.makeEyes();
+
+}
+
+potatoHeadApp.makeEyes = function () {
     let droppable = new Draggable.Droppable(
         potatoHeadApp.eyeDropzones,
         {
@@ -14,10 +19,7 @@ potatoHeadApp.init = function () {
             mirror: { constrainDimensions: true }
         }
     );
-
 }
-
-
 
 
 

@@ -496,61 +496,23 @@ main {
           align-items: center;
 }
 
-.square {
-  width: 40px;
-  height: 40px;
-  background-color: green;
-  position: absolute;
-  top: calc(50% - (40px / 2));
-  left: calc(50% - (40px / 2));
-}
-
-.rectangle-template {
-  height: 50px;
-  width: 50px;
-  background-color: yellow;
-}
-
-.circle {
-  width: 50px;
-  height: 50px;
-  background-color: blue;
-  position: absolute;
-  top: calc(50% - (50px / 2));
-  left: calc(50% - (50px / 2));
-  border-radius: 50%;
-}
-
-.moon {
-  width: 50px;
-  height: 50px;
-  background-color: grey;
-  position: absolute;
-  top: calc(50% - (50px / 2));
-  left: calc(50% - (50px / 2));
-  border-radius: 50%;
-  border-radius: 50% 50% 0 0;
-}
-
 .body {
-  width: 60px;
-  height: 60px;
+  width: 310px;
+  height: 390px;
   background-color: #db8336;
   position: absolute;
-  top: calc(50% - (60px / 2));
-  left: calc(50% - (60px / 2));
+  top: calc(50% - (310px / 2));
+  left: calc(50% - (390px / 2));
   border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
   position: relative;
   top: 0;
   left: 0;
-  width: 310px;
-  height: 390px;
   /* body part dropzone styles  */
 }
 
 .body .eye {
-  top: 90px;
-  left: calc(50% - 80px);
+  top: calc(0.23 * 390px);
+  left: calc(50% - (calc( calc(0.24 * 310px) + 10px)));
 }
 
 .dropzone {
@@ -563,18 +525,17 @@ main {
 
 .eye {
   position: relative;
-  width: 80px;
-  height: 80px;
-  min-width: 50px;
+  width: calc( calc(0.24 * 310px) + 10px);
+  height: calc( calc(0.24 * 310px) + 10px);
 }
 
 .eyes1 {
-  width: 75px;
-  height: 75px;
+  width: calc(0.24 * 310px);
+  height: calc(0.24 * 310px);
   background-color: white;
   position: absolute;
-  top: calc(50% - (75px / 2));
-  left: calc(50% - (75px / 2));
+  top: calc(50% - (calc(0.24 * 310px) / 2));
+  left: calc(50% - (calc(0.24 * 310px) / 2));
   border-radius: 50%;
 }
 

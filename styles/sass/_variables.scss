@@ -23,3 +23,9 @@
     border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
      
 }
+
+$bodyWidth: 310px;
+$bodyHeight: 390px;
+
+$eyeWidth: calc(0.24 * #{$bodyWidth});
+$eyeContainerWidth: calc( #{$eyeWidth} + 10px);
