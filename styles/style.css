@@ -455,7 +455,7 @@ html {
   font-size: 62.5%;
 }
 
-main {
+main, .eyesOnFace {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -535,27 +535,30 @@ main {
 .body {
   width: 60px;
   height: 60px;
-  background-color: teal;
+  background-color: #db8336;
   position: absolute;
   top: calc(50% - (60px / 2));
   left: calc(50% - (60px / 2));
-  border-radius: 50% 50% 60% 60% / 60% 60% 40% 40%;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
   position: relative;
   top: 0;
   left: 0;
-  width: 60%;
-  height: 60%;
-  /* body part dropzone styles */
+  width: 310px;
+  height: 390px;
+  /* body part dropzone styles  */
 }
 
 .body .eye {
-  top: 15%;
-  left: 50%;
+  top: 90px;
+  left: calc(50% - 80px);
 }
 
 .dropzone {
   background-color: pink;
-  padding: 10px;
+}
+
+.dropzone:hover {
+  background-color: green;
 }
 
 .eye {
@@ -566,11 +569,11 @@ main {
 }
 
 .eyes1 {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background-color: white;
   position: absolute;
-  top: calc(50% - (50px / 2));
-  left: calc(50% - (50px / 2));
+  top: calc(50% - (75px / 2));
+  left: calc(50% - (75px / 2));
   border-radius: 50%;
 }

@@ -13,7 +13,7 @@ html {
     font-size: 62.5%;
 }
 
-main {
+main, .eyesOnFace {
     display: flex;
 }
 
@@ -71,23 +71,26 @@ main {
 }
 
 .body {
-    @include makeEgg(60px, 60px, teal, 90px, 30px);
+    @include makeEgg(60px, 60px, #db8336, 90px, 30px);
     position: relative;
     top: 0;
     left: 0;
-    width: 60%;
-    height: 60%;
+    width: 310px;
+    height: 390px;
 
-    /* body part dropzone styles */
+    /* body part dropzone styles  */
     .eye {
-        top: 15%;
-        left: 50%;
+        top: 90px;
+        left: calc(50% - 80px);
     }
 }
 
 .dropzone {
     background-color: pink;
-    padding: 10px;
+}
+
+.dropzone:hover{
+    background-color: green;
 }
 
 .eye {
@@ -99,5 +102,5 @@ main {
 }
 
 .eyes1 {
-    @include makeCircle(50px, 50px, white, 10px, 10px);
+    @include makeCircle(75px, 75px, white, 10px, 10px);
 }

@@ -20,5 +20,6 @@
 
 @mixin makeEgg ($width, $height, $color, $top, $left) {
     @include makeRectangle($width, $height, $color, $top, $left );
-     border-radius: 50% 50% 60% 60% / 60% 60% 40% 40%;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+     
 }
