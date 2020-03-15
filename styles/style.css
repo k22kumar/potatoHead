@@ -2,6 +2,11 @@
 /* body HEIGHT min max values*/
 /* device min max values for iphone 4*/
 /* desktop min max values*/
+/*
+$bodyWidth: calc(calc(310px * 0.52) + (calc(310px * 1.5) - calc(310px * 0.52)) * ((100vw -  320px) / (1920px - 320px)));
+
+$bodyHeight: calc(calc(390px * 0.52) + (calc(390px * 1.5) - calc(390px * 0.52)) * ((100vw - 480px) / (1080px - 480px)));
+*/
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -465,6 +470,10 @@ main, .eyesOnFace {
   display: flex;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* header styles */
 header h1 {
   font-size: 2rem;
@@ -513,7 +522,23 @@ main {
   left: 0;
   max-width: 310px;
   max-height: 390px;
+  /* arms styles  */
   /* body part dropzone styles  */
+}
+
+.body .arms {
+  position: absolute;
+  width: calc(0.35 * 310px);
+  height: auto;
+  top: calc(0.25 * 390px);
+}
+
+.body .leftArm {
+  left: calc(-0.6 * calc(0.35 * 310px));
+}
+
+.body .rightArm {
+  right: calc(-0.6 * calc(0.35 * 310px));
 }
 
 .body .eye {

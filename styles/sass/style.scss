@@ -17,6 +17,9 @@ main, .eyesOnFace {
     display: flex;
 }
 
+img {
+    max-width: 100%;
+}
 /* header styles */
 
 header {
@@ -60,6 +63,23 @@ main {
     left: 0;
     max-width: 310px;
     max-height: 390px;
+
+    /* arms styles  */
+
+    .arms {
+        position: absolute;
+        width: $armsWidth;
+        height: auto;
+        top: calc(0.25 * #{$bodyHeight});
+    }
+
+    .leftArm {
+        left: calc(-0.6 * #{$armsWidth});
+    }
+
+    .rightArm {
+        right: calc(-0.6 * #{$armsWidth});
+    }
 
     /* body part dropzone styles  */
     .eye {

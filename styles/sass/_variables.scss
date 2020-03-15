@@ -21,7 +21,10 @@
 @mixin makeEgg ($width, $height, $color, $top, $left) {
     @include makeRectangle($width, $height, $color, $top, $left );
     border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
-     
+}
+
+@mixin centerHorizontalToBody ($partWidth) {
+    left: calc(50% - (#{$partWidth}));
 }
 
 @function strip-unit($value) {
@@ -53,15 +56,20 @@ $minDeviceHeight: 480px;
 $maxDeviceWidth: 1920px;
 $maxDeviceHeight: 1080px;
 
+ $bodyWidth: $masterWidth; 
+ $bodyHeight: $masterHeight;
 
-// $bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidth} - #{$minBodyWidth}) * ((100vw -  #{$minDeviceWidth}) / (#{$maxDeviceWidth} - #{$minDeviceWidth})));
+ /*
+$bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidth} - #{$minBodyWidth}) * ((100vw -  #{$minDeviceWidth}) / (#{$maxDeviceWidth} - #{$minDeviceWidth})));
 
-// $bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeight} - #{$minBodyHeight}) * ((100vw - #{$minDeviceHeight}) / (#{$maxDeviceHeight} - #{$minDeviceHeight})));
+$bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeight} - #{$minBodyHeight}) * ((100vw - #{$minDeviceHeight}) / (#{$maxDeviceHeight} - #{$minDeviceHeight})));
+*/
 
-$bodyWidth: $masterWidth;
-$bodyHeight: $masterHeight;
+
 
 
 $eyeWidth: calc(0.24 * #{$bodyWidth});
 $pupilWidth: calc(0.2 * #{$eyeWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
+
+$armsWidth: calc(0.35 * #{$bodyWidth})
