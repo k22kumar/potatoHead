@@ -1,3 +1,7 @@
+/* body WIDTH min max values*/
+/* body HEIGHT min max values*/
+/* device min max values for iphone 4*/
+/* desktop min max values*/
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -447,8 +451,8 @@ textarea {
 /* general styles */
 * {
   border: 2px solid lime;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 html {
@@ -507,6 +511,8 @@ main {
   position: relative;
   top: 0;
   left: 0;
+  max-width: 310px;
+  max-height: 390px;
   /* body part dropzone styles  */
 }
 
@@ -541,11 +547,11 @@ main {
 
 .eyes1:after {
   content: '';
-  width: 15px;
-  height: 15px;
+  width: calc(0.2 * calc(0.24 * 310px));
+  height: calc(0.2 * calc(0.24 * 310px));
   background-color: black;
   position: absolute;
-  top: calc(50% - (15px / 2));
-  left: calc(50% - (15px / 2));
+  top: calc(50% - (calc(0.2 * calc(0.24 * 310px)) / 2));
+  left: calc(50% - (calc(0.2 * calc(0.24 * 310px)) / 2));
   border-radius: 50%;
 }

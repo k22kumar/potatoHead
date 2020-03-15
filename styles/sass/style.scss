@@ -6,7 +6,7 @@
 
 * {
     border: 2px solid lime;
-    transition: all 0.3s;
+    transition: all 0.1s;
 }
 
 html {
@@ -58,6 +58,8 @@ main {
     position: relative;
     top: 0;
     left: 0;
+    max-width: 310px;
+    max-height: 390px;
 
     /* body part dropzone styles  */
     .eye {
@@ -87,5 +89,5 @@ main {
 }
 .eyes1:after {
         content: '';
-        @include makeCircle(15px, 15px, black, 10px, 10px);
+        @include makeCircle($pupilWidth, $pupilWidth, black, 10px, 10px);
     }

@@ -24,8 +24,44 @@
      
 }
 
-$bodyWidth: 310px;
-$bodyHeight: 390px;
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+$masterWidth: 310px; 
+$masterHeight: 390px;
+
+$ratioForMin: 0.52;
+$ratioForMax: 1.5;
+
+/* body WIDTH min max values*/
+$minBodyWidth: calc(#{$masterWidth} * #{$ratioForMin});
+$maxBodyWidth: calc(#{$masterWidth} * #{$ratioForMax});
+
+/* body HEIGHT min max values*/
+
+$minBodyHeight: calc(#{$masterHeight} * #{$ratioForMin});
+$maxBodyHeight: calc(#{$masterHeight} * #{$ratioForMax});
+
+/* device min max values for iphone 4*/
+
+$minDeviceWidth: 320px;
+$minDeviceHeight: 480px;
+
+/* desktop min max values*/
+
+$maxDeviceWidth: 1920px;
+$maxDeviceHeight: 1080px;
+
+
+// $bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidth} - #{$minBodyWidth}) * ((100vw -  #{$minDeviceWidth}) / (#{$maxDeviceWidth} - #{$minDeviceWidth})));
+
+// $bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeight} - #{$minBodyHeight}) * ((100vw - #{$minDeviceHeight}) / (#{$maxDeviceHeight} - #{$minDeviceHeight})));
+
+$bodyWidth: $masterWidth;
+$bodyHeight: $masterHeight;
+
 
 $eyeWidth: calc(0.24 * #{$bodyWidth});
+$pupilWidth: calc(0.2 * #{$eyeWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
