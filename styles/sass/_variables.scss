@@ -4,6 +4,7 @@
     height: $height;
     background-color: $color;
     position: absolute;
+
     top: calc(50% - (#{$width} / 2));
     left: calc(50% - (#{$height} / 2));
 }
@@ -20,7 +21,9 @@
 
 @mixin makeEgg ($width, $height, $color, $top, $left) {
     @include makeRectangle($width, $height, $color, $top, $left );
-    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    border-radius: 50% 50% 50% 50%/80% 80% 25% 25%;
+
+    /*ORIGINAL border-radius: 50% 50% 50% 50%/60% 60% 40% 40%; */
 }
 
 @mixin centerHorizontalToBody ($partWidth) {
@@ -31,8 +34,11 @@
   @return $value / ($value * 0 + 1);
 }
 
-$masterWidth: 310px; 
-$masterHeight: 390px;
+/* ORIGINAL VALUES $masterWidth: 310px; 
+$masterHeight: 390px; */
+
+$masterWidth: 270px; 
+$masterHeight: 380px;
 
 $ratioForMin: 0.52;
 $ratioForMax: 1.5;
@@ -69,7 +75,12 @@ $bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeight} - #{$minBodyHeight}) * 
 
 
 $eyeWidth: calc(0.24 * #{$bodyWidth});
-$pupilWidth: calc(0.2 * #{$eyeWidth});
+$eyeHeight: calc(0.33 * #{$bodyWidth});
+$pupilWidth: calc(0.3 * #{$eyeWidth});
+$pupilHeight: calc(0.4 * #{$eyeWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
+$eyeContainerHeight: calc( #{$eyeHeight} + 10px);
+
+$eyeLid: #b06523;
 
 $armsWidth: calc(0.35 * #{$bodyWidth})
