@@ -104,4 +104,7 @@ $eyeContainerHeight: calc( #{$eyeHeight} + 10px);
 
 $eyeLid: #b06523;
 
-$armsWidth: calc(0.35 * #{$bodyWidth})
+$armsWidth: calc(0.35 * #{$bodyWidth});
+
+$hatContainerWidth: calc(#{$eyeContainerWidth} * 2.5);
+$hatContainerHeight: calc(#{$eyeContainerWidth} * 2);

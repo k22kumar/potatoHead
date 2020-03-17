@@ -94,7 +94,19 @@ main {
     /* body part dropzone styles  */
     .eye {
         top: calc(0.23 * #{$bodyHeight});
+    }
+
+    .leftEye {
         left: calc(50% - (#{$eyeContainerWidth}));
+    }
+
+    .rightEye {
+        right: calc(50% - (#{$eyeContainerWidth}));
+    }
+
+    .hat {
+        top: -50px;
+        left: calc(50% - (#{$hatContainerWidth}));
     }
 
     .dropzone {
@@ -103,11 +115,13 @@ main {
 
 }
 
+.eye, .hat, .nose, .mouth, .shoes{
+    position: absolute;
+} 
+
 .eye {
-    position: relative;
     width: $eyeContainerWidth;
     height: $eyeContainerHeight;
-    
 }
 
 .eyes1 {
@@ -122,6 +136,12 @@ main {
         top: 33%;
         left: 36%;
     }
+
+    .hat {
+    width: $hatContainerWidth;
+    height: $hatContainerHeight;
+    }
+
 
 /* PARTS styles */
 
@@ -157,6 +177,20 @@ main {
     .partsContainer {
         justify-content: center;
         flex-wrap: wrap;
+        height: 75%;
+
+        .hatsBin, .eyesBin, .mouthBin{
+            width: 75%;
+        }
+        
+        .noseBin {
+            width: 100%;
+        }
+        
+        .hatsBin, .eyesBin, .mouthBin, .noseBin {
+            height: 100%;
+        }
+
     }
 }
 

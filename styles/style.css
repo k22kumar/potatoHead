@@ -561,15 +561,30 @@ main {
 
 .body .eye {
   top: calc(0.23 * 38vw);
+}
+
+.body .leftEye {
   left: calc(50% - (calc( calc(0.24 * 27vw) + 10px)));
+}
+
+.body .rightEye {
+  right: calc(50% - (calc( calc(0.24 * 27vw) + 10px)));
+}
+
+.body .hat {
+  top: -50px;
+  left: calc(50% - (calc(calc( calc(0.24 * 27vw) + 10px) * 2.5)));
 }
 
 .body .dropzone {
   background-color: none;
 }
 
+.eye, .hat, .nose, .mouth, .shoes {
+  position: absolute;
+}
+
 .eye {
-  position: relative;
   width: calc( calc(0.24 * 27vw) + 10px);
   height: calc( calc(0.33 * 27vw) + 10px);
 }
@@ -598,6 +613,11 @@ main {
   border-radius: 50%;
   top: 33%;
   left: 36%;
+}
+
+.hat {
+  width: calc(calc( calc(0.24 * 27vw) + 10px) * 2.5);
+  height: calc(calc( calc(0.24 * 27vw) + 10px) * 2);
 }
 
 /* PARTS styles */
@@ -645,4 +665,17 @@ main {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: 75%;
+}
+
+.availableParts .partsContainer .hatsBin, .availableParts .partsContainer .eyesBin, .availableParts .partsContainer .mouthBin {
+  width: 75%;
+}
+
+.availableParts .partsContainer .noseBin {
+  width: 100%;
+}
+
+.availableParts .partsContainer .hatsBin, .availableParts .partsContainer .eyesBin, .availableParts .partsContainer .mouthBin, .availableParts .partsContainer .noseBin {
+  height: 100%;
 }
