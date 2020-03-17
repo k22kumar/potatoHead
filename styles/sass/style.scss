@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesContainer {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer {
     display: flex;
 }
 /* header styles */
@@ -58,7 +58,13 @@ main {
     align-items: center;
 }
 
+.hide{
+    display: none;
+}
 
+.show{
+    display: flex;
+}
 
 .body {
     @include makeEgg($bodyWidth, $bodyHeight, #db8336, 90px, 30px);
@@ -123,33 +129,38 @@ main {
     background-color: slategrey;
     flex-direction: column;
     .optionsContainer {
-         background-color: goldenrod;
-         height: 25%;
-         min-height: 100px;
+        background-color: goldenrod;
+        height: 25%;
+        min-height: 100px;
 
-         input[type="radio"] {
+        input[type="radio"] {
              /* dont put display none or else not focusable */
             opacity: 0;
             position: fixed;
             width: 0;
-         }
+        }
 
-         label {
-             flex: 1 0 60px;
-             text-align: center;
-             font-size: 3rem;
-             height: 100%;
-         }
-         label:hover, label:focus{
-             background-color: skyblue;
-         }
-         input[type="radio"]:checked + label{
+        label {
+            flex: 1 0 60px;
+            text-align: center;
+            font-size: 3rem;
+            height: 100%;
+        }
+        label:hover, label:focus{
+            background-color: skyblue;
+        }
+        input[type="radio"]:checked + label{
             background-color: yellow;
-         }
+        }
+    }
+
+    .partsContainer {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
 .optionsContainer {
-   
+
     
 }

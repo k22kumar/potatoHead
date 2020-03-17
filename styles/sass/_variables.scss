@@ -30,9 +30,7 @@
     left: calc(50% - (#{$partWidth}));
 }
 
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
+
 
 /* ORIGINAL VALUES $masterWidth: 310px; 
 $masterHeight: 390px; */
@@ -47,29 +45,52 @@ $ratioForMax: 1.5;
 $minBodyWidth: calc(#{$masterWidth} * #{$ratioForMin});
 $maxBodyWidth: calc(#{$masterWidth} * #{$ratioForMax});
 
+/* unitless body WIDTH min max values*/
+
+$minBodyWidthNoUnit: 135;
+$maxBodyWidthNoUnit: 405;
+
 /* body HEIGHT min max values*/
 
 $minBodyHeight: calc(#{$masterHeight} * #{$ratioForMin});
 $maxBodyHeight: calc(#{$masterHeight} * #{$ratioForMax});
+
+/* unitless body HEIGHT min max values*/
+
+$minBodyHeightNoUnit: 190;
+$maxBodyHeightNoUnit: 570;
 
 /* device min max values for iphone 4*/
 
 $minDeviceWidth: 320px;
 $minDeviceHeight: 480px;
 
+/* unitless device min max values for iphone 4*/
+
+$minDeviceWidthNoUnit: 320;
+$minDeviceHeightNoUnit: 480;
+
 /* desktop min max values*/
 
 $maxDeviceWidth: 1920px;
 $maxDeviceHeight: 1080px;
 
- $bodyWidth: $masterWidth; 
- $bodyHeight: $masterHeight;
+/* unitless device min max values*/
 
- /*
-$bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidth} - #{$minBodyWidth}) * ((100vw -  #{$minDeviceWidth}) / (#{$maxDeviceWidth} - #{$minDeviceWidth})));
+$maxDeviceWidthNoUnit: 1920;
+$maxDeviceHeightNoUnit: 1080;
 
-$bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeight} - #{$minBodyHeight}) * ((100vw - #{$minDeviceHeight}) / (#{$maxDeviceHeight} - #{$minDeviceHeight})));
+$bodyWidth: 27vw; 
+$bodyHeight: 38vw;
+
+
+
+/*
+$bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidthNoUnit} - #{$minBodyWidthNoUnit}) * ((100vw -  #{$minDeviceWidth}) / (1920 - 320)));
+
+$bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeightNoUnit} - #{$minBodyHeightNoUnit}) * ((100vh - #{$minDeviceHeight}) / (#{$maxDeviceHeightNoUnit} - #{$minDeviceHeightNoUnit})));
 */
+
 
 
 

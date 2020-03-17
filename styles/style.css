@@ -1,13 +1,17 @@
 /* ORIGINAL VALUES $masterWidth: 310px; 
 $masterHeight: 390px; */
 /* body WIDTH min max values*/
+/* unitless body WIDTH min max values*/
 /* body HEIGHT min max values*/
+/* unitless body HEIGHT min max values*/
 /* device min max values for iphone 4*/
+/* unitless device min max values for iphone 4*/
 /* desktop min max values*/
+/* unitless device min max values*/
 /*
-$bodyWidth: calc(calc(270px * 0.52) + (calc(270px * 1.5) - calc(270px * 0.52)) * ((100vw -  320px) / (1920px - 320px)));
+$bodyWidth: calc(calc(270px * 0.52) + (405 - 135) * ((100vw -  320px) / (1920 - 320)));
 
-$bodyHeight: calc(calc(380px * 0.52) + (calc(380px * 1.5) - calc(380px * 0.52)) * ((100vw - 480px) / (1080px - 480px)));
+$bodyHeight: calc(calc(380px * 0.52) + (570 - 190) * ((100vh - 480px) / (1080 - 480)));
 */
 html {
   line-height: 1.15;
@@ -470,7 +474,7 @@ img {
   max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesContainer {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -512,13 +516,23 @@ main {
           align-items: center;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .body {
-  width: 270px;
-  height: 380px;
+  width: 27vw;
+  height: 38vw;
   background-color: #db8336;
   position: absolute;
-  top: calc(50% - (270px / 2));
-  left: calc(50% - (380px / 2));
+  top: calc(50% - (27vw / 2));
+  left: calc(50% - (38vw / 2));
   border-radius: 50% 50% 50% 50%/80% 80% 25% 25%;
   /*ORIGINAL border-radius: 50% 50% 50% 50%/60% 60% 40% 40%; */
   position: relative;
@@ -532,22 +546,22 @@ main {
 
 .body .arms {
   position: absolute;
-  width: calc(0.35 * 270px);
+  width: calc(0.35 * 27vw);
   height: auto;
-  top: calc(0.6 * 380px);
+  top: calc(0.6 * 38vw);
 }
 
 .body .leftArm {
-  left: calc(-0.8 * calc(0.35 * 270px));
+  left: calc(-0.8 * calc(0.35 * 27vw));
 }
 
 .body .rightArm {
-  right: calc(-0.8 * calc(0.35 * 270px));
+  right: calc(-0.8 * calc(0.35 * 27vw));
 }
 
 .body .eye {
-  top: calc(0.23 * 380px);
-  left: calc(50% - (calc( calc(0.24 * 270px) + 10px)));
+  top: calc(0.23 * 38vw);
+  left: calc(50% - (calc( calc(0.24 * 27vw) + 10px)));
 }
 
 .body .dropzone {
@@ -556,17 +570,17 @@ main {
 
 .eye {
   position: relative;
-  width: calc( calc(0.24 * 270px) + 10px);
-  height: calc( calc(0.33 * 270px) + 10px);
+  width: calc( calc(0.24 * 27vw) + 10px);
+  height: calc( calc(0.33 * 27vw) + 10px);
 }
 
 .eyes1 {
-  width: calc(0.24 * 270px);
-  height: calc(0.33 * 270px);
+  width: calc(0.24 * 27vw);
+  height: calc(0.33 * 27vw);
   background-color: white;
   position: absolute;
-  top: calc(50% - (calc(0.24 * 270px) / 2));
-  left: calc(50% - (calc(0.33 * 270px) / 2));
+  top: calc(50% - (calc(0.24 * 27vw) / 2));
+  left: calc(50% - (calc(0.33 * 27vw) / 2));
   border-radius: 50%;
   top: 5px;
   left: 5px;
@@ -575,12 +589,12 @@ main {
 
 .eyes1:after {
   content: '';
-  width: calc(0.3 * calc(0.24 * 270px));
-  height: calc(0.4 * calc(0.24 * 270px));
+  width: calc(0.3 * calc(0.24 * 27vw));
+  height: calc(0.4 * calc(0.24 * 27vw));
   background-color: black;
   position: absolute;
-  top: calc(50% - (calc(0.3 * calc(0.24 * 270px)) / 2));
-  left: calc(50% - (calc(0.4 * calc(0.24 * 270px)) / 2));
+  top: calc(50% - (calc(0.3 * calc(0.24 * 27vw)) / 2));
+  left: calc(50% - (calc(0.4 * calc(0.24 * 27vw)) / 2));
   border-radius: 50%;
   top: 33%;
   left: 36%;
@@ -623,4 +637,12 @@ main {
 
 .availableParts .optionsContainer input[type="radio"]:checked + label {
   background-color: yellow;
+}
+
+.availableParts .partsContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
