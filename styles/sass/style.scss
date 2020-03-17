@@ -73,6 +73,7 @@ main {
 
 .body {
     @include makeEgg($bodyWidth, $bodyHeight, #db8336, 90px, 30px);
+    justify-content: center;
     position: relative;
     top: 0;
     left: 0;
@@ -98,12 +99,13 @@ main {
 
     .eyesOnFace {
         justify-content: center;
-        width: $bodyWidth;
+        height: $eyeContainerHeight;
+        top: calc(0.24 * #{$bodyHeight});
+        position: absolute;
     }
     
     /* body part dropzone styles  */
     .eye {
-        top: calc(0.24 * #{$bodyHeight});
     }
 
     .leftEye {

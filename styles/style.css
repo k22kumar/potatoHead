@@ -539,6 +539,9 @@ main {
   left: calc(50% - (38vw / 2));
   border-radius: 50% 50% 50% 50%/80% 80% 25% 25%;
   /*ORIGINAL border-radius: 50% 50% 50% 50%/60% 60% 40% 40%; */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   top: 0;
   left: 0;
@@ -567,11 +570,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 27vw;
-}
-
-.body .eye {
+  height: calc( calc(0.33 * 27vw) + 10px);
   top: calc(0.24 * 38vw);
+  position: absolute;
 }
 
 .body .hat {
