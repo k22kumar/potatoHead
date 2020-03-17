@@ -474,7 +474,7 @@ img {
   max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -563,8 +563,15 @@ main {
   right: calc(-0.8 * calc(0.35 * 27vw));
 }
 
+.body .eyesOnFace {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 27vw;
+}
+
 .body .eye {
-  top: calc(0.23 * 38vw);
+  top: calc(0.24 * 38vw);
 }
 
 .body .hat {
@@ -577,7 +584,7 @@ main {
 }
 
 .eye, .hat, .nose, .mouth, .shoes {
-  position: absolute;
+  position: relative;
 }
 
 .eye {

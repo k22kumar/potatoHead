@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body {
     display: flex;
 }
 
@@ -96,12 +96,22 @@ main {
         right: calc(-0.8 * #{$armsWidth});
     }
 
+    .eyesOnFace {
+        justify-content: center;
+        width: $bodyWidth;
+    }
+    
     /* body part dropzone styles  */
     .eye {
-        top: calc(0.23 * #{$bodyHeight});
+        top: calc(0.24 * #{$bodyHeight});
     }
 
-    
+    .leftEye {
+        
+    }
+    .rightEye {
+        
+    }
 
     .hat {
         top: -50px;
@@ -115,7 +125,7 @@ main {
 }
 
 .eye, .hat, .nose, .mouth, .shoes{
-    position: absolute;
+    position: relative;
 } 
 
 .eye {
