@@ -5,10 +5,9 @@ const potatoHeadApp = {
 };
 
 potatoHeadApp.init = function () {
+    potatoHeadApp.defaultLoad();
     potatoHeadApp.showOptions();
     potatoHeadApp.makeEyes();
-
-
 }
 
 potatoHeadApp.makeEyes = function () {
@@ -25,19 +24,28 @@ potatoHeadApp.makeEyes = function () {
 //this function shows the parts available upon user selction of a corresponding body part radio button
 potatoHeadApp.showOptions = function() {
     
-    $('input').on('change', function() {
-        const id = $(this).attr('id');
+    
+    $('input').on('click', function() {
+        const id = $(this).attr('id'); 
         const className = `.${id}Bin`;
         $bins = $('[class$="Bin"]');
-        $bins.css("display","none");
-            $(className).show();
+        $bins.addClass('hide');
+        if($('input').is(":checked")) {
+            $(className).removeClass('hide');
+            console.log('sup');
+        }                       
     }); 
 }
+
+potatoHeadApp.defaultLoad = function() {
+    
+    console.log('defaultLog');
+}
+
 
 potatoHeadApp.updatePartsContainer = function() {
 
 }
-
 
 
 

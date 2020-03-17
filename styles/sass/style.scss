@@ -20,6 +20,11 @@ img {
 main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer {
     display: flex;
 }
+
+.hide {
+    display: none;
+}
+
 /* header styles */
 
 header {
@@ -96,13 +101,7 @@ main {
         top: calc(0.23 * #{$bodyHeight});
     }
 
-    .leftEye {
-        left: calc(50% - (#{$eyeContainerWidth}));
-    }
-
-    .rightEye {
-        right: calc(50% - (#{$eyeContainerWidth}));
-    }
+    
 
     .hat {
         top: -50px;
@@ -154,7 +153,7 @@ main {
         min-height: 100px;
 
         input[type="radio"] {
-             /* dont put display none or else not focusable */
+            /* dont put display none or else not focusable */
             opacity: 0;
             position: fixed;
             width: 0;

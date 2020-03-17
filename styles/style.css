@@ -480,6 +480,10 @@ main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .parts
   display: flex;
 }
 
+.hide {
+  display: none;
+}
+
 /* header styles */
 header h1 {
   font-size: 2rem;
@@ -561,14 +565,6 @@ main {
 
 .body .eye {
   top: calc(0.23 * 38vw);
-}
-
-.body .leftEye {
-  left: calc(50% - (calc( calc(0.24 * 27vw) + 10px)));
-}
-
-.body .rightEye {
-  right: calc(50% - (calc( calc(0.24 * 27vw) + 10px)));
 }
 
 .body .hat {
