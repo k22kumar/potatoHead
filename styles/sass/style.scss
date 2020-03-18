@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody {
     display: flex;
 }
 
@@ -43,6 +43,7 @@ main {
 
 .dropzone {
     background-color: pink;
+    opacity: 0.6;
 }
 
 .dropzone:hover{
@@ -97,28 +98,31 @@ main {
         right: calc(-0.8 * #{$armsWidth});
     }
 
+    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody{
+        position: absolute;
+    }
+ 
+    .hatOnBody {
+        top: calc(-0.23 * #{$bodyHeight});
+    }
+
     .eyesOnFace {
         justify-content: center;
         height: $eyeContainerHeight;
-        top: calc(0.24 * #{$bodyHeight});
-        position: absolute;
+        top: calc(0.2 * #{$bodyHeight});
     }
+
+    .noseOnBody {
+        top: calc(0.41 * #{$bodyHeight});
+    }
+
+    .mouthOnBody {
+        top: calc(0.6 * #{$bodyHeight});
+    }
+
+
     
     /* body part dropzone styles  */
-    .eye {
-    }
-
-    .leftEye {
-        
-    }
-    .rightEye {
-        
-    }
-
-    .hat {
-        top: -50px;
-        left: calc(50% - (#{$hatContainerWidth}));
-    }
 
     .dropzone {
         background-color: none;
@@ -153,6 +157,15 @@ main {
     height: $hatContainerHeight;
     }
 
+    .nose {
+        width: $noseWidth;
+        height: $noseHeight;
+    }
+
+    .mouth {
+        width: $mouthWidth;
+        height: $mouthHeight;
+    }
 
 /* PARTS styles */
 

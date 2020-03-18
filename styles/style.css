@@ -474,7 +474,7 @@ img {
   max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -497,6 +497,7 @@ main {
 
 .dropzone {
   background-color: pink;
+  opacity: 0.6;
 }
 
 .dropzone:hover {
@@ -566,18 +567,28 @@ main {
   right: calc(-0.8 * calc(0.35 * 27vw));
 }
 
+.body .hatOnBody, .body .eyesOnFace, .body .noseOnBody, .body .mouthOnBody, .body .shoesOnBody {
+  position: absolute;
+}
+
+.body .hatOnBody {
+  top: calc(-0.23 * 38vw);
+}
+
 .body .eyesOnFace {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   height: calc( calc(0.33 * 27vw) + 10px);
-  top: calc(0.24 * 38vw);
-  position: absolute;
+  top: calc(0.2 * 38vw);
 }
 
-.body .hat {
-  top: -50px;
-  left: calc(50% - (calc(calc( calc(0.24 * 27vw) + 10px) * 2.5)));
+.body .noseOnBody {
+  top: calc(0.41 * 38vw);
+}
+
+.body .mouthOnBody {
+  top: calc(0.6 * 38vw);
 }
 
 .body .dropzone {
@@ -620,8 +631,18 @@ main {
 }
 
 .hat {
-  width: calc(calc( calc(0.24 * 27vw) + 10px) * 2.5);
-  height: calc(calc( calc(0.24 * 27vw) + 10px) * 2);
+  width: calc(calc(0.7 * 27vw) + 10px);
+  height: calc(calc(0.4 * 27vw) + 10px);
+}
+
+.nose {
+  width: calc(0.4 * 27vw);
+  height: calc(0.35 * 27vw);
+}
+
+.mouth {
+  width: calc(0.85 * 27vw);
+  height: calc(0.4 * 27vw);
 }
 
 /* PARTS styles */
