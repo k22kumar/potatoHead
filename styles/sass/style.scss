@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody, .hat {
     display: flex;
 }
 
@@ -104,6 +104,7 @@ main {
  
     .hatOnBody {
         top: calc(-0.23 * #{$bodyHeight});
+        justify-content: center;
     }
 
     .eyesOnFace {
@@ -134,6 +135,8 @@ main {
     position: relative;
 } 
 
+ /* EYES  */
+
 .eye {
     width: $eyeContainerWidth;
     height: $eyeContainerHeight;
@@ -152,15 +155,39 @@ main {
         left: 36%;
     }
 
+    /* HATS  */
+
     .hat {
     width: $hatContainerWidth;
     height: $hatContainerHeight;
     }
 
+    /* HATS  */
+
+    .hat1 {
+    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, black, 10px, 10px);
+    top: 5px;
+    left: 0;
+    margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
+
+    }
+    .hat1:after {
+        content: '';
+        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, grey, 10px, 10px);
+        bottom: 90%;
+        left: 0;
+        top: 80%;
+        margin-left: calc((#{$bowlerBrimWidth} - #{$bowlerHatWidth}) / -2);
+    }
+
+    /* NOSES  */
+
     .nose {
         width: $noseWidth;
         height: $noseHeight;
     }
+
+    /* MOUTHS  */
 
     .mouth {
         width: $mouthWidth;

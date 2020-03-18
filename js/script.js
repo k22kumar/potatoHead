@@ -1,7 +1,10 @@
 const potatoHeadApp = {
 
     //all dropzones act as the containers for the dragabble parts
-    eyeDropzones: document.querySelectorAll('.eye')
+    eyeDropzones: document.querySelectorAll('.eye'),
+    hatDropzones: document.querySelectorAll('.hat'),
+    noseDropzones: document.querySelectorAll('.nose'),
+    mouthDropzones: document.querySelectorAll('.mouth')
 };
 
 potatoHeadApp.init = function () {
@@ -11,11 +14,20 @@ potatoHeadApp.init = function () {
 }
 
 potatoHeadApp.makeEyes = function () {
-    let droppable = new Draggable.Droppable(
+    let droppableEye = new Draggable.Droppable(
         potatoHeadApp.eyeDropzones,
         {
             draggable: '.eyes1',
             dropzone: '.eye',
+            mirror: { constrainDimensions: true }
+        }
+    );
+
+    let droppableHat = new Draggable.Droppable(
+        potatoHeadApp.hatDropzones,
+        {
+            draggable: '.hat1',
+            dropzone: '.hat',
             mirror: { constrainDimensions: true }
         }
     );

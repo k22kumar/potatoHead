@@ -474,7 +474,7 @@ img {
   max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody {
+main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody, .hat {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -573,6 +573,9 @@ main {
 
 .body .hatOnBody {
   top: calc(-0.23 * 38vw);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .body .eyesOnFace {
@@ -599,6 +602,7 @@ main {
   position: relative;
 }
 
+/* EYES  */
 .eye {
   width: calc( calc(0.24 * 27vw) + 10px);
   height: calc( calc(0.33 * 27vw) + 10px);
@@ -630,16 +634,48 @@ main {
   left: 36%;
 }
 
+/* HATS  */
 .hat {
-  width: calc(calc(0.7 * 27vw) + 10px);
+  width: calc(calc(0.8 * 27vw) + 10px);
   height: calc(calc(0.4 * 27vw) + 10px);
 }
 
+/* HATS  */
+.hat1 {
+  width: calc(0.6 * 27vw);
+  height: calc(0.4 * 27vw);
+  background-color: black;
+  position: absolute;
+  top: calc(50% - (calc(0.6 * 27vw) / 2));
+  left: calc(50% - (calc(0.4 * 27vw) / 2));
+  border-radius: 50%;
+  border-radius: 50% 50% 0 0;
+  top: 5px;
+  left: 0;
+  margin-left: calc((calc(calc(0.8 * 27vw) + 10px) - calc(0.6 * 27vw)) / 2);
+}
+
+.hat1:after {
+  content: '';
+  width: calc(0.8 * 27vw);
+  height: calc(0.1 * 27vw);
+  background-color: grey;
+  position: absolute;
+  top: calc(50% - (calc(0.8 * 27vw) / 2));
+  left: calc(50% - (calc(0.1 * 27vw) / 2));
+  bottom: 90%;
+  left: 0;
+  top: 80%;
+  margin-left: calc((calc(0.8 * 27vw) - calc(0.6 * 27vw)) / -2);
+}
+
+/* NOSES  */
 .nose {
   width: calc(0.4 * 27vw);
   height: calc(0.35 * 27vw);
 }
 
+/* MOUTHS  */
 .mouth {
   width: calc(0.85 * 27vw);
   height: calc(0.4 * 27vw);
