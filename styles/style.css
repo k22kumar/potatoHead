@@ -8,6 +8,7 @@ $masterHeight: 390px; */
 /* unitless device min max values for iphone 4*/
 /* desktop min max values*/
 /* unitless device min max values*/
+/* original values WIDTH: 27vw HEIGHT: 38vw  */
 /*
 $bodyWidth: calc(calc(270px * 0.52) + (405 - 135) * ((100vw -  320px) / (1920 - 320)));
 
@@ -497,7 +498,6 @@ main {
 
 .dropzone {
   background-color: pink;
-  opacity: 0.6;
 }
 
 .dropzone:hover {
@@ -550,6 +550,14 @@ main {
     max-height: 390px; */
   /* arms styles  */
   /* body part dropzone styles  */
+}
+
+.body .dropzone {
+  background-color: transparent;
+}
+
+.body .dropzone:hover, .body .dropzone:focus {
+  background-color: lightgreen;
 }
 
 .body .arms {
@@ -706,7 +714,7 @@ main {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   top: 38%;
-  left: -15px;
+  left: -30%;
 }
 
 .nose1::after {
@@ -721,7 +729,7 @@ main {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   top: 38%;
-  left: 25px;
+  left: 50%;
 }
 
 /* MOUTH container  */
@@ -797,4 +805,16 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .canvas, main .availableParts {
+    width: 100%;
+  }
 }
