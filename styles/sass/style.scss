@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .canvas, .availableParts, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
     display: flex;
 }
 
@@ -345,6 +345,17 @@ main {
         }
 
     }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  .selector:not(*:root),  .optionsContainer{
+    display: inline-block;
+    background-color: blue;
+  
+  }
+  labels {
+      width: 25%;
+  }
 }
 
 @media (max-width: 600px) {

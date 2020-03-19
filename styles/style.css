@@ -460,7 +460,7 @@ img {
   max-width: 100%;
 }
 
-main, .canvas, .availableParts, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -870,6 +870,16 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .selector:not(*:root), .optionsContainer {
+    display: inline-block;
+    background-color: blue;
+  }
+  labels {
+    width: 25%;
+  }
 }
 
 @media (max-width: 600px) {
