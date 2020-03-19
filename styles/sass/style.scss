@@ -17,7 +17,7 @@ img {
     max-width: 100%;
 }
 
-main, .eyesOnFace, .canvas, .availableParts, .optionsContainer, .eyesBin, .partsContainer, .body, .hatOnBody, .hat {
+main, .canvas, .availableParts, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
     display: flex;
 }
 
@@ -103,7 +103,7 @@ main {
     }
  
     .hatOnBody {
-        top: calc(-0.23 * #{$bodyHeight});
+        top: calc(-0.2 * #{$bodyHeight});
         justify-content: center;
     }
 
@@ -119,6 +119,10 @@ main {
 
     .mouthOnBody {
         top: calc(0.6 * #{$bodyHeight});
+    }
+
+    .shoesOnBody {
+        top: calc(0.95 * #{$bodyHeight});
     }
 
 
@@ -155,7 +159,7 @@ main {
         left: 36%;
     }
 
-    /* HATS  */
+    /* HATS  container*/
 
     .hat {
     width: $hatContainerWidth;
@@ -169,29 +173,64 @@ main {
     top: 5px;
     left: 0;
     margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
-
     }
+
     .hat1:after {
         content: '';
         @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, grey, 10px, 10px);
-        bottom: 90%;
         left: 0;
         top: 80%;
         margin-left: calc((#{$bowlerBrimWidth} - #{$bowlerHatWidth}) / -2);
+        border-radius: 50% 50% / 0% 0% 60% 60%;
     }
-
-    /* NOSES  */
+    
+    /* NOSE container  */
 
     .nose {
-        width: $noseWidth;
-        height: $noseHeight;
+        width: $noseContainerWidth;
+        height: $noseContainerHeight;
     }
 
-    /* MOUTHS  */
+    /* NOSES */
+
+        /* HATS  */
+
+    .nose1 {
+    @include makeCircle($nose1Width, $nose1Height, #ff8c1a, 10px, 10px);
+    top: 5px;
+    left: 0;
+    margin-left: calc((#{$noseContainerWidth} - #{$nose1Width}) / 2);
+    }
+
+    .nose1::before {
+        content: '';
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        transform: rotate(45deg);
+        top: 38%;
+        left: -15px;
+    }
+
+    .nose1::after {
+        content: '';
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        transform: rotate(-45deg);
+        top: 38%;
+        left: 25px;
+    }
+    
+
+    /* MOUTH container  */
 
     .mouth {
         width: $mouthWidth;
         height: $mouthHeight;
+    }
+
+    /* SHOES  container*/
+
+    .shoe {
+        width: $shoeWidth;
+        height: $shoeHeight;
     }
 
 /* PARTS styles */
@@ -239,13 +278,9 @@ main {
         }
         
         .hatsBin, .eyesBin, .mouthBin, .noseBin {
+            justify-content: center;
             height: 100%;
         }
 
     }
-}
-
-.optionsContainer {
-
-    
 }

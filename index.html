@@ -35,7 +35,9 @@
 
                 <!-- nose -->
                 <div class="noseOnBody">
-                    <div class="nose dropzone"></div>
+                    <div class="nose dropzone">
+                        <div class="draggable nose1"></div>
+                    </div>
                 </div>
                 <!-- mouth -->
                 <div class="mouthOnBody">
@@ -43,8 +45,12 @@
                 </div>
                 <!-- shoes -->
                 <div class="shoesOnBody">
-                    <div class="shoe dropzone"></div>
-                    <div class="shoe dropzone"></div>
+                    <div class="leftShoe shoe dropzone">
+                        <div class="draggable shoe1"></div>
+                    </div>
+                    <div class="rightShoe shoe dropzone">
+                        <div class="draggable shoe1"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -54,13 +60,13 @@
             <fieldset class="optionsContainer">
                 <input type="radio" name="parts" id="hats" value="hats">
                 <label for="hats">Hats</label>
-            
-                <input type="radio" name="parts" id="eyes" value="eyes" checked="true">
+
+                <input type="radio" name="parts" id="eyes" value="eyes" checked="checked">
                 <label for="eyes">Eyes</label>
-            
+
                 <input type="radio" name="parts" id="nose" value="nose">
                 <label for="nose">Nose</label>
-            
+
                 <input type="radio" name="parts" id="mouth" value="mouth">
                 <label for="mouth">Mouth</label>
             </fieldset>
@@ -81,8 +87,9 @@
                     </div>
                 </div>
                 <div class="hide noseBin">
-                    <div class="nose1"></div>
-                    <div class="nose2"></div>
+                    <div class="dropzone nose">
+                        <div class="draggable nose1"></div>
+                    </div>
                 </div>
                 <div class="hide mouthBin">
                     <div class="mouth1"></div>

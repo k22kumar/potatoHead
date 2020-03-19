@@ -19,6 +19,11 @@
     border-radius: 50% 50% 0 0;
 }
 
+@mixin makeUpsideDownSemiCircle ($width, $height, $color, $top, $left){
+    @include makeCircle($width, $height, $color, $top, $left );
+    border-radius: 0 0 50% 50%;
+}
+
 @mixin makeEgg ($width, $height, $color, $top, $left) {
     @include makeRectangle($width, $height, $color, $top, $left );
     border-radius: 50% 50% 50% 50%/80% 80% 25% 25%;
@@ -80,8 +85,8 @@ $maxDeviceHeight: 1080px;
 $maxDeviceWidthNoUnit: 1920;
 $maxDeviceHeightNoUnit: 1080;
 
-$bodyWidth: 27vw; 
-$bodyHeight: 38vw;
+$bodyWidth: 21.6vw; 
+$bodyHeight: 30.4vw;
 
 
 
@@ -111,7 +116,7 @@ $hatWidth: calc(0.8 * #{$bodyWidth});
 $hatHeight: calc(0.4 * #{$bodyWidth});
 
 $bowlerHatWidth: calc(0.6 * #{$bodyWidth});
-$bowlerHatHeight: calc(0.4 * #{$bodyWidth});
+$bowlerHatHeight: calc(0.35 * #{$bodyWidth});
 $bowlerBrimWidth: calc(0.8 * #{$bodyWidth});
 $bowlerBrimHeight: calc(0.1 * #{$bodyWidth});
 
@@ -120,6 +125,10 @@ $hatContainerHeight: calc(#{$hatHeight} + 10px);
 
 $noseWidth: calc(0.4 * #{$bodyWidth});
 $noseHeight: calc(0.35 * #{$bodyWidth});
+
+$nose1Width: calc(0.2 * #{$bodyWidth});
+$nose1Height: calc(0.33 * #{$bodyWidth});
+
 $noseContainerWidth: calc(#{$noseWidth} + 10px);
 $noseContainerHeight: calc(#{$noseHeight} + 10px);
 
@@ -128,4 +137,8 @@ $mouthHeight: calc(0.4 * #{$bodyWidth});
 $mouthContainerWidth: calc(#{$mouthWidth} + 10px);
 $mouthContainerHeight: calc(#{$mouthHeight} + 10px);
 
+$shoeWidth: calc(0.35 * #{$bodyWidth});
+$shoeHeight: calc(0.25 * #{$bodyWidth});
+$shoeContainerWidth: calc( #{$shoeWidth} + 10px);
+$shoeContainerHeight: calc( #{$shoeHeight} + 10px);
 
