@@ -42,7 +42,7 @@ main {
 }
 
 .dropzone {
-    background-color: pink;
+    background-color: lightgrey;
     
 }
 
@@ -59,7 +59,7 @@ main {
 
 .canvas {
     position: relative;
-    background-color: ivory;
+    background-color: lightgrey;
     justify-content: center;
     align-items: center;
 }
@@ -141,7 +141,7 @@ main {
 
 }
 
-.eye, .hat, .nose, .mouth, .shoes{
+.eye, .hat, .nose, .mouth, .shoe{
     position: relative;
 } 
 
@@ -174,14 +174,14 @@ main {
 
     /* HATS  */
 
-    .hat1 {
+    .bowlerHat {
     @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, black, 10px, 10px);
     top: 5px;
     left: 0;
     margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
     }
 
-    .hat1:after {
+    .bowlerHat:after {
         content: '';
         @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, grey, 10px, 10px);
         left: 0;
@@ -237,12 +237,51 @@ main {
     .shoe {
         width: $shoeWidth;
         height: $shoeHeight;
+        margin: 0 10px;
     }
+
+    .leftShoe {
+        transform: rotate(12deg);
+    }
+    .rightShoe {
+        transform: rotate(-12deg);
+    }
+
+    /* SHOES */
+
+    .runningShoe {
+        @include makeRectangle($runningShoeWidth, $runningShoeHeight, #2d97e5, 10px, 10px);
+        top: 0;
+        left: 0;
+        /*margin-left: calc((#{$shoeContainerWidth} - #{$runningShoeWidth}) / 2); */
+        transform: perspective(8px) rotateX(4deg);
+        border-radius: 27% 27% 42% 47%;
+        border-bottom: 4px solid darkblue;
+    }
+
+    .runningShoe::before {
+        content: "";
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
+        background-color: darkblue;
+        top: 20%;
+        left: calc(0.25 * #{$runningShoeWidth});
+        border-radius: 9px;
+    }
+
+    .runningShoe::after {
+        content: "";
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
+        background-color: darkblue;
+        top: 60%;
+        left: calc(0.25 * #{$runningShoeWidth});
+        border-radius: 9px;
+    }
+   
 
 /* PARTS styles */
 
 .availableParts {
-    background-color: slategrey;
+    background-color: salmon;
     flex-direction: column;
     .optionsContainer {
         background-color: goldenrod;
@@ -292,7 +331,7 @@ main {
 }
 
 @media (max-width: 600px) {
-    $bodyWidth: 50vw; 
+    $bodyWidth: 27vw; 
     $bodyHeight: 38vw;
     main {
         flex-direction: column;

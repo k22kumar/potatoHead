@@ -27,7 +27,7 @@ potatoHeadApp.makeEyes = function () {
     let droppableHat = new Draggable.Droppable(
         potatoHeadApp.hatDropzones,
         {
-            draggable: '.hat1',
+            draggable: '.bowlerHat',
             dropzone: '.hat',
             mirror: { constrainDimensions: true }
         }

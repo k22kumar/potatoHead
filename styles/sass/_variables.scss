@@ -36,69 +36,9 @@
 }
 
 
-
-/* ORIGINAL VALUES $masterWidth: 310px; 
-$masterHeight: 390px; */
-
-$masterWidth: 270px; 
-$masterHeight: 380px;
-
-$ratioForMin: 0.52;
-$ratioForMax: 1.5;
-
-/* body WIDTH min max values*/
-$minBodyWidth: calc(#{$masterWidth} * #{$ratioForMin});
-$maxBodyWidth: calc(#{$masterWidth} * #{$ratioForMax});
-
-/* unitless body WIDTH min max values*/
-
-$minBodyWidthNoUnit: 135;
-$maxBodyWidthNoUnit: 405;
-
-/* body HEIGHT min max values*/
-
-$minBodyHeight: calc(#{$masterHeight} * #{$ratioForMin});
-$maxBodyHeight: calc(#{$masterHeight} * #{$ratioForMax});
-
-/* unitless body HEIGHT min max values*/
-
-$minBodyHeightNoUnit: 190;
-$maxBodyHeightNoUnit: 570;
-
-/* device min max values for iphone 4*/
-
-$minDeviceWidth: 320px;
-$minDeviceHeight: 480px;
-
-/* unitless device min max values for iphone 4*/
-
-$minDeviceWidthNoUnit: 320;
-$minDeviceHeightNoUnit: 480;
-
-/* desktop min max values*/
-
-$maxDeviceWidth: 1920px;
-$maxDeviceHeight: 1080px;
-
-/* unitless device min max values*/
-
-$maxDeviceWidthNoUnit: 1920;
-$maxDeviceHeightNoUnit: 1080;
-
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
 $bodyWidth: 21.6vw; 
 $bodyHeight: 30.4vw;
-
-
-
-/*
-$bodyWidth: calc(#{$minBodyWidth} + (#{$maxBodyWidthNoUnit} - #{$minBodyWidthNoUnit}) * ((100vw -  #{$minDeviceWidth}) / (1920 - 320)));
-
-$bodyHeight: calc(#{$minBodyHeight} + (#{$maxBodyHeightNoUnit} - #{$minBodyHeightNoUnit}) * ((100vh - #{$minDeviceHeight}) / (#{$maxDeviceHeightNoUnit} - #{$minDeviceHeightNoUnit})));
-*/
-
-
-
 
 
 $eyeWidth: calc(0.24 * #{$bodyWidth});
@@ -116,22 +56,21 @@ $armsWidth: calc(0.35 * #{$bodyWidth});
 $hatWidth: calc(0.8 * #{$bodyWidth});
 $hatHeight: calc(0.4 * #{$bodyWidth});
 
+$hatContainerWidth: calc(#{$hatWidth} + 10px);
+$hatContainerHeight: calc(#{$hatHeight} + 10px);
+
 $bowlerHatWidth: calc(0.6 * #{$bodyWidth});
 $bowlerHatHeight: calc(0.35 * #{$bodyWidth});
 $bowlerBrimWidth: calc(0.8 * #{$bodyWidth});
 $bowlerBrimHeight: calc(0.1 * #{$bodyWidth});
 
-$hatContainerWidth: calc(#{$hatWidth} + 10px);
-$hatContainerHeight: calc(#{$hatHeight} + 10px);
-
 $noseWidth: calc(0.4 * #{$bodyWidth});
 $noseHeight: calc(0.35 * #{$bodyWidth});
+$noseContainerWidth: calc(#{$noseWidth} + 10px);
+$noseContainerHeight: calc(#{$noseHeight} + 10px);
 
 $nose1Width: calc(0.2 * #{$bodyWidth});
 $nose1Height: calc(0.33 * #{$bodyWidth});
-
-$noseContainerWidth: calc(#{$noseWidth} + 10px);
-$noseContainerHeight: calc(#{$noseHeight} + 10px);
 
 $mouthWidth: calc(0.85 * #{$bodyWidth});
 $mouthHeight: calc(0.4 * #{$bodyWidth});
@@ -143,3 +82,6 @@ $shoeHeight: calc(0.25 * #{$bodyWidth});
 $shoeContainerWidth: calc( #{$shoeWidth} + 10px);
 $shoeContainerHeight: calc( #{$shoeHeight} + 10px);
 
+
+$runningShoeWidth: calc(0.35 * #{$bodyWidth});
+$runningShoeHeight: calc(0.25 * #{$bodyWidth});
