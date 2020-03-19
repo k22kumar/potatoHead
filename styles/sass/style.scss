@@ -160,10 +160,26 @@ main {
 }
 .eyes1:after {
         content: '';
-        @include makeCircle($pupilWidth, $pupilHeight, black, 10px, 10px);
+        @include makeCircle($pupilWidth, $pupilHeight, $eyeBlack, 10px, 10px);
         top: 33%;
         left: 36%;
     }
+
+.eyes1:before {
+    content: '';
+        @include makeRectangle($eyeWidth, $eyeBrowHeight, $eyeBlack, 10px, 10px);
+        top: -65%;
+        left: 0;
+        border-radius: 5px;
+}
+
+.angledLeft::before {
+    transform: rotate(15deg);
+}
+
+.angledRight::before {
+    transform: rotate(-15deg);
+}
 
     /* HATS  container*/
 
@@ -175,17 +191,18 @@ main {
     /* HATS  */
 
     .bowlerHat {
-    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, black, 10px, 10px);
-    top: 5px;
+    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, #3d3d3d, 10px, 10px);
+    top: 0;
     left: 0;
+    border-bottom: calc(0.1 * #{$bodyWidth}) solid grey;
     margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
     }
 
     .bowlerHat:after {
         content: '';
-        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, grey, 10px, 10px);
+        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, #3d3d3d, 10px, 10px);
         left: 0;
-        top: 80%;
+        top: 120%;
         margin-left: calc((#{$bowlerBrimWidth} - #{$bowlerHatWidth}) / -2);
         border-radius: 50% 50% / 0% 0% 60% 60%;
     }

@@ -45,8 +45,10 @@ $eyeWidth: calc(0.24 * #{$bodyWidth});
 $eyeHeight: calc(0.33 * #{$bodyWidth});
 $pupilWidth: calc(0.3 * #{$eyeWidth});
 $pupilHeight: calc(0.4 * #{$eyeWidth});
+$eyeBrowHeight: calc(0.3 * #{$eyeWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
 $eyeContainerHeight: calc( #{$eyeHeight} + 10px);
+$eyeBlack: #272727;
 
 $eyeLid: #b06523;
 

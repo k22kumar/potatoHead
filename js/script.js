@@ -15,6 +15,14 @@ potatoHeadApp.init = function () {
 }
 
 potatoHeadApp.makeEyes = function () {
+    // let swappableEye = new Draggable.Swappable(
+    //     potatoHeadApp.eyeDropzones,
+    //     {
+    //         draggable: '.eyes1',
+    //         swappable: '.eye',
+    //         mirror: { constrainDimensions: true }
+    //     }
+    // );
     let droppableEye = new Draggable.Droppable(
         potatoHeadApp.eyeDropzones,
         {
