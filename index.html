@@ -79,70 +79,88 @@
                 <label for="mouth">Mouth</label>
             </fieldset> -->
 
-            
-                <ul class="menuContainer">
-                    <li class="previous">
-                        <button>
-                            back
-                        </button>
-                    </li>
-                    <li class="partGUI">
-                            <p class="partsScreen">
-                                uWu
-                            </p>
-                            <ul class="partCustomizer">
-                                <li>
-                                    <button class="partPicker toUpper">
-                                        parts
-                                    </button>
-                                </li>
-                                <li class="colorContainer">
-                                    <button class="primaryColor">
-                                        1
-                                    </button>
-                                    <button class="secondaryColor">
-                                        2
-                                    </button>
-                                </li>
-                            </ul>
-                    </li>
-                    <li class="next">
-                        <button>
-                            next
-                        </button>
-                    </li>
-                </ul>
-            
+
+            <ul class="menuContainer">
+                <li class="previous">
+                    <button id="previous">
+                        back
+                    </button>
+                </li>
+                <li class="partGUI">
+                    <p class="partsScreen">
+                        uWu
+                    </p>
+                    <ul class="partCustomizer">
+                        <li>
+                            <button class="partPicker toUpper">
+                                parts
+                            </button>
+                        </li>
+                        <li class="colorContainer">
+                            <button class="primaryColor">
+                                1
+                            </button>
+                            <button class="secondaryColor">
+                                2
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="next">
+                    <button id="next">
+                        next
+                    </button>
+                </li>
+            </ul>
+
 
 
             <div class="partsContainer">
-                <div class="hide hatsBin">
-                    <div class="dropzone hat">
-                        <div class="draggable bowlerHat"></div>
+                <div class="currentPart">
+                    <!-- paint bins -->
+                    <div class="hide primaryPaintBin">
+                        <fieldset class="colorBrightness">
+                            <input type="radio" name="brightness" id="darkerPrimary" value="darker">
+                            <label for="normalPrimary">Darker</label>
+                            
+                            <input type="radio" name="brightness" id="normalPrimary" value="normal" checked="checked">
+                            <label for="normalPrimary">Normal</label>
+                            
+                            <input type="radio" name="brightness" id="lighterPrimary" value="lighter">
+                            <label for="lighterPrimary">Lighter</label>
+                        </fieldset>
                     </div>
-                </div>
-                <div class="eyesBin">
-                    <div class="dropzone leftEye eye">
-                        <div class="draggable eyes1"></div>
+                    <!-- parts bins -->
+                    <div class="hide partBin hatsBin">
+                        <div class="dropzone hat">
+                            <div class="draggable bowlerHat"></div>
+                        </div>
                     </div>
-                    <div class="dropzone rightEye eye">
-                        <div class="draggable eyes1"></div>
+                    <div class="partBin eyesBin">
+                        <div class="dropzone leftEye eye">
+                            <div class="draggable eyes1"></div>
+                        </div>
+                        <div class="dropzone rightEye eye">
+                            <div class="draggable eyes1"></div>
+                        </div>
+                        <div class="dropzone leftEye eye">
+                            <div class="draggable eyes1 angledLeft"></div>
+                        </div>
+                        <div class="dropzone rightEye eye">
+                            <div class="draggable eyes1 angledRight"></div>
+                        </div>
                     </div>
-                    <div class="dropzone leftEye eye">
-                        <div class="draggable eyes1 angledLeft"></div>
+                    <div class="hide partBin noseBin">
+                        <div class="dropzone nose">
+                            <div class="draggable nose1"></div>
+                        </div>
                     </div>
-                    <div class="dropzone rightEye eye">
-                        <div class="draggable eyes1 angledRight"></div>
-                    </div>
-                </div>
-                <div class="hide noseBin">
-                    <div class="dropzone nose">
-                        <div class="draggable nose1"></div>
-                    </div>
-                </div>
-                <div class="hide mouthBin">
-                    <div class="mouth1"></div>
-                </div>
+                    <!-- drawer -->
+                    <div class="drawer pulledOut"></div>
+                </div> 
+                <!-- ^ end of current part -->
+            </div>
+            <!-- ^ end of parts container -->
         </section>
     </main>
 

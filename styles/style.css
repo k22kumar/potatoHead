@@ -815,7 +815,6 @@ main {
 
 /* PARTS styles */
 .availableParts {
-  background-color: salmon;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -858,12 +857,29 @@ main {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 75%;
-  padding-top: 10%;
+  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../assets/wood-pattern.png);
+  background-repeat: repeat;
+  background-color: #d1a558;
+}
+
+.availableParts .partsContainer .currentPart {
+  background-image: url(../assets/wood-pattern.png);
+  background-color: #d1a558;
+  background-color: #a6842e;
+  background-repeat: repeat;
+  -webkit-box-shadow: inset 0px 0px 63px 9px #000000;
+  box-shadow: inset 0px 0px 63px 9px #000;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
 }
 
 .availableParts .partsContainer .hatsBin, .availableParts .partsContainer .eyesBin, .availableParts .partsContainer .mouthBin {
-  width: 75%;
+  width: 80%;
 }
 
 .availableParts .partsContainer .noseBin {
@@ -879,7 +895,7 @@ main {
 
 /* BRAND NEW MENU START */
 /* JUST CENETERING */
-.partsScreen, .partCustomizer, .partPicker, .primaryColor, .secondaryColor, .next, .previous {
+.partsScreen, .partCustomizer, .partPicker, .primaryColor, .secondaryColor, .next, .previous, .currentPart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -891,6 +907,20 @@ main {
           align-items: center;
 }
 
+button {
+  /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
+}
+
+button .btn-3d {
+  display: inline-block;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  -webkit-transition: top .01s linear;
+  transition: top .01s linear;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
 .menuContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -898,11 +928,17 @@ main {
   width: 100%;
   height: 20%;
   background-color: lightblue;
+  /* parts GUI end */
 }
 
 .menuContainer .previous, .menuContainer .next {
   width: 25%;
   background-color: orange;
+}
+
+.menuContainer .previous button, .menuContainer .next button {
+  width: 50px;
+  height: 50px;
 }
 
 .menuContainer .partGUI {
@@ -916,6 +952,7 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  /* partsCustomizer end */
 }
 
 .menuContainer .partGUI .partsScreen, .menuContainer .partGUI .partCustomizer {
@@ -925,8 +962,11 @@ main {
 }
 
 .menuContainer .partGUI .partsScreen {
-  color: red;
+  color: black;
   font-size: 1.3rem;
+  background-color: #d7e496;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .menuContainer .partGUI .partCustomizer {

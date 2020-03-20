@@ -2,7 +2,7 @@
 /* PARTS styles */
 
 .availableParts {
-    background-color: salmon;
+    
     flex-direction: column;
     .optionsContainer {
         background-color: goldenrod;
@@ -34,13 +34,29 @@
 
 
     .partsContainer {
+
         justify-content: center;
         flex-wrap: wrap;
-        height: 75%;
-        padding-top: 10%;
+        height: 80%;
+        align-items: center;
+        background-image: url(../assets/wood-pattern.png);
+        background-repeat: repeat;
+        background-color: #d1a558;
+        
+        .currentPart {
+            background-image: url(../assets/wood-pattern.png);
+            background-color: #d1a558;
+            background-color: #a6842e;
+            background-repeat: repeat;
+            -webkit-box-shadow: inset 0px 0px 63px 9px #000000;
+            box-shadow: inset 0px 0px 63px 9px #000;
+            width: 90%;
+            height: 90%;
+            border-radius: 10px; 
+        }
 
         .hatsBin, .eyesBin, .mouthBin{
-            width: 75%;
+            width: 80%;
         }
         
         .noseBin {
@@ -59,10 +75,22 @@
 
 /* BRAND NEW MENU START */
 /* JUST CENETERING */
-.partsScreen, .partCustomizer, .partPicker, .primaryColor,.secondaryColor , .next, .previous{
+.partsScreen, .partCustomizer, .partPicker, .primaryColor,.secondaryColor , .next, .previous, .currentPart{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+button {
+    /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
+    .btn-3d {
+	display: inline-block;
+	color: white;
+	border-radius: 6px;
+	text-align: center;
+	transition: top .01s linear;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
 }
 
 .menuContainer {
@@ -73,6 +101,11 @@
     .previous, .next {
         width: 25%;
         background-color: orange;
+        button {
+            width: 50px;
+            height: 50px;
+
+        }
     }
 
     .partGUI {
@@ -88,8 +121,11 @@
         }
 
         .partsScreen {
-            color: red;
+            color: black;
             font-size: 1.3rem;
+            background-color: #d7e496;
+            border-radius: 10px;
+            border: 2px solid black;
         }
 
         .partCustomizer {
@@ -116,9 +152,7 @@
                 max-height: 35px;
                 border-radius: 50%;
             }
-        }
-
-
-    }
+        } /* partsCustomizer end */
+    } /* parts GUI end */
     
 }
