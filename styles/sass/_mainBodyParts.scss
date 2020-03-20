@@ -3,7 +3,6 @@
 /* general styles */
 
 * {
-    border: 2px solid lime;
     transition: all 0.1s;
 }
 
@@ -61,7 +60,9 @@ main {
 
 .canvas {
     position: relative;
-    background-color: lightgrey;
+    
+    background-image: url(../assets/backdrop.jpg);
+    background-size: cover;
     justify-content: center;
     align-items: center;
 }

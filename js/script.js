@@ -4,6 +4,7 @@ const potatoHeadApp = {
     //keeps track of which part is currently being shown
     partsCounter: 0,
     partsArray: $('.partBin'),
+    $drawer: $('.drawer'),
 
     //all dropzones act as the containers for the dragabble parts
     eyeDropzones: document.querySelectorAll('.eye'),
@@ -98,13 +99,22 @@ potatoHeadApp.showPrevPart = function() {
 //this function updates the currentBin container to show only the part corresponding to currentPart
 potatoHeadApp.showBin = function(partIndex) {
     const currentBin = potatoHeadApp.partsArray[partIndex].classList[1];
+    potatoHeadApp.pushDrawer();
     potatoHeadApp.partsArray.each( function() {
         $(this).hasClass(`${currentBin}`) ?
         $(this).removeClass('hide') :
         $(this).addClass('hide');
     });
-    console.log(currentBin);
+    potatoHeadApp.pullDrawer();
 }
+
+potatoHeadApp.pullDrawer = function() {
+ $(".drawer").addClass('pulledOut');
+}
+
+potatoHeadApp.pushDrawer = function() {
+  $('.drawer').removeClass('pulledOut');
+};
 
 //this function shows the parts available upon user selction of a corresponding body part radio button
 potatoHeadApp.showOptions = function() {

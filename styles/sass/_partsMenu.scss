@@ -2,10 +2,9 @@
 /* PARTS styles */
 
 .availableParts {
-    
+    overflow: hidden;
     flex-direction: column;
     .optionsContainer {
-        background-color: goldenrod;
         height: 25%;
         min-height: 100px;
 
@@ -30,11 +29,26 @@
         }
     }
 
+    /* drawer styles */
 
+    .drawer {
+        background-image: url(../assets/wood-pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+         width: 100%;
+        transition: all 0.5s ease-in-out;
+        position: absolute;
+        top: 0;
+        background-color: black;
+    }
+
+    .pulledOut {
+        top: 100%;
+    }
 
 
     .partsContainer {
-
+        position: relative;
         justify-content: center;
         flex-wrap: wrap;
         height: 80%;
@@ -44,7 +58,7 @@
         background-color: #d1a558;
         
         .currentPart {
-            background-image: url(../assets/wood-pattern.png);
+            background-image: url(../assets/wood-pattern-horizontal.png);
             background-color: #d1a558;
             background-color: #a6842e;
             background-repeat: repeat;
@@ -53,21 +67,20 @@
             width: 90%;
             height: 90%;
             border-radius: 10px; 
-        }
 
-        .hatsBin, .eyesBin, .mouthBin{
-            width: 80%;
-        }
-        
-        .noseBin {
-            width: 100%;
+            .partBin {
+            width: 90%;
+            height: 90%;
+            overflow: auto;
+            flex-wrap: wrap;
+            }
         }
         
         .hatsBin, .eyesBin, .mouthBin, .noseBin {
             justify-content: center;
             height: 100%;
         }
-
+        
     }
 }
 
@@ -83,24 +96,38 @@
 
 button {
     /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
-    .btn-3d {
+    
 	display: inline-block;
 	color: white;
 	border-radius: 6px;
 	text-align: center;
 	transition: top .01s linear;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    white-space: nowrap;
+    text-decoration: none;
+
+background-color: #e74c3c;
+	box-shadow: 0 0 0 1px #c63702 inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 #C24032,
+        0 8px 0 1px rgba(0,0,0,0.4),
+				0 8px 8px 1px rgba(0,0,0,0.5);
 }
+
+button:active {
+    top: -9px;
+    box-shadow: 0 0 0 1px #c63702 inset,
+				0 0 0 2px rgba(255,255,255,0.15) inset,
+				0 0 0 1px rgba(0,0,0,0.4);
 }
 
 .menuContainer {
+    background-color: slategrey;
     display: flex;
     width: 100%;
     height: 20%;
-    background-color: lightblue;
+
     .previous, .next {
         width: 25%;
-        background-color: orange;
         button {
             width: 50px;
             height: 50px;
@@ -110,14 +137,12 @@ button {
 
     .partGUI {
         width: 50%;
-        background-color: lightyellow;
         display: flex;
         flex-direction: column;
         text-align: center;
         .partsScreen, .partCustomizer {
             height: 50%;
             width: 100%;
-            background-color: skyblue;
         }
 
         .partsScreen {
