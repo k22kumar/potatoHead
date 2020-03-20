@@ -4,6 +4,9 @@
 .availableParts {
     overflow: hidden;
     flex-direction: column;
+    background-image: url(../assets/wood-pattern.png);
+        background-repeat: repeat;
+        background-color: #d1a558;
     .optionsContainer {
         height: 25%;
         min-height: 100px;
@@ -53,13 +56,10 @@
         flex-wrap: wrap;
         height: 80%;
         align-items: center;
-        background-image: url(../assets/wood-pattern.png);
-        background-repeat: repeat;
-        background-color: #d1a558;
+        
         
         .currentPart {
             background-image: url(../assets/wood-pattern-horizontal.png);
-            background-color: #d1a558;
             background-color: #a6842e;
             background-repeat: repeat;
             -webkit-box-shadow: inset 0px 0px 63px 9px #000000;
@@ -121,7 +121,7 @@ button:active {
 }
 
 .menuContainer {
-    background-color: slategrey;
+    
     display: flex;
     width: 100%;
     height: 20%;
