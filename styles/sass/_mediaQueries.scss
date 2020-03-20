@@ -1,0 +1,22 @@
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  .selector:not(*:root),  .optionsContainer{
+    display: inline-block;
+    background-color: blue;
+  
+  }
+  labels {
+      width: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+    $bodyWidth: 27vw; 
+    $bodyHeight: 38vw;
+    main {
+        flex-direction: column;
+        .canvas, .availableParts {
+            width: 100%;
+        }
+    }
+}

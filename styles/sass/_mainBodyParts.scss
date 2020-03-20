@@ -1,0 +1,298 @@
+
+
+/* general styles */
+
+* {
+    border: 2px solid lime;
+    transition: all 0.1s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.toUpper {
+    text-transform: uppercase;
+}
+
+main, .canvas, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+/* header styles */
+
+header {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+/* main styles */
+
+main {
+    height: calc(100vh - 20px);
+
+}
+
+.dropzone {
+    background-color: lightgrey;
+    
+}
+
+.dropzone:hover{
+    background-color: green;
+}
+
+.canvas, .availableParts {
+    width: 50%;
+    height: 100%;
+}
+
+/* CANVAS styles */
+
+.canvas {
+    position: relative;
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.body {
+    .dropzone {
+        background-color: transparent;
+    }
+    .dropzone:hover, .dropzone:focus {
+        background-color: lightgreen;
+    }
+    @include makeEgg($bodyWidth, $bodyHeight, #db8336, 90px, 30px);
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* max-width: 310px;
+    max-height: 390px; */
+
+    /* arms styles  */
+
+    .arms {
+        position: absolute;
+        width: $armsWidth;
+        height: auto;
+        top: calc(0.6 * #{$bodyHeight});
+    }
+
+    .leftArm {
+        left: calc(-0.8 * #{$armsWidth});
+    }
+
+    .rightArm {
+        right: calc(-0.8 * #{$armsWidth});
+    }
+
+    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody{
+        position: absolute;
+    }
+ 
+    .hatOnBody {
+        top: calc(-0.2 * #{$bodyHeight});
+        justify-content: center;
+    }
+
+    .eyesOnFace {
+        justify-content: center;
+        height: $eyeContainerHeight;
+        top: calc(0.2 * #{$bodyHeight});
+    }
+
+    .noseOnBody {
+        top: calc(0.41 * #{$bodyHeight});
+    }
+
+    .mouthOnBody {
+        top: calc(0.6 * #{$bodyHeight});
+    }
+
+    .shoesOnBody {
+        top: calc(0.95 * #{$bodyHeight});
+    }
+
+
+    
+    /* body part dropzone styles  */
+
+    .dropzone {
+        background-color: none;
+    }
+
+}
+
+.eye, .hat, .nose, .mouth, .shoe{
+    position: relative;
+} 
+
+ /* EYES  */
+
+.eye {
+    width: $eyeContainerWidth;
+    height: $eyeContainerHeight;
+}
+
+.eyes1 {
+    @include makeCircle($eyeWidth, $eyeHeight, white, 10px, 10px);
+    top: 5px;
+    left: 5px;
+    border-top: 12px solid $eyeLid;
+}
+.eyes1:after {
+        content: '';
+        @include makeCircle($pupilWidth, $pupilHeight, $eyeBlack, 10px, 10px);
+        top: 33%;
+        left: 36%;
+    }
+
+.eyes1:before {
+    content: '';
+        @include makeRectangle($eyeWidth, $eyeBrowHeight, $eyeBlack, 10px, 10px);
+        top: -65%;
+        left: 0;
+        border-radius: 5px;
+}
+
+.angledLeft::before {
+    transform: rotate(15deg);
+}
+
+.angledRight::before {
+    transform: rotate(-15deg);
+}
+
+    /* HATS  container*/
+
+    .hat {
+    width: $hatContainerWidth;
+    height: $hatContainerHeight;
+    }
+
+    /* HATS  */
+
+    .bowlerHat {
+    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, #3d3d3d, 10px, 10px);
+    top: 0;
+    left: 0;
+    border-bottom: calc(0.1 * #{$bodyWidth}) solid grey;
+    margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
+    }
+
+    .bowlerHat:after {
+        content: '';
+        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, #3d3d3d, 10px, 10px);
+        left: 0;
+        top: 120%;
+        margin-left: calc((#{$bowlerBrimWidth} - #{$bowlerHatWidth}) / -2);
+        border-radius: 50% 50% / 0% 0% 60% 60%;
+    }
+    
+    /* NOSE container  */
+
+    .nose {
+        width: $noseContainerWidth;
+        height: $noseContainerHeight;
+    }
+
+    /* NOSES */
+
+        /* HATS  */
+
+    .nose1 {
+    @include makeCircle($nose1Width, $nose1Height, #ff8c1a, 10px, 10px);
+    top: 5px;
+    left: 0;
+    margin-left: calc((#{$noseContainerWidth} - #{$nose1Width}) / 2);
+    }
+
+    .nose1::before {
+        content: '';
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        transform: rotate(45deg);
+        top: 38%;
+        left: -30%;
+    }
+
+    .nose1::after {
+        content: '';
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        transform: rotate(-45deg);
+        top: 38%;
+        left: 50%;
+    }
+    
+
+    /* MOUTH container  */
+
+    .mouth {
+        width: $mouthWidth;
+        height: $mouthHeight;
+    }
+
+    /* SHOES  container*/
+
+    .shoe {
+        width: $shoeWidth;
+        height: $shoeHeight;
+        margin: 0 10px;
+    }
+
+    .leftShoe {
+        transform: rotate(12deg);
+    }
+    .rightShoe {
+        transform: rotate(-12deg);
+    }
+
+    /* SHOES */
+
+    .runningShoe {
+        @include makeRectangle($runningShoeWidth, $runningShoeHeight, #2d97e5, 10px, 10px);
+        top: 0;
+        left: 0;
+        /*margin-left: calc((#{$shoeContainerWidth} - #{$runningShoeWidth}) / 2); */
+        transform: perspective(8px) rotateX(4deg);
+        border-radius: 27% 27% 42% 47%;
+        border-bottom: 4px solid darkblue;
+    }
+
+    .runningShoe::before {
+        content: "";
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
+        background-color: darkblue;
+        top: 20%;
+        left: calc(0.25 * #{$runningShoeWidth});
+        border-radius: 9px;
+    }
+
+    .runningShoe::after {
+        content: "";
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
+        background-color: darkblue;
+        top: 60%;
+        left: calc(0.25 * #{$runningShoeWidth});
+        border-radius: 9px;
+    }
+   
