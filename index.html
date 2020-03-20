@@ -116,22 +116,23 @@
 
 
             <div class="partsContainer">
+                <!-- must keep addding classes to parts as partBin typeOfBodyPartBin optional hide -->
                 <div class="currentPart">
                     <!-- paint bins -->
                     <div class="hide primaryPaintBin">
                         <fieldset class="colorBrightness">
                             <input type="radio" name="brightness" id="darkerPrimary" value="darker">
                             <label for="normalPrimary">Darker</label>
-                            
+
                             <input type="radio" name="brightness" id="normalPrimary" value="normal" checked="checked">
                             <label for="normalPrimary">Normal</label>
-                            
+
                             <input type="radio" name="brightness" id="lighterPrimary" value="lighter">
                             <label for="lighterPrimary">Lighter</label>
                         </fieldset>
                     </div>
                     <!-- parts bins -->
-                    <div class="hide partBin hatsBin">
+                    <div class="partBin hatsBin hide">
                         <div class="dropzone hat">
                             <div class="draggable bowlerHat"></div>
                         </div>
@@ -150,14 +151,14 @@
                             <div class="draggable eyes1 angledRight"></div>
                         </div>
                     </div>
-                    <div class="hide partBin noseBin">
+                    <div class="partBin noseBin hide">
                         <div class="dropzone nose">
                             <div class="draggable nose1"></div>
                         </div>
                     </div>
                     <!-- drawer -->
                     <div class="drawer pulledOut"></div>
-                </div> 
+                </div>
                 <!-- ^ end of current part -->
             </div>
             <!-- ^ end of parts container -->

@@ -18,6 +18,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.showOptions();
     potatoHeadApp.makeEyes();
     potatoHeadApp.showNextPart();
+    potatoHeadApp.showPrevPart();
 }
 
 potatoHeadApp.makeEyes = function () {
@@ -75,26 +76,34 @@ potatoHeadApp.makeEyes = function () {
     );
 }
 
-//this function shows the next partOption
+//this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
 potatoHeadApp.showNextPart = function() {
-    const next = $("#next");
-    console.log(next);
     $('#next').on('click', function () {
-
-        if (potatoHeadApp.partsCounter > potatoHeadApp.partsArray.length) {
-            console.log(potatoHeadApp.partsCounter + " too big reseting")
-            potatoHeadApp.partsCounter = 0;
-        }
+        potatoHeadApp.partsCounter > (potatoHeadApp.partsArray.length - 2) ?
+        potatoHeadApp.partsCounter = 0 :
         potatoHeadApp.partsCounter++;
         potatoHeadApp.showBin(potatoHeadApp.partsCounter);
     });
 }
 
+potatoHeadApp.showPrevPart = function() {
+  $("#previous").on("click", function() {
+    potatoHeadApp.partsCounter === 0 ? 
+    potatoHeadApp.partsCounter = potatoHeadApp.partsArray.length - 1 : 
+    potatoHeadApp.partsCounter--;
+    potatoHeadApp.showBin(potatoHeadApp.partsCounter);
+  });
+};
+
+//this function updates the currentBin container to show only the part corresponding to currentPart
 potatoHeadApp.showBin = function(partIndex) {
-    console.log(partIndex);
+    const currentBin = potatoHeadApp.partsArray[partIndex].classList[1];
     potatoHeadApp.partsArray.each( function() {
-        
+        $(this).hasClass(`${currentBin}`) ?
+        $(this).removeClass('hide') :
+        $(this).addClass('hide');
     });
+    console.log(currentBin);
 }
 
 //this function shows the parts available upon user selction of a corresponding body part radio button
@@ -112,7 +121,7 @@ potatoHeadApp.showOptions = function() {
 
 potatoHeadApp.defaultLoad = function() {
     
-    console.log(potatoHeadApp.partsArray);
+    console.log("startup parts: " + potatoHeadApp.partsArray);
 }
 
 
