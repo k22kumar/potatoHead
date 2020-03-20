@@ -37,6 +37,7 @@
         justify-content: center;
         flex-wrap: wrap;
         height: 75%;
+        padding-top: 10%;
 
         .hatsBin, .eyesBin, .mouthBin{
             width: 75%;
@@ -58,7 +59,7 @@
 
 /* BRAND NEW MENU START */
 /* JUST CENETERING */
-.partsScreen, .partCustomizer, .partPicker, .primaryColor,.secondaryColor {
+.partsScreen, .partCustomizer, .partPicker, .primaryColor,.secondaryColor , .next, .previous{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,16 +100,20 @@
             display: flex;
             
             .partPicker, .primaryColor, .secondaryColor {
-                margin: 5px 5px;
+                margin: 5px;
             }
             .partPicker {
-                width: calc(0.3 * #{$bodyWidth});
-                height: 35px;
+                width: calc(0.6 * #{$bodyWidth});
+                height: calc(0.3 * #{$bodyWidth});
+                max-width: 60px;
+                max-height: 35px;
             }
             
             .primaryColor,.secondaryColor {
-                width: calc(0.15 * #{$bodyWidth});
-                height: calc(0.15 * #{$bodyWidth});
+                width: calc(0.23 * #{$bodyWidth});
+                height: calc(0.23 * #{$bodyWidth});
+                max-width: 35px;
+                max-height: 35px;
                 border-radius: 50%;
             }
         }
