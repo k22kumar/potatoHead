@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PotatoHead</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/63b84c9d87.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,10 +37,14 @@
 
                 <!-- ear -->
                 <div class="leftEarOnBody">
-                    <div class="leftEar dropzone"></div>
+                    <div class="leftEar ear dropzone">
+                        <div class="ear1"></div>
+                    </div>
                 </div>
                 <div class="rightEarOnBody">
-                    <div class="rightEar dropzone"></div>
+                    <div class="rightEar ear dropzone">
+                        <div class="ear1"></div>
+                    </div>
                 </div>
 
                 <!-- nose -->
@@ -87,9 +93,6 @@
                     </button>
                 </li>
                 <li class="partGUI">
-                    <p class="partsScreen">
-                        uWu
-                    </p>
                     <ul class="partCustomizer">
                         <li class="colorContainer">
                             <button class="primaryColor">
@@ -115,17 +118,54 @@
             <div class="partsContainer">
                 <!-- must keep addding classes to parts as partBin typeOfBodyPartBin optional hide -->
                 <div class="currentPart">
-                    <!-- paint bins -->
-                    <div class="hide primaryPaintBin">
-                        <fieldset class="colorBrightness">
-                            <input type="radio" name="brightness" id="darkerPrimary" value="darker">
-                            <label for="normalPrimary">Darker</label>
+                    <!-- paint bin -->
+                    <div class="paintBin hide">
+                        <button class="brightness"><i class="far fa-lightbulb"></i></button>
+                        <fieldset class="colorPalette">
+                            <input type="radio" name="colors" id="black" value="black">
+                            <label for="black">black</label>
 
-                            <input type="radio" name="brightness" id="normalPrimary" value="normal" checked="checked">
-                            <label for="normalPrimary">Normal</label>
+                            <input type="radio" name="colors" id="white" value="white">
+                            <label for="white">white</label>
 
-                            <input type="radio" name="brightness" id="lighterPrimary" value="lighter">
-                            <label for="lighterPrimary">Lighter</label>
+                            <input type="radio" name="colors" id="red" value="red">
+                            <label for="red">red</label>
+
+                            <input type="radio" name="colors" id="brown" value="brown">
+                            <label for="brown">brown</label>
+
+                            <input type="radio" name="colors" id="orange" value="orange">
+                            <label for="orange">orange</label>
+
+                            <input type="radio" name="colors" id="yellow" value="yellow">
+                            <label for="yellow">yellow</label>
+
+                            <input type="radio" name="colors" id="chartreuseGreen" value="chartreuseGreen">
+                            <label for="chartreuseGreen">chartreuseGreen</label>
+                            
+                            <input type="radio" name="colors" id="green" value="green">
+                            <label for="green">green</label>
+                            
+                            <input type="radio" name="colors" id="springGreen" value="springGreen">
+                            <label for="springGreen">springGreen</label>
+                            
+                            <input type="radio" name="colors" id="cyan" value="cyan">
+                            <label for="cyan">cyan</label>
+                            
+                            <input type="radio" name="colors" id="azure" value="azure">
+                            <label for="azure">azure</label>
+
+                            <input type="radio" name="colors" id="blue" value="blue">
+                            <label for="blue">blue</label>
+                            
+                            <input type="radio" name="colors" id="violet" value="violet">
+                            <label for="violet">violet</label>
+                            
+                            <input type="radio" name="colors" id="magenta" value="magenta">
+                            <label for="magenta">magenta</label>
+                            
+                            <input type="radio" name="colors" id="rose" value="rose">
+                            <label for="rose">rose</label>
                         </fieldset>
                     </div>
                     <!-- parts bins -->
@@ -136,7 +176,7 @@
                     </div>
                     <div class="partBin eyesBin hide">
                         <div class="dropzone leftEye eye">
-                            <div class="draggable eyes1"></div>
+                            <div class="draggable eyes1 primaryColor"></div>
                         </div>
                         <div class="dropzone rightEye eye">
                             <div class="draggable eyes1"></div>

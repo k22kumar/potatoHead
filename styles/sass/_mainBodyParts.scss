@@ -18,13 +18,10 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .body, .eyesOnFace, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .canvas, .optionsContainer, .partsContainer, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
     display: flex;
 }
 
-.hide {
-    display: none;
-}
 
 /* header styles */
 
@@ -107,7 +104,7 @@ main {
         right: calc(-0.8 * #{$armsWidth});
     }
 
-    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody{
+    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody, .leftEarOnBody, .rightEarOnBody{
         position: absolute;
     }
  
@@ -120,6 +117,18 @@ main {
         justify-content: center;
         height: $eyeContainerHeight;
         top: calc(0.2 * #{$bodyHeight});
+    }
+
+    .rightEarOnBody {
+        top: calc(0.2 * #{$bodyHeight});
+        left: 85%;
+        transform: rotate(-15deg);
+    }
+
+    .leftEarOnBody {
+        top: calc(0.2 * #{$bodyHeight});
+        right: 85%;
+        transform: rotate(15deg);
     }
 
     .noseOnBody {
@@ -144,12 +153,13 @@ main {
 
 }
 
-.eye, .hat, .nose, .mouth, .shoe{
+.eye, .hat, .nose, .mouth, .shoe, .ear{
     position: relative;
 } 
 
  /* EYES  */
 
+ 
 .eye {
     width: $eyeContainerWidth;
     height: $eyeContainerHeight;
@@ -219,7 +229,6 @@ main {
 
     /* NOSES */
 
-        /* HATS  */
 
     .nose1 {
     @include makeCircle($nose1Width, $nose1Height, #ff8c1a, 10px, 10px);
@@ -244,6 +253,35 @@ main {
         left: 50%;
     }
     
+
+    /* EARS container */
+
+    .ear {
+        width: $earContainerWidth;
+        height: $earContainerHeight;
+    }
+
+    /* EARS */
+    .ear1 {
+    @include makeCircle($earWidth, $earHeight, pink, 10px, 10px);
+    top: 5px;
+    left: 0;
+    margin-left: calc((#{$earContainerWidth} - #{$earWidth}) / 2);
+    }
+
+    .leftEarOnBody .ear ::after {
+        content: '';
+        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
+        top: 13%;
+        left: 16%;
+    }
+
+    .rightEarOnBody .ear ::after {
+        content: '';
+        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
+        top: 13%;
+        left: 5%;
+    }
 
     /* MOUTH container  */
 

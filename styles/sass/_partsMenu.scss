@@ -11,12 +11,7 @@
         height: 25%;
         min-height: 100px;
 
-        input[type="radio"] {
-            /* dont put display none or else not focusable */
-            opacity: 0;
-            position: fixed;
-            width: 0;
-        }
+        
 
         label {
             flex: 1 0 60px;
@@ -68,6 +63,10 @@
             height: 90%;
             border-radius: 10px; 
 
+            .paintBin {
+                background-color: blue;
+            }
+
             .partBin {
             width: 90%;
             height: 90%;
@@ -75,8 +74,8 @@
             flex-wrap: wrap;
             }
         }
-        
-        .hatsBin, .eyesBin, .mouthBin, .noseBin {
+
+        .hatsBin, .eyesBin, .mouthBin, .noseBin, .earBin {
             justify-content: center;
             height: 100%;
         }
@@ -84,11 +83,16 @@
     }
 }
 
+//paintBin
 
+
+
+
+    
 
 /* BRAND NEW MENU START */
 /* JUST CENETERING */
-.partsScreen, .partCustomizer, .partPicker, .primaryColor,.secondaryColor , .next, .previous, .currentPart{
+ .partCustomizer, .partPicker, .primaryColor,.secondaryColor , .next, .previous, .currentPart{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +118,7 @@ background-color: #e74c3c;
 }
 
 button:active {
-    top: -9px;
+    transform: translateY(9px);
     box-shadow: 0 0 0 1px #c63702 inset,
 				0 0 0 2px rgba(255,255,255,0.15) inset,
 				0 0 0 1px rgba(0,0,0,0.4);
@@ -140,17 +144,10 @@ button:active {
         display: flex;
         flex-direction: column;
         text-align: center;
-        .partsScreen, .partCustomizer {
-            height: 50%;
+        align-items: center;
+         .partCustomizer {
+            height: 100%;
             width: 100%;
-        }
-
-        .partsScreen {
-            color: black;
-            font-size: 1.3rem;
-            background-color: #d7e496;
-            border-radius: 10px;
-            border: 2px solid black;
         }
 
         .partCustomizer {
@@ -180,4 +177,94 @@ button:active {
         } /* partsCustomizer end */
     } /* parts GUI end */
     
+}
+
+.paintBin {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .colorPalette {
+                input[type="radio"] {
+            /* dont put display none or else not focusable */
+            opacity: 0;
+            position: fixed;
+            width: 0;
+            }
+                label, button {
+            height: 35px;
+            width: calc(25% - 10px);
+            margin: 5px;
+                } 
+            }
+        
+
+        .brightness {
+            color: yellow;
+            background-color: grey;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #red {
+            background-color: #ff0000;
+        }
+
+        #brown {
+            background-color: brown;
+        }
+
+        #orange {
+            background-color: #ff7f00;
+        }
+
+        #yellow {
+            background-color: #ffff00;
+        }
+
+        #chartreuseGreen {
+            background-color: #7fff00;
+        }
+
+        #green {
+            background-color: #00ff00;
+        }
+
+        #springGreen {
+            background-color: #00ff7f;
+        }
+
+        #cyan {
+            background-color: #00ffff;
+        }
+
+        #azure {
+            background-color: #007fff;
+        }
+
+        #blue {
+            background-color: #0000ff;
+        }
+
+        #violet {
+            background-color: #7f00ff;
+        }
+
+        #magenta {
+            background-color: #ff00ff;
+        }
+
+        #rose {
+            background-color: #ff007f;
+        }
+        }
+
+.hide {
+    display: none;
 }

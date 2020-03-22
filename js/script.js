@@ -6,6 +6,9 @@ const potatoHeadApp = {
     partsArray: $('.partBin'),
     $drawer: $('.drawer'),
 
+    //paint variables
+    primaryPressed: false,
+
     //all dropzones act as the containers for the dragabble parts
     eyeDropzones: document.querySelectorAll('.eye'),
     hatDropzones: document.querySelectorAll('.hat'),
@@ -20,6 +23,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.makeEyes();
     potatoHeadApp.showNextPart();
     potatoHeadApp.showPrevPart();
+    potatoHeadApp.primaryColor();
 }
 
 potatoHeadApp.makeEyes = function () {
@@ -108,6 +112,40 @@ potatoHeadApp.showBin = function(partIndex) {
     potatoHeadApp.pullDrawer();
 }
 
+potatoHeadApp.primaryColor = function() {
+    $('.primaryColor').on('click', function() {
+        //starts off as false
+        potatoHeadApp.primaryPressed ?
+        potatoHeadApp.hideColorPalette() :
+        potatoHeadApp.showColorPalette();
+        
+    });
+};
+
+potatoHeadApp.showColorPalette = function() {
+    potatoHeadApp.hideParts();
+    $('.paintBin').removeClass('hide');
+}
+
+potatoHeadApp.hideColorPalette = function() {
+  $(".paintBin").addClass('hide');
+  potatoHeadApp.showParts();
+};
+
+potatoHeadApp.hideParts = function() {
+  potatoHeadApp.partsArray.each(function() {
+    $(this).addClass("hide");
+  });
+  potatoHeadApp.primaryPressed = true;
+  console.log("paints");
+};
+
+potatoHeadApp.showParts = function() {
+    potatoHeadApp.showBin(potatoHeadApp.partsCounter);
+    potatoHeadApp.primaryPressed = false;
+};
+
+
 potatoHeadApp.pullDrawer = function() {
  $(".drawer").addClass('pulledOut');
 }
@@ -133,6 +171,7 @@ potatoHeadApp.defaultLoad = function() {
     
     console.log("startup parts: " + potatoHeadApp.partsArray);
 }
+
 
 
 potatoHeadApp.updatePartsContainer = function() {
