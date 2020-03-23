@@ -18,7 +18,7 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
+main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
     display: flex;
 }
 
@@ -49,8 +49,20 @@ main {
 }
 
 .canvas, .availableParts {
-    width: 50%;
     height: 100%;
+    transition: all 0.4s;
+}
+
+.canvas {
+    width: 100%;
+}
+
+.availableParts {
+    width: 0%;
+}
+
+.openToolBox{
+    width: 50%;
 }
 
 /* CANVAS styles */
@@ -62,6 +74,33 @@ main {
     background-size: cover;
     justify-content: center;
     align-items: center;
+
+    .toolbox {
+        transition: all .6s;
+        font-size: 3rem;
+        padding: 10px;
+        color: black;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        input[type="checkbox"] {
+            /* This is much better than display none*/
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+    }
+    .toolbox :active, .toolbox:hover {
+        background-color: black;
+        color: white;
+        scale: 1.1;
+    }
+
+    
+
+    
 }
 
 .hide{

@@ -17,6 +17,10 @@
 
     <main>
         <section class="canvas">
+            <nav class="toolbox">
+                <label class="toolBoxLabel" for="toggle"><i class="fas fa-tools"></i></label>
+                <input class="toolBoxInput" type="checkbox" autocomplete="off" id="toggle" name="toggle">
+            </nav>
             <div class="body">
                 <!-- arms -->
                 <div class="arms leftArm">
@@ -62,8 +66,7 @@
                 <!-- mouth -->
                 <div class="mouthOnBody">
                     <div class="mouth dropzone">
-                        <div class="draggable smileWithTeeth"></div>
-                        <!-- <div class="draggable clearPart"></div> -->
+                        <div class="draggable clearPart"></div>
                     </div>
                 </div>
                 <!-- shoes -->
@@ -108,8 +111,6 @@
                     </button>
                 </li>
             </ul>
-
-
 
             <div class="partsContainer">
                 <!-- must keep addding classes to parts as partBin typeOfBodyPartBin optional hide -->
@@ -206,6 +207,12 @@
                     <div class="partBin mouthBin hide">
                         <div class="dropzone mouth">
                             <div class="draggable loudMouth"></div>
+                        </div>
+                        <div class="dropzone mouth">
+                            <div class="draggable smileWithTeeth"></div>
+                        </div>
+                        <div class="dropzone mouth">
+                            <div class="draggable frownWithTeeth"></div>
                         </div>
                     </div>
                     <div class="partBin shoesBin hide">

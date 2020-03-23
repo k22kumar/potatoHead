@@ -24,6 +24,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.showNextPart();
     potatoHeadApp.showPrevPart();
     potatoHeadApp.primaryColor();
+    potatoHeadApp.openToolBox();
 }
 
 potatoHeadApp.makeEyes = function () {
@@ -75,7 +76,7 @@ potatoHeadApp.makeEyes = function () {
         }
     );
 
-    let droppableMouth = new Draggable.Droppable(
+    let droppableMouth = new Draggable.Swappable(
         potatoHeadApp.mouthDropzones,
         {
             draggable: '.draggable',
@@ -125,13 +126,11 @@ potatoHeadApp.showPrevPart = function() {
 //this function updates the currentBin container to show only the part corresponding to currentPart
 potatoHeadApp.showBin = function(partIndex) {
     const currentBin = potatoHeadApp.partsArray[partIndex].classList[1];
-    potatoHeadApp.pushDrawer();
     potatoHeadApp.partsArray.each( function() {
         $(this).hasClass(`${currentBin}`) ?
         $(this).removeClass('hide') :
         $(this).addClass('hide');
     });
-    potatoHeadApp.pullDrawer();
 }
 
 potatoHeadApp.primaryColor = function() {
@@ -167,14 +166,15 @@ potatoHeadApp.showParts = function() {
     potatoHeadApp.primaryPressed = false;
 };
 
-
-potatoHeadApp.pullDrawer = function() {
- $(".drawer").addClass('pulledOut');
+potatoHeadApp.openToolBox = function() {
+    $('.toolBoxInput').on('click', function() {
+      console.log("toolbox");
+      $(".canvas").toggleClass("openToolBox");
+      $(".availableParts").toggleClass("openToolBox");
+    });
 }
 
-potatoHeadApp.pushDrawer = function() {
-  $('.drawer').removeClass('pulledOut');
-};
+
 
 potatoHeadApp.defaultLoad = function() {
     

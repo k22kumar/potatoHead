@@ -463,7 +463,7 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
+main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,8 +489,21 @@ main {
 }
 
 .canvas, .availableParts {
-  width: 50%;
   height: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.canvas {
+  width: 100%;
+}
+
+.availableParts {
+  width: 0%;
+}
+
+.openToolBox {
+  width: 50%;
 }
 
 /* CANVAS styles */
@@ -504,6 +517,32 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.canvas .toolbox {
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  font-size: 3rem;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.canvas .toolbox input[type="checkbox"] {
+  /* This is much better than display none*/
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.canvas .toolbox :active, .canvas .toolbox:hover {
+  background-color: black;
+  color: white;
+  scale: 1.1;
 }
 
 .hide {
@@ -943,28 +982,6 @@ main {
   background-repeat: repeat;
   background-color: #d1a558;
   /* drawer styles */
-}
-
-.availableParts .optionsContainer {
-  height: 25%;
-  min-height: 100px;
-}
-
-.availableParts .optionsContainer label {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 60px;
-          flex: 1 0 60px;
-  text-align: center;
-  font-size: 3rem;
-  height: 100%;
-}
-
-.availableParts .optionsContainer label:hover, .availableParts .optionsContainer label:focus {
-  background-color: skyblue;
-}
-
-.availableParts .optionsContainer input[type="radio"]:checked + label {
-  background-color: yellow;
 }
 
 .availableParts .drawer {
