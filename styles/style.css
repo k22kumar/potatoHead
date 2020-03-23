@@ -463,7 +463,7 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -752,7 +752,7 @@ main {
 }
 
 /* EARS */
-.ear1 {
+.leftEar1, .rightEar1 {
   width: calc(0.27 * 21.6vw);
   height: calc(0.35 * 21.6vw);
   background-color: pink;
@@ -764,7 +764,7 @@ main {
   margin-left: calc((calc(calc(0.27 * 21.6vw) + 10px) - calc(0.27 * 21.6vw)) / 2);
 }
 
-.leftEarOnBody .ear ::after {
+.leftEar1::after {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));
@@ -776,7 +776,7 @@ main {
   left: 12%;
 }
 
-.rightEarOnBody .ear ::after {
+.rightEar1::after {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));

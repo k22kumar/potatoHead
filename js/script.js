@@ -14,7 +14,8 @@ const potatoHeadApp = {
   noseDropzones: document.querySelectorAll(".nose"),
   mouthDropzones: document.querySelectorAll(".mouth"),
   shoeDropzones: document.querySelectorAll(".shoe"),
-  leftEarDropzones: document.querySelectorAll(".leftEar")
+  leftEarDropzones: document.querySelectorAll(".leftEar"),
+  rightEarDropzones: document.querySelectorAll(".rightEar")
 };
 
 potatoHeadApp.init = function () {
@@ -58,9 +59,18 @@ potatoHeadApp.makeEyes = function () {
 
     let droppableLeftEar = new Draggable.Droppable(potatoHeadApp.leftEarDropzones, {
       draggable: ".draggable",
-      dropzone: ".ear",
+      dropzone: ".leftEar",
       mirror: { constrainDimensions: true }
     });
+
+    let droppableRightEar = new Draggable.Droppable(
+      potatoHeadApp.rightEarDropzones,
+      {
+        draggable: ".draggable",
+        dropzone: ".rightEar",
+        mirror: { constrainDimensions: true }
+      }
+    );
 
 
 

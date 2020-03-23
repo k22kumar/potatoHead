@@ -18,7 +18,7 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
     display: flex;
 }
 
@@ -262,21 +262,21 @@ main {
     }
 
     /* EARS */
-    .ear1 {
+    .leftEar1, .rightEar1 {
     @include makeCircle($earWidth, $earHeight, pink, 10px, 10px);
     top: 5px;
     left: 0;
     margin-left: calc((#{$earContainerWidth} - #{$earWidth}) / 2);
     }
 
-    .leftEarOnBody .ear ::after {
+    .leftEar1::after {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
         left: 12%;
     }
 
-    .rightEarOnBody .ear ::after {
+    .rightEar1::after {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
