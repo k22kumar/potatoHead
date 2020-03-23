@@ -463,7 +463,7 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -510,12 +510,6 @@ main {
   display: none;
 }
 
-.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .body {
   width: 21.6vw;
   height: 30.4vw;
@@ -559,7 +553,7 @@ main {
   right: calc(-0.8 * calc(0.35 * 21.6vw));
 }
 
-.body .hatOnBody, .body .eyesOnFace, .body .noseOnBody, .body .mouthOnBody, .body .shoesOnBody, .body .leftEarOnBody, .body .rightEarOnBody {
+.body .hatOnBody, .body .eyesOnFace, .body .noseOnBody, .body .mouthOnBody, .body .shoesOnBody, .body .leftEarOnBody, .body .rightEarOnBody, .body .leftShoeOnBody, .body .rightShoeOnBody {
   position: absolute;
 }
 
@@ -600,8 +594,20 @@ main {
   top: calc(0.67 * 30.4vw);
 }
 
-.body .shoesOnBody {
+.body .leftShoeOnBody, .body .rightShoeOnBody {
   top: calc(0.95 * 30.4vw);
+}
+
+.body .leftShoeOnBody {
+  left: 10%;
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.body .rightShoeOnBody {
+  right: 10%;
+  -webkit-transform: rotate(-12deg);
+          transform: rotate(-12deg);
 }
 
 .body .dropzone {
@@ -610,6 +616,13 @@ main {
 
 .eye, .hat, .nose, .mouth, .shoe, .ear {
   position: relative;
+}
+
+/* SPACE  this class acts as an invisble space for other parts to swap with. WITHOUT IT SWAPPABLE CANNOT WORK */
+.clearPart {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 /* EYES  */
@@ -752,7 +765,7 @@ main {
 }
 
 /* EARS */
-.leftEar1, .rightEar1 {
+.leftEar1, .rightEar1, .leftEar2, .rightEar2 {
   width: calc(0.27 * 21.6vw);
   height: calc(0.35 * 21.6vw);
   background-color: pink;
@@ -764,7 +777,7 @@ main {
   margin-left: calc((calc(calc(0.27 * 21.6vw) + 10px) - calc(0.27 * 21.6vw)) / 2);
 }
 
-.leftEar1::after {
+.leftEar1::before, .leftEar2::before {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));
@@ -776,7 +789,7 @@ main {
   left: 12%;
 }
 
-.rightEar1::after {
+.rightEar1::before, .rightEar2::before {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));
@@ -788,13 +801,34 @@ main {
   left: 8%;
 }
 
+.leftEar2::after {
+  content: '';
+  width: calc(0.4 * calc(0.27 * 21.6vw));
+  height: calc(0.4 * calc(0.27 * 21.6vw));
+  background-color: yellow;
+  position: absolute;
+  top: calc(50% - (calc(0.4 * calc(0.27 * 21.6vw)) / 2));
+  border-radius: 50%;
+  top: 70%;
+  left: 30%;
+}
+
+.rightEar2::after {
+  content: '';
+  width: calc(0.4 * calc(0.27 * 21.6vw));
+  height: calc(0.4 * calc(0.27 * 21.6vw));
+  background-color: yellow;
+  position: absolute;
+  top: calc(50% - (calc(0.4 * calc(0.27 * 21.6vw)) / 2));
+  border-radius: 50%;
+  top: 70%;
+  right: 30%;
+}
+
 /* MOUTH container  */
 .mouth {
   width: calc(0.85 * 21.6vw);
   height: calc(0.4 * 21.6vw);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -809,7 +843,7 @@ main {
   -webkit-transform: perspective(8px) rotateX(4deg);
           transform: perspective(8px) rotateX(4deg);
   border-radius: 30%;
-  top: 0;
+  top: 10%;
 }
 
 .loudMouth::after {
@@ -828,21 +862,34 @@ main {
   border-radius: 27%;
 }
 
+.smileWithTeeth, .frownWithTeeth {
+  width: calc(0.6 * 21.6vw);
+  height: calc(0.25 * 21.6vw);
+  background-color: white;
+  position: absolute;
+  top: calc(50% - (calc(0.6 * 21.6vw) / 2));
+  border-radius: 50%;
+  border-radius: 50% 50% 0 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border: calc(0.07 * calc(0.6 * 21.6vw)) solid red;
+  top: 10%;
+  border-bottom-left-radius: 13%;
+  border-bottom-right-radius: 13%;
+}
+
+.frownWithTeeth {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
 /* SHOES  container*/
 .shoe {
-  width: calc(0.35 * 21.6vw);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(0.4 * 21.6vw);
   height: calc(0.25 * 21.6vw);
-  margin: 0 10px;
-}
-
-.leftShoe {
-  -webkit-transform: rotate(12deg);
-          transform: rotate(12deg);
-}
-
-.rightShoe {
-  -webkit-transform: rotate(-12deg);
-          transform: rotate(-12deg);
 }
 
 /* SHOES */
@@ -853,8 +900,6 @@ main {
   position: absolute;
   top: calc(50% - (calc(0.35 * 21.6vw) / 2));
   top: 0;
-  left: 0;
-  /*margin-left: calc((calc( calc(0.35 * 21.6vw) + 10px) - calc(0.35 * 21.6vw)) / 2); */
   -webkit-transform: perspective(8px) rotateX(4deg);
           transform: perspective(8px) rotateX(4deg);
   border-radius: 27% 27% 42% 47%;

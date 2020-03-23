@@ -86,7 +86,7 @@ $mouthContainerHeight: calc(#{$mouthHeight} + 10px);
 $loudMouthWidth: calc(0.6 * #{$bodyWidth});
 $loudMouthHeight: calc(0.25 * #{$bodyWidth});
 
-$shoeWidth: calc(0.35 * #{$bodyWidth});
+$shoeWidth: calc(0.4 * #{$bodyWidth});
 $shoeHeight: calc(0.25 * #{$bodyWidth});
 $shoeContainerWidth: calc( #{$shoeWidth} + 10px);
 $shoeContainerHeight: calc( #{$shoeHeight} + 10px);

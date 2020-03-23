@@ -27,42 +27,52 @@
                 </div>
                 <!-- hat -->
                 <div class="hatOnBody">
-                    <div class="hat dropzone"></div>
+                    <div class="hat dropzone">
+                        <div class="draggable clearPart"></div>
+                    </div>
                 </div>
                 <!-- eyes -->
                 <div class="eyesOnFace">
-                    <div class="rightEye eye dropzone"></div>
-                    <div class="leftEye eye dropzone"></div>
+                    <div class="rightEye eye dropzone">
+                        <div class="draggable clearPart"></div>
+                    </div>
+                    <div class="leftEye eye dropzone">
+                        <div class="draggable clearPart"></div>
+                    </div>
                 </div>
 
                 <!-- ear -->
                 <div class="leftEarOnBody">
                     <div class="leftEar ear dropzone">
-                        <div class="draggable leftEar2"></div>
+                        <div class="draggable clearPart"></div>
                     </div>
                 </div>
                 <div class="rightEarOnBody">
                     <div class="rightEar ear dropzone">
-                        <div class="draggable rightEar2"></div>
+                        <div class="draggable clearPart"></div>
                     </div>
                 </div>
 
                 <!-- nose -->
                 <div class="noseOnBody">
                     <div class="nose dropzone">
-                        <!-- <div class="draggable nose1"></div> -->
+                        <div class="draggable clearPart"></div>
                     </div>
                 </div>
                 <!-- mouth -->
                 <div class="mouthOnBody">
                     <div class="mouth dropzone">
+                        <div class="draggable smileWithTeeth"></div>
+                        <!-- <div class="draggable clearPart"></div> -->
                     </div>
                 </div>
                 <!-- shoes -->
-                <div class="shoesOnBody">
+                <div class="leftShoeOnBody">
                     <div class="leftShoe shoe dropzone">
                         <div class="draggable runningShoe"></div>
                     </div>
+                </div>
+                <div class="rightShoeOnBody">
                     <div class="rightShoe shoe dropzone">
                         <div class="draggable runningShoe"></div>
                     </div>
@@ -128,28 +138,28 @@
 
                             <input type="radio" name="colors" id="chartreuseGreen" value="chartreuseGreen">
                             <label for="chartreuseGreen">chartreuseGreen</label>
-                            
+
                             <input type="radio" name="colors" id="green" value="green">
                             <label for="green">green</label>
-                            
+
                             <input type="radio" name="colors" id="springGreen" value="springGreen">
                             <label for="springGreen">springGreen</label>
-                            
+
                             <input type="radio" name="colors" id="cyan" value="cyan">
                             <label for="cyan">cyan</label>
-                            
+
                             <input type="radio" name="colors" id="azure" value="azure">
                             <label for="azure">azure</label>
 
                             <input type="radio" name="colors" id="blue" value="blue">
                             <label for="blue">blue</label>
-                            
+
                             <input type="radio" name="colors" id="violet" value="violet">
                             <label for="violet">violet</label>
-                            
+
                             <input type="radio" name="colors" id="magenta" value="magenta">
                             <label for="magenta">magenta</label>
-                            
+
                             <input type="radio" name="colors" id="rose" value="rose">
                             <label for="rose">rose</label>
                         </fieldset>
@@ -167,10 +177,16 @@
                         <div class="rightEar ear dropzone">
                             <div class="draggable rightEar1"></div>
                         </div>
+                        <div class="leftEar ear dropzone">
+                            <div class="draggable leftEar2"></div>
+                        </div>
+                        <div class="rightEar ear dropzone">
+                            <div class="draggable rightEar2"></div>
+                        </div>
                     </div>
                     <div class="partBin eyesBin hide">
                         <div class="dropzone leftEye eye">
-                            <div class="draggable eyes1 primaryColor"></div>
+                            <div class="draggable eyes1"></div>
                         </div>
                         <div class="dropzone rightEye eye">
                             <div class="draggable eyes1"></div>
@@ -192,7 +208,15 @@
                             <div class="draggable loudMouth"></div>
                         </div>
                     </div>
-                    
+                    <div class="partBin shoesBin hide">
+                        <div class="leftShoe shoe dropzone">
+                            <div class="draggable runningShoe"></div>
+                        </div>
+                        <div class="rightShoe shoe dropzone">
+                            <div class="draggable runningShoe"></div>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- ^ end of current part -->
                 <!-- drawer -->

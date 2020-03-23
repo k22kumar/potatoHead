@@ -18,7 +18,7 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin {
+main, .canvas, .optionsContainer, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
     display: flex;
 }
 
@@ -68,10 +68,6 @@ main {
     display: none;
 }
 
-.show{
-    display: flex;
-}
-
 .body {
     .dropzone {
         background-color: transparent;
@@ -104,7 +100,7 @@ main {
         right: calc(-0.8 * #{$armsWidth});
     }
 
-    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody, .leftEarOnBody, .rightEarOnBody{
+    .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody, .leftEarOnBody, .rightEarOnBody, .leftShoeOnBody, .rightShoeOnBody{
         position: absolute;
     }
  
@@ -139,8 +135,18 @@ main {
         top: calc(0.67 * #{$bodyHeight});
     }
 
-    .shoesOnBody {
+    .leftShoeOnBody, .rightShoeOnBody {
         top: calc(0.95 * #{$bodyHeight});
+    }
+
+    .leftShoeOnBody {
+        left: 10%;
+        transform: rotate(12deg);
+    }
+
+    .rightShoeOnBody {
+        right: 10%;
+        transform: rotate(-12deg);
     }
 
 
@@ -156,6 +162,13 @@ main {
 .eye, .hat, .nose, .mouth, .shoe, .ear{
     position: relative;
 } 
+
+ /* SPACE  this class acts as an invisble space for other parts to swap with. WITHOUT IT SWAPPABLE CANNOT WORK */
+.clearPart {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
 
  /* EYES  */
 
@@ -262,25 +275,39 @@ main {
     }
 
     /* EARS */
-    .leftEar1, .rightEar1 {
+    .leftEar1, .rightEar1, .leftEar2, .rightEar2 {
     @include makeCircle($earWidth, $earHeight, pink, 10px, 10px);
     top: 5px;
     left: 0;
     margin-left: calc((#{$earContainerWidth} - #{$earWidth}) / 2);
     }
 
-    .leftEar1::after {
+    .leftEar1::before, .leftEar2::before {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
         left: 12%;
     }
 
-    .rightEar1::after {
+    .rightEar1::before, .rightEar2::before {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
         left: 8%;
+    }
+
+    .leftEar2::after {
+        content: '';
+        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), yellow, 10px, 10px);
+        top: 70%;
+        left: 30%;
+    }
+
+    .rightEar2::after {
+        content: '';
+        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), yellow, 10px, 10px);
+        top: 70%;
+        right: 30%;
     }
 
     /* MOUTH container  */
@@ -288,7 +315,6 @@ main {
     .mouth {
         width: $mouthWidth;
         height: $mouthHeight;
-        display: flex;
         justify-content: center;
     }
 
@@ -296,7 +322,7 @@ main {
         @include makeRectangle($loudMouthWidth, $loudMouthHeight, red, 10px, 10px);
         transform: perspective(8px) rotateX(4deg);
         border-radius: 30%;
-        top: 0;
+        top: 10%;
     }
 
     .loudMouth::after {
@@ -312,19 +338,25 @@ main {
         border-radius: 27%;
     }
 
+    .smileWithTeeth, .frownWithTeeth {
+        @include makeSemiCircle($loudMouthWidth, $loudMouthHeight, white, 10px, 10px);
+        transform: rotate(180deg);
+        border: calc(0.07 * #{$loudMouthWidth}) solid red;
+        top: 10%;
+        border-bottom-left-radius: 13%;
+        border-bottom-right-radius: 13%;
+    }
+
+    .frownWithTeeth {
+        transform: rotate(0deg);
+    }
+
     /* SHOES  container*/
 
     .shoe {
+        justify-content: center;
         width: $shoeWidth;
         height: $shoeHeight;
-        margin: 0 10px;
-    }
-
-    .leftShoe {
-        transform: rotate(12deg);
-    }
-    .rightShoe {
-        transform: rotate(-12deg);
     }
 
     /* SHOES */
@@ -332,8 +364,6 @@ main {
     .runningShoe {
         @include makeRectangle($runningShoeWidth, $runningShoeHeight, #2d97e5, 10px, 10px);
         top: 0;
-        left: 0;
-        /*margin-left: calc((#{$shoeContainerWidth} - #{$runningShoeWidth}) / 2); */
         transform: perspective(8px) rotateX(4deg);
         border-radius: 27% 27% 42% 47%;
         border-bottom: 4px solid darkblue;

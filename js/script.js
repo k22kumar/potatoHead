@@ -13,14 +13,13 @@ const potatoHeadApp = {
   hatDropzones: document.querySelectorAll(".hat"),
   noseDropzones: document.querySelectorAll(".nose"),
   mouthDropzones: document.querySelectorAll(".mouth"),
-  shoeDropzones: document.querySelectorAll(".shoe"),
+  leftShoeDropzones: document.querySelectorAll(".leftShoe"),
+  rightShoeDropzones: document.querySelectorAll(".rightShoe"),
   leftEarDropzones: document.querySelectorAll(".leftEar"),
   rightEarDropzones: document.querySelectorAll(".rightEar")
 };
 
 potatoHeadApp.init = function () {
-    potatoHeadApp.defaultLoad();
-    potatoHeadApp.showOptions();
     potatoHeadApp.makeEyes();
     potatoHeadApp.showNextPart();
     potatoHeadApp.showPrevPart();
@@ -28,15 +27,8 @@ potatoHeadApp.init = function () {
 }
 
 potatoHeadApp.makeEyes = function () {
-    // let swappableEye = new Draggable.Swappable(
-    //     potatoHeadApp.eyeDropzones,
-    //     {
-    //         draggable: '.eyes1',
-    //         swappable: '.eye',
-    //         mirror: { constrainDimensions: true }
-    //     }
-    // );
-    let droppableEye = new Draggable.Droppable(
+    //notes to self - in order for swappable to work, there needs to be an EXISTING element to swap WITH. OTHERWISE nothing will happen. possible fix, create an invisble element on body to swap WITH that user wont notice.
+    let droppableEye = new Draggable.Swappable(
         potatoHeadApp.eyeDropzones,
         {
             draggable: '.draggable',
@@ -57,14 +49,13 @@ potatoHeadApp.makeEyes = function () {
 
 
 
-    let droppableLeftEar = new Draggable.Droppable(potatoHeadApp.leftEarDropzones, {
+    let droppableLeftEar = new Draggable.Swappable(potatoHeadApp.leftEarDropzones, {
       draggable: ".draggable",
       dropzone: ".leftEar",
       mirror: { constrainDimensions: true }
     });
 
-    let droppableRightEar = new Draggable.Droppable(
-      potatoHeadApp.rightEarDropzones,
+    let droppableRightEar = new Draggable.Swappable(potatoHeadApp.rightEarDropzones,
       {
         draggable: ".draggable",
         dropzone: ".rightEar",
@@ -75,7 +66,7 @@ potatoHeadApp.makeEyes = function () {
 
 
     
-    let droppableNose = new Draggable.Droppable(
+    let droppableNose = new Draggable.Swappable(
         potatoHeadApp.noseDropzones,
         {
             draggable: '.draggable',
@@ -93,14 +84,23 @@ potatoHeadApp.makeEyes = function () {
         }
     );
 
-    let droppableShoes = new Draggable.Droppable(
-        potatoHeadApp.shoeDropzones,
-        {
-            draggable: '.draggable',
-            dropzone: '.shoe',
-            mirror: { constrainDimensions: true }
-        }
-    );
+       let droppableLeftShoe = new Draggable.Swappable(
+         potatoHeadApp.leftShoeDropzones,
+         {
+           draggable: ".draggable",
+           dropzone: ".leftShoe",
+           mirror: { constrainDimensions: true }
+         }
+       );
+
+       let droppableRightShoe = new Draggable.Swappable(
+         potatoHeadApp.rightShoeDropzones,
+         {
+           draggable: ".draggable",
+           dropzone: ".rightShoe",
+           mirror: { constrainDimensions: true }
+         }
+       );
 }
 
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
@@ -176,31 +176,10 @@ potatoHeadApp.pushDrawer = function() {
   $('.drawer').removeClass('pulledOut');
 };
 
-//this function shows the parts available upon user selction of a corresponding body part radio button
-potatoHeadApp.showOptions = function() {
-    $('input').on('click', function() {
-        // const id = $(this).attr('id'); 
-        // const className = `.${id}Bin`;
-        // $bins = $('[class$="Bin"]');
-        // $bins.addClass('hide');
-        // if($('input').is(":checked")) {
-        //     $(className).removeClass('hide');
-        // }                       
-    }); 
-}
-
 potatoHeadApp.defaultLoad = function() {
     
     console.log("startup parts: " + potatoHeadApp.partsArray);
 }
-
-
-
-potatoHeadApp.updatePartsContainer = function() {
-
-}
-
-
 
 $(document).ready(function() {
     potatoHeadApp.init();
