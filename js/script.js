@@ -1,20 +1,20 @@
 const potatoHeadApp = {
+  //Variables
+  //keeps track of which part is currently being shown
+  partsCounter: 0,
+  partsArray: $(".partBin"),
+  $drawer: $(".drawer"),
 
-    //Variables
-    //keeps track of which part is currently being shown
-    partsCounter: 0,
-    partsArray: $('.partBin'),
-    $drawer: $('.drawer'),
+  //paint variables
+  primaryPressed: false,
 
-    //paint variables
-    primaryPressed: false,
-
-    //all dropzones act as the containers for the dragabble parts
-    eyeDropzones: document.querySelectorAll('.eye'),
-    hatDropzones: document.querySelectorAll('.hat'),
-    noseDropzones: document.querySelectorAll('.nose'),
-    mouthDropzones: document.querySelectorAll('.mouth'),
-    shoeDropzones: document.querySelectorAll('.shoe')
+  //all dropzones act as the containers for the dragabble parts
+  eyeDropzones: document.querySelectorAll(".eye"),
+  hatDropzones: document.querySelectorAll(".hat"),
+  noseDropzones: document.querySelectorAll(".nose"),
+  mouthDropzones: document.querySelectorAll(".mouth"),
+  shoeDropzones: document.querySelectorAll(".shoe"),
+  leftEarDropzones: document.querySelectorAll(".leftEar")
 };
 
 potatoHeadApp.init = function () {
@@ -38,7 +38,7 @@ potatoHeadApp.makeEyes = function () {
     let droppableEye = new Draggable.Droppable(
         potatoHeadApp.eyeDropzones,
         {
-            draggable: '.eyes1',
+            draggable: '.draggable',
             dropzone: '.eye',
             mirror: { constrainDimensions: true }
         }
@@ -47,16 +47,28 @@ potatoHeadApp.makeEyes = function () {
     let droppableHat = new Draggable.Droppable(
         potatoHeadApp.hatDropzones,
         {
-            draggable: '.bowlerHat',
+            draggable: '.draggable',
             dropzone: '.hat',
             mirror: { constrainDimensions: true }
         }
     );
 
+
+
+
+    let droppableLeftEar = new Draggable.Droppable(potatoHeadApp.leftEarDropzones, {
+      draggable: ".draggable",
+      dropzone: ".ear",
+      mirror: { constrainDimensions: true }
+    });
+
+
+
+    
     let droppableNose = new Draggable.Droppable(
         potatoHeadApp.noseDropzones,
         {
-            draggable: '.nose1',
+            draggable: '.draggable',
             dropzone: '.nose',
             mirror: { constrainDimensions: true }
         }
@@ -65,7 +77,7 @@ potatoHeadApp.makeEyes = function () {
     let droppableMouth = new Draggable.Droppable(
         potatoHeadApp.mouthDropzones,
         {
-            draggable: '.mouth1',
+            draggable: '.draggable',
             dropzone: '.mouth',
             mirror: { constrainDimensions: true }
         }
@@ -74,7 +86,7 @@ potatoHeadApp.makeEyes = function () {
     let droppableShoes = new Draggable.Droppable(
         potatoHeadApp.shoeDropzones,
         {
-            draggable: '.shoe1',
+            draggable: '.draggable',
             dropzone: '.shoe',
             mirror: { constrainDimensions: true }
         }

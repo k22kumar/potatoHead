@@ -136,7 +136,7 @@ main {
     }
 
     .mouthOnBody {
-        top: calc(0.6 * #{$bodyHeight});
+        top: calc(0.67 * #{$bodyHeight});
     }
 
     .shoesOnBody {
@@ -273,14 +273,14 @@ main {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
-        left: 16%;
+        left: 12%;
     }
 
     .rightEarOnBody .ear ::after {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
         top: 13%;
-        left: 5%;
+        left: 8%;
     }
 
     /* MOUTH container  */
@@ -288,6 +288,28 @@ main {
     .mouth {
         width: $mouthWidth;
         height: $mouthHeight;
+        display: flex;
+        justify-content: center;
+    }
+
+    .loudMouth {
+        @include makeRectangle($loudMouthWidth, $loudMouthHeight, red, 10px, 10px);
+        transform: perspective(8px) rotateX(4deg);
+        border-radius: 30%;
+        top: 0;
+    }
+
+    .loudMouth::after {
+        content: '';
+        @include makeRectangle(calc(0.85 * #{$loudMouthWidth}), calc(0.32 * #{$loudMouthWidth}), black, 10px, 10px);
+        
+        top: 15%;
+        @include centerHorizontalToBody (calc(0.85 * #{$loudMouthWidth}));
+        margin-left: calc(0.5 * 0.85 * #{$loudMouthWidth});
+        background-color: black;
+        border-top: 10px solid white;
+        border-bottom: 6px solid white;
+        border-radius: 27%;
     }
 
     /* SHOES  container*/
