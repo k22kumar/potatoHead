@@ -47,9 +47,6 @@ potatoHeadApp.makeEyes = function () {
         }
     );
 
-
-
-
     let droppableLeftEar = new Draggable.Swappable(potatoHeadApp.leftEarDropzones, {
       draggable: ".draggable",
       dropzone: ".leftEar",
