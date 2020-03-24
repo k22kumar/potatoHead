@@ -446,11 +446,6 @@ textarea {
 }
 
 /* general styles */
-* {
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -463,10 +458,23 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
+main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.draggable-mirror {
+  z-index: 1;
+}
+
+.mouthPiece {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* header styles */
@@ -614,15 +622,11 @@ main {
 .body .rightEarOnBody {
   top: calc(0.2 * 30.4vw);
   left: 85%;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
 }
 
 .body .leftEarOnBody {
   top: calc(0.2 * 30.4vw);
   right: 85%;
-  -webkit-transform: rotate(15deg);
-          transform: rotate(15deg);
 }
 
 .body .noseOnBody {
@@ -972,6 +976,21 @@ main {
 }
 
 /* PARTS styles */
+.gallery {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  overflow: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 10%;
+  height: 80%;
+}
+
 .availableParts {
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -981,23 +1000,6 @@ main {
   background-image: url(../assets/wood-pattern.png);
   background-repeat: repeat;
   background-color: #d1a558;
-  /* drawer styles */
-}
-
-.availableParts .drawer {
-  background-image: url(../assets/wood-pattern.png);
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  background-color: black;
-}
-
-.availableParts .pulledOut {
-  top: 100%;
 }
 
 .availableParts .partsContainer {
@@ -1024,6 +1026,13 @@ main {
   border-radius: 10px;
 }
 
+.availableParts .partsContainer .currentPart h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+}
+
 .availableParts .partsContainer .currentPart .paintBin {
   background-color: blue;
 }
@@ -1032,14 +1041,16 @@ main {
   width: 90%;
   height: 90%;
   overflow: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .availableParts .partsContainer .hatsBin, .availableParts .partsContainer .eyesBin, .availableParts .partsContainer .mouthBin, .availableParts .partsContainer .noseBin, .availableParts .partsContainer .earsBin {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   height: 100%;
 }
 
@@ -1256,5 +1267,14 @@ button:active {
   main .canvas {
     background-position: bottom;
     background-repeat: no-repeat;
+  }
+  main .canvas {
+    height: 100%;
+  }
+  main .availableParts {
+    height: 0%;
+  }
+  main .openToolBox {
+    height: 50%;
   }
 }

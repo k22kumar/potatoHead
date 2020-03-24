@@ -1,29 +1,21 @@
 
 /* PARTS styles */
 
+.gallery {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: auto;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    height: 80%;
+}
 .availableParts {
     overflow: hidden;
     flex-direction: column;
     background-image: url(../assets/wood-pattern.png);
         background-repeat: repeat;
         background-color: #d1a558;
-
-    /* drawer styles */
-
-    .drawer {
-        background-image: url(../assets/wood-pattern.png);
-        background-repeat: repeat;
-        height: 100%;
-         width: 100%;
-        transition: all 0.5s ease-in-out;
-        position: absolute;
-        top: 0;
-        background-color: black;
-    }
-
-    .pulledOut {
-        top: 100%;
-    }
 
 
     .partsContainer {
@@ -44,6 +36,13 @@
             height: 90%;
             border-radius: 10px; 
 
+            h2 {
+                text-align: center;
+                font-size: 3rem;
+                color: white;
+                font-weight: bold;
+            }
+
             .paintBin {
                 background-color: blue;
             }
@@ -52,12 +51,12 @@
             width: 90%;
             height: 90%;
             overflow: auto;
-            flex-wrap: wrap;
+            flex-direction: column;
             }
         }
 
         .hatsBin, .eyesBin, .mouthBin, .noseBin, .earsBin {
-            justify-content: center;
+            justify-content: start;
             height: 100%;
         }
         

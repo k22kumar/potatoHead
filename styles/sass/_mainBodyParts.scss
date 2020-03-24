@@ -2,10 +2,6 @@
 
 /* general styles */
 
-* {
-    transition: all 0.1s;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -18,10 +14,19 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe {
+main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
     display: flex;
 }
 
+.draggable-mirror {
+    z-index: 1;
+}
+
+
+.mouthPiece {
+    justify-content: center;
+    align-items: center;
+}
 
 /* header styles */
 
@@ -157,13 +162,13 @@ main {
     .rightEarOnBody {
         top: calc(0.2 * #{$bodyHeight});
         left: 85%;
-        transform: rotate(-15deg);
+        
     }
 
     .leftEarOnBody {
         top: calc(0.2 * #{$bodyHeight});
         right: 85%;
-        transform: rotate(15deg);
+        
     }
 
     .noseOnBody {

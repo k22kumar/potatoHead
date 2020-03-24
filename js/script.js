@@ -50,7 +50,7 @@ potatoHeadApp.makeEyes = function () {
     let droppableLeftEar = new Draggable.Swappable(potatoHeadApp.leftEarDropzones, {
       draggable: ".draggable",
       dropzone: ".leftEar",
-      mirror: { constrainDimensions: true }
+      mirror: { constrainDimensions: true,}
     });
 
     let droppableRightEar = new Draggable.Swappable(potatoHeadApp.rightEarDropzones,
@@ -99,6 +99,11 @@ potatoHeadApp.makeEyes = function () {
            mirror: { constrainDimensions: true }
          }
        );
+
+      //  swappable.on("drag:start", (evt) => {
+      //    //If drag then:
+      //    console.log('dragging');
+      //  });
 }
 
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
