@@ -261,16 +261,16 @@ main {
     /* HATS  */
 
     .bowlerHat {
-    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, var(--preview-primary-hat), 10px, 10px);
+    @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, var(--preview-primary-hats), 10px, 10px);
     top: 0;
     left: 0;
-    border-bottom: calc(0.1 * #{$bodyWidth}) solid var(--preview-accent-hat);
+    border-bottom: calc(0.1 * #{$bodyWidth}) solid var(--preview-accent-hats);
     margin-left: calc((#{$hatContainerWidth} - #{$bowlerHatWidth}) / 2);
     }
 
     .bowlerHat:after {
         content: '';
-        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, var(--preview-primary-hat), 10px, 10px);
+        @include makeRectangle($bowlerBrimWidth, $bowlerBrimHeight, var(--preview-primary-hats), 10px, 10px);
         left: 0;
         top: 120%;
         margin-left: calc((#{$bowlerBrimWidth} - #{$bowlerHatWidth}) / -2);
