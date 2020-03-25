@@ -56,10 +56,26 @@
     --base-magenta: #ff00ff;
     --base-rose: #ff007f;
 
+    --current-black: #3d3d3d;
+    --current-white: white;
+    --current-red: #ff0000;
+    --current-brown: brown;
+    --current-orange: #ff7f00;
+    --current-yellow: #ffff00;
+    --current-chartGreen: #7fff00;
+    --current-green: #00ff00;
+    --current-springGreen: #00ff7f;
+    --current-cyan: #00ffff;
+    --current-azure: #007fff;
+    --current-blue: #0000ff;
+    --current-violet: #7f00ff;
+    --current-magenta: #ff00ff;
+    --current-rose: #ff007f;
+
     /* Component Variables */
 
     /* HATS */
-    --default-primary-hat: #3d3d3d3d;
+    --default-primary-hat: #3d3d3d;
     --default-accent-hat:  grey;
     --custom-primary-hat: var(--default-primary-hat);
     --custom-accent-hat: var(--default-accent-hat);

@@ -160,7 +160,6 @@ potatoHeadApp.hideParts = function() {
     $(this).addClass("hide");
   });
   potatoHeadApp.paintPressed = true;
-  console.log("paints");
 };
 
 potatoHeadApp.showParts = function() {
@@ -170,14 +169,31 @@ potatoHeadApp.showParts = function() {
 
 potatoHeadApp.openToolBox = function() {
     $('.toolBoxInput').on('click', function() {
-      console.log("toolbox");
       $(".canvas").toggleClass("openToolBox");
       $(".availableParts").toggleClass("openToolBox");
     });
 }
 
 potatoHeadApp.paintColor = function() {
-  
+  $('.paintColor').on('click', function() {
+    const selectedColor = $(this).attr("id");
+    const colorCode = potatoHeadApp.getCSSVarValue(`--current-${selectedColor}`);
+  });
+}
+
+// this generic function recieves the name of a CSS variable, and returns its value 
+//`--current-${id}`
+potatoHeadApp.getCSSVarValue = function (property) {
+  //not sure if trim is required but saw it on another post.
+  let rootStyles = window.getComputedStyle(document.body);
+  let cssValue = rootStyles.getPropertyValue(`${property}`).trim();
+  console.log(property + " : " + cssValue);
+  return cssValue;
+}
+
+// this generic function recieves the name of a CSS variable plus a value and sets that property to that value 
+potatoHeadApp.setCSSVarValue = function(property, value) {
+
 }
 
 potatoHeadApp.defaultLoad = function() {
