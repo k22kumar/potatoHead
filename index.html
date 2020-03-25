@@ -32,7 +32,7 @@
                 <!-- hat -->
                 <div class="hatOnBody">
                     <div class="hat dropzone">
-                        <div class="draggable clearPart"></div>
+                        <div class="draggable bowlerHat"></div>
                     </div>
                 </div>
                 <!-- eyes -->
@@ -88,26 +88,17 @@
             <ul class="menuContainer">
                 <li class="previous">
                     <button id="previous">
-                        back
+                        <i class="fas fa-arrow-left"></i>
                     </button>
                 </li>
-                <li class="partGUI">
-                    <ul class="partCustomizer">
-                        <li class="colorContainer">
-                            <button class="primaryColor">
-                                1
+                <li class="partPainter">
+                            <button class="paintButton">
+                                <i class="fas fa-paint-brush"></i>
                             </button>
-                        </li>
-                        <li class="colorContainer">
-                            <button class="secondaryColor">
-                                2
-                            </button>
-                        </li>
-                    </ul>
                 </li>
                 <li class="next">
                     <button id="next">
-                        next
+                        <i class="fas fa-arrow-right"></i>
                     </button>
                 </li>
             </ul>
@@ -117,53 +108,36 @@
                 <div class="currentPart">
                     <!-- paint bin -->
                     <div class="paintBin hide">
-                        <button class="brightness"><i class="far fa-lightbulb"></i></button>
-                        <fieldset class="colorPalette">
-                            <input type="radio" name="colors" id="black" value="black">
-                            <label for="black">black</label>
-
-                            <input type="radio" name="colors" id="white" value="white">
-                            <label for="white">white</label>
-
-                            <input type="radio" name="colors" id="red" value="red">
-                            <label for="red">red</label>
-
-                            <input type="radio" name="colors" id="brown" value="brown">
-                            <label for="brown">brown</label>
-
-                            <input type="radio" name="colors" id="orange" value="orange">
-                            <label for="orange">orange</label>
-
-                            <input type="radio" name="colors" id="yellow" value="yellow">
-                            <label for="yellow">yellow</label>
-
-                            <input type="radio" name="colors" id="chartreuseGreen" value="chartreuseGreen">
-                            <label for="chartreuseGreen">chartreuseGreen</label>
-
-                            <input type="radio" name="colors" id="green" value="green">
-                            <label for="green">green</label>
-
-                            <input type="radio" name="colors" id="springGreen" value="springGreen">
-                            <label for="springGreen">springGreen</label>
-
-                            <input type="radio" name="colors" id="cyan" value="cyan">
-                            <label for="cyan">cyan</label>
-
-                            <input type="radio" name="colors" id="azure" value="azure">
-                            <label for="azure">azure</label>
-
-                            <input type="radio" name="colors" id="blue" value="blue">
-                            <label for="blue">blue</label>
-
-                            <input type="radio" name="colors" id="violet" value="violet">
-                            <label for="violet">violet</label>
-
-                            <input type="radio" name="colors" id="magenta" value="magenta">
-                            <label for="magenta">magenta</label>
-
-                            <input type="radio" name="colors" id="rose" value="rose">
-                            <label for="rose">rose</label>
-                        </fieldset>
+                        <button id="brightness" class="paintOptions brightness">
+                            <i class="far fa-lightbulb"></i>
+                        </button>
+                        <button id="defaultColor" class="paintOptions defaultColor">
+                            <i class="fas fa-tint-slash"></i>
+                        </button>
+                        <button id="undo" class="paintOptions undo">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                        <button id="setColor" class="paintOptions setColor">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button id="accent" class="paintOptions accent">
+                            <i class="fas fa-adjust"></i>
+                        </button>
+                        <button id="black" class="paintOptions paintColor  black"></button>
+                        <button id="white" class="paintOptions paintColor white"></button>
+                        <button id="red" class="paintOptions paintColor red"></button>
+                        <button id="brown" class="paintOptions paintColor brown"></button>
+                        <button id="orange" class="paintOptions paintColor orange"></button>
+                        <button id="yellow" class="paintOptions paintColor yellow"></button>
+                        <button id="chartGreen" class="paintOptions paintColor chartGreen"></button>
+                        <button id="green" class="paintOptions paintColor green"></button>
+                        <button id="springGreen" class="paintOptions paintColor springGreen"></button>
+                        <button id="cyan" class="paintOptions paintColor cyan"></button>
+                        <button id="azure" class="paintOptions paintColor azure"></button>
+                        <button id="blue" class="paintOptions paintColor blue"></button>
+                        <button id="violet" class="paintOptions paintColor violet"></button>
+                        <button id="magenta" class="paintOptions paintColor magenta"></button>
+                        <button id="rose" class="paintOptions paintColor rose"></button>
                     </div>
                     <!-- parts bins -->
                     <div class="partBin hatsBin">

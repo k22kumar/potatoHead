@@ -1,3 +1,31 @@
+/* CSS color variables  */
+:root {
+  /* base colours */
+  --base-black: #3d3d3d;
+  --base-white: white;
+  --base-red: #ff0000;
+  --base-brown: brown;
+  --base-orange: #ff7f00;
+  --base-yellow: #ffff00;
+  --base-chartGreen: #7fff00;
+  --base-green: #00ff00;
+  --base-springGreen: #00ff7f;
+  --base-cyan: #00ffff;
+  --base-azure: #007fff;
+  --base-blue: #0000ff;
+  --base-violet: #7f00ff;
+  --base-magenta: #ff00ff;
+  --base-rose: #ff007f;
+  /* Component Variables */
+  /* HATS */
+  --default-primary-hat: #3d3d3d3d;
+  --default-accent-hat:  grey;
+  --custom-primary-hat: var(--default-primary-hat);
+  --custom-accent-hat: var(--default-accent-hat);
+  --preview-primary-hat: var(--default-primary-hat);
+  --preview-accent-hat: var(--default-accent-hat);
+}
+
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
 html {
   line-height: 1.15;
@@ -1033,10 +1061,6 @@ main {
   font-weight: bold;
 }
 
-.availableParts .partsContainer .currentPart .paintBin {
-  background-color: blue;
-}
-
 .availableParts .partsContainer .currentPart .partBin {
   width: 90%;
   height: 90%;
@@ -1068,6 +1092,18 @@ main {
           align-items: center;
 }
 
+.paintButton {
+  font-size: 2.5rem;
+}
+
+.next, .previous {
+  font-size: 3rem;
+}
+
+.brightness, .defaultColor, .undo, .setColor, .accent {
+  font-size: 2rem;
+}
+
 button {
   /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
   display: inline-block;
@@ -1090,13 +1126,20 @@ button:active {
           box-shadow: 0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
+.disabled {
+  background-color: grey;
+  -webkit-box-shadow: 0 0 0 1px grey inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 grey, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0 1px grey inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 grey, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .menuContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 20%;
-  /* parts GUI end */
 }
 
 .menuContainer .previous, .menuContainer .next {
@@ -1108,7 +1151,7 @@ button:active {
   height: 50px;
 }
 
-.menuContainer .partGUI {
+.menuContainer .partPainter {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1118,71 +1161,45 @@ button:active {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* partsCustomizer end */
 }
 
-.menuContainer .partGUI .partCustomizer {
+.menuContainer .partPainter .partCustomizer {
   height: 100%;
   width: 100%;
 }
 
-.menuContainer .partGUI .partCustomizer {
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.menuContainer .partGUI .partCustomizer li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.menuContainer .partGUI .partCustomizer li .partPicker, .menuContainer .partGUI .partCustomizer li .primaryColor, .menuContainer .partGUI .partCustomizer li .secondaryColor {
+.menuContainer .partPainter .primaryColor {
   margin: 5px;
 }
 
-.menuContainer .partGUI .partCustomizer li .partPicker {
-  width: calc(0.6 * 21.6vw);
-  height: calc(0.3 * 21.6vw);
-  max-width: 60px;
-  max-height: 35px;
-}
-
-.menuContainer .partGUI .partCustomizer li .primaryColor, .menuContainer .partGUI .partCustomizer li .secondaryColor {
-  width: calc(0.23 * 21.6vw);
-  height: calc(0.23 * 21.6vw);
-  max-width: 35px;
-  max-height: 35px;
+.menuContainer .partPainter .paintButton {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
 .paintBin {
-  background-color: blue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1fr;
+  width: 100%;
+  height: 100%;
 }
 
-.paintBin .colorPalette input[type="radio"] {
-  /* dont put display none or else not focusable */
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.paintBin .colorPalette label, .paintBin .colorPalette button {
-  height: 35px;
-  width: calc(25% - 10px);
-  margin: 5px;
+.paintBin .paintOptions {
+  margin: 10px;
+  width: calc(0.275 * 21.6vw);
+  height: calc(0.275 * 21.6vw);
 }
 
 .paintBin .brightness {

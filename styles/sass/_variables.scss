@@ -34,6 +34,38 @@
     left: calc(50% - (#{$partWidth}));
 }
 
+/* CSS color variables  */
+
+:root {
+
+    /* base colours */
+
+    --base-black: #3d3d3d;
+    --base-white: white;
+    --base-red: #ff0000;
+    --base-brown: brown;
+    --base-orange: #ff7f00;
+    --base-yellow: #ffff00;
+    --base-chartGreen: #7fff00;
+    --base-green: #00ff00;
+    --base-springGreen: #00ff7f;
+    --base-cyan: #00ffff;
+    --base-azure: #007fff;
+    --base-blue: #0000ff;
+    --base-violet: #7f00ff;
+    --base-magenta: #ff00ff;
+    --base-rose: #ff007f;
+
+    /* Component Variables */
+
+    /* HATS */
+    --default-primary-hat: #3d3d3d3d;
+    --default-accent-hat:  grey;
+    --custom-primary-hat: var(--default-primary-hat);
+    --custom-accent-hat: var(--default-accent-hat);
+    --preview-primary-hat: var(--default-primary-hat);
+    --preview-accent-hat: var(--default-accent-hat);
+}
 
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
 $bodyWidth: 21.6vw; 

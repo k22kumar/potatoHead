@@ -6,7 +6,7 @@ const potatoHeadApp = {
   $drawer: $(".drawer"),
 
   //paint variables
-  primaryPressed: false,
+  paintPressed: false,
 
   //all dropzones act as the containers for the dragabble parts
   eyeDropzones: document.querySelectorAll(".eye"),
@@ -25,6 +25,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.showPrevPart();
     potatoHeadApp.primaryColor();
     potatoHeadApp.openToolBox();
+    potatoHeadApp.paintColor();
 }
 
 potatoHeadApp.makeEyes = function () {
@@ -99,11 +100,6 @@ potatoHeadApp.makeEyes = function () {
            mirror: { constrainDimensions: true }
          }
        );
-
-      //  swappable.on("drag:start", (evt) => {
-      //    //If drag then:
-      //    console.log('dragging');
-      //  });
 }
 
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
@@ -136,9 +132,9 @@ potatoHeadApp.showBin = function(partIndex) {
 }
 
 potatoHeadApp.primaryColor = function() {
-    $('.primaryColor').on('click', function() {
+    $('.paintButton').on('click', function() {
         //starts off as false
-        potatoHeadApp.primaryPressed ?
+        potatoHeadApp.paintPressed ?
         potatoHeadApp.hideColorPalette() :
         potatoHeadApp.showColorPalette();
         
@@ -147,10 +143,14 @@ potatoHeadApp.primaryColor = function() {
 
 potatoHeadApp.showColorPalette = function() {
     potatoHeadApp.hideParts();
+    $('#next').toggleClass('disabled');
+    $("#previous").toggleClass("disabled");
     $('.paintBin').removeClass('hide');
 }
 
 potatoHeadApp.hideColorPalette = function() {
+  $("#next").toggleClass("disabled");
+  $("#previous").toggleClass("disabled");
   $(".paintBin").addClass('hide');
   potatoHeadApp.showParts();
 };
@@ -159,13 +159,13 @@ potatoHeadApp.hideParts = function() {
   potatoHeadApp.partsArray.each(function() {
     $(this).addClass("hide");
   });
-  potatoHeadApp.primaryPressed = true;
+  potatoHeadApp.paintPressed = true;
   console.log("paints");
 };
 
 potatoHeadApp.showParts = function() {
     potatoHeadApp.showBin(potatoHeadApp.partsCounter);
-    potatoHeadApp.primaryPressed = false;
+    potatoHeadApp.paintPressed = false;
 };
 
 potatoHeadApp.openToolBox = function() {
@@ -176,7 +176,9 @@ potatoHeadApp.openToolBox = function() {
     });
 }
 
-
+potatoHeadApp.paintColor = function() {
+  
+}
 
 potatoHeadApp.defaultLoad = function() {
     
