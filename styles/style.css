@@ -46,6 +46,34 @@
   --custom-accent-shoes: var(--default-accent-shoes);
   --preview-primary-shoes: var(--default-primary-shoes);
   --preview-accent-shoes: var(--default-accent-shoes);
+  /* EYES */
+  --default-primary-eyes: #b06523;
+  --default-accent-eyes:  #272727;
+  --custom-primary-eyes: var(--default-primary-eyes);
+  --custom-accent-eyes: var(--default-accent-eyes);
+  --preview-primary-eyes: var(--default-primary-eyes);
+  --preview-accent-eyes: var(--default-accent-eyes);
+  /* NOSE */
+  --default-primary-nose: #ff8c1a;
+  --default-accent-nose:  #272727;
+  --custom-primary-nose: var(--default-primary-nose);
+  --custom-accent-nose: var(--default-accent-nose);
+  --preview-primary-nose: var(--default-primary-nose);
+  --preview-accent-nose: var(--default-accent-nose);
+  /* EARS */
+  --default-primary-ears: salmon;
+  --default-accent-ears:  yellow;
+  --custom-primary-ears: var(--default-primary-ears);
+  --custom-accent-ears: var(--default-accent-ears);
+  --preview-primary-ears: var(--default-primary-ears);
+  --preview-accent-ears: var(--default-accent-ears);
+  /* MOUTH */
+  --default-primary-mouth: red;
+  --default-accent-mouth:  white;
+  --custom-primary-mouth: var(--default-primary-mouth);
+  --custom-accent-mouth: var(--default-accent-mouth);
+  --preview-primary-mouth: var(--default-primary-mouth);
+  --preview-accent-mouth: var(--default-accent-mouth);
 }
 
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
@@ -733,14 +761,14 @@ main {
   border-radius: 50%;
   top: 5px;
   left: 5px;
-  border-top: 12px solid #b06523;
+  border-top: 12px solid var(--preview-primary-eyes);
 }
 
 .eyes1:after {
   content: '';
   width: calc(0.3 * calc(0.24 * 21.6vw));
   height: calc(0.4 * calc(0.24 * 21.6vw));
-  background-color: #272727;
+  background-color: var(--preview-accent-eyes);
   position: absolute;
   top: calc(50% - (calc(0.3 * calc(0.24 * 21.6vw)) / 2));
   border-radius: 50%;
@@ -814,7 +842,7 @@ main {
 .nose1 {
   width: calc(0.2 * 21.6vw);
   height: calc(0.33 * 21.6vw);
-  background-color: #ff8c1a;
+  background-color: var(--preview-primary-nose);
   position: absolute;
   top: calc(50% - (calc(0.2 * 21.6vw) / 2));
   border-radius: 50%;
@@ -827,7 +855,7 @@ main {
   content: '';
   width: calc(0.15 * 21.6vw);
   height: calc(0.6 * calc(0.33 * 21.6vw));
-  background-color: #ff8c1a;
+  background-color: var(--preview-primary-nose);
   position: absolute;
   top: calc(50% - (calc(0.15 * 21.6vw) / 2));
   border-radius: 50%;
@@ -841,7 +869,7 @@ main {
   content: '';
   width: calc(0.15 * 21.6vw);
   height: calc(0.6 * calc(0.33 * 21.6vw));
-  background-color: #ff8c1a;
+  background-color: var(--preview-primary-nose);
   position: absolute;
   top: calc(50% - (calc(0.15 * 21.6vw) / 2));
   border-radius: 50%;
@@ -874,7 +902,7 @@ main {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));
-  background-color: salmon;
+  background-color: var(--preview-primary-ears);
   position: absolute;
   top: calc(50% - (calc(0.8 * calc(0.27 * 21.6vw)) / 2));
   border-radius: 50%;
@@ -886,7 +914,7 @@ main {
   content: '';
   width: calc(0.8 * calc(0.27 * 21.6vw));
   height: calc(0.8 * calc(0.35 * 21.6vw));
-  background-color: salmon;
+  background-color: var(--preview-primary-ears);
   position: absolute;
   top: calc(50% - (calc(0.8 * calc(0.27 * 21.6vw)) / 2));
   border-radius: 50%;
@@ -898,7 +926,7 @@ main {
   content: '';
   width: calc(0.4 * calc(0.27 * 21.6vw));
   height: calc(0.4 * calc(0.27 * 21.6vw));
-  background-color: yellow;
+  background-color: var(--preview-accent-ears);
   position: absolute;
   top: calc(50% - (calc(0.4 * calc(0.27 * 21.6vw)) / 2));
   border-radius: 50%;
@@ -930,7 +958,7 @@ main {
 .loudMouth {
   width: calc(0.6 * 21.6vw);
   height: calc(0.25 * 21.6vw);
-  background-color: red;
+  background-color: var(--preview-primary-mouth);
   position: absolute;
   top: calc(50% - (calc(0.6 * 21.6vw) / 2));
   -webkit-transform: perspective(8px) rotateX(4deg);
@@ -950,22 +978,22 @@ main {
   left: calc(50% - (calc(0.85 * calc(0.6 * 21.6vw))));
   margin-left: calc(0.5 * 0.85 * calc(0.6 * 21.6vw));
   background-color: black;
-  border-top: 10px solid white;
-  border-bottom: 6px solid white;
+  border-top: 10px solid var(--preview-accent-mouth);
+  border-bottom: 6px solid var(--preview-accent-mouth);
   border-radius: 27%;
 }
 
 .smileWithTeeth, .frownWithTeeth {
   width: calc(0.6 * 21.6vw);
   height: calc(0.25 * 21.6vw);
-  background-color: white;
+  background-color: var(--preview-accent-mouth);
   position: absolute;
   top: calc(50% - (calc(0.6 * 21.6vw) / 2));
   border-radius: 50%;
   border-radius: 50% 50% 0 0;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  border: calc(0.07 * calc(0.6 * 21.6vw)) solid red;
+  border: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-primary-mouth);
   top: 10%;
   border-bottom-left-radius: 13%;
   border-bottom-right-radius: 13%;

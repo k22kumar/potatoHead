@@ -7,7 +7,10 @@ const potatoHeadApp = {
   //paint variables
   paintPressed: false,
   accentPressed:false,
-  currentColor: '',
+  currentColor: "",
+  //saved paint color values of items
+  setPrimary: "",
+  setAccent: "",
 
   //all dropzones act as the containers for the dragabble parts
   eyeDropzones: document.querySelectorAll(".eye"),
@@ -27,7 +30,10 @@ potatoHeadApp.init = function () {
     potatoHeadApp.primaryColor();
     potatoHeadApp.openToolBox();
     potatoHeadApp.paintColor();
+    potatoHeadApp.setColor();
     potatoHeadApp.accentPainter();
+    potatoHeadApp.savePrimary();
+    potatoHeadApp.saveAccent();
 }
 
 potatoHeadApp.makeBodyParts = function () {
@@ -113,6 +119,9 @@ potatoHeadApp.showNextPart = function() {
         potatoHeadApp.partsCounter = 0 :
         potatoHeadApp.partsCounter++;
         potatoHeadApp.showBin(potatoHeadApp.partsCounter);
+        //save the colors of the body parts 
+        potatoHeadApp.savePrimary();
+        potatoHeadApp.saveAccent();
     });
 }
 
@@ -124,6 +133,9 @@ potatoHeadApp.showPrevPart = function() {
     potatoHeadApp.partsCounter = potatoHeadApp.partsArray.length - 1 : 
     potatoHeadApp.partsCounter--;
     potatoHeadApp.showBin(potatoHeadApp.partsCounter);
+    //save the colors of the body parts 
+    potatoHeadApp.savePrimary();
+    potatoHeadApp.saveAccent();
   });
 };
 
@@ -135,6 +147,17 @@ potatoHeadApp.showBin = function(partIndex) {
           : $(this).addClass("hide");
     });
 }
+
+potatoHeadApp.savePrimary = function() {
+  primaryToBeSaved = `--preview-primary-${potatoHeadApp.getCurrentPartName()}`;
+  potatoHeadApp.setPrimary = potatoHeadApp.getCSSVarValue(primaryToBeSaved);
+}
+
+potatoHeadApp.saveAccent = function() {
+  accentToBeSaved = `--preview-accent-${potatoHeadApp.getCurrentPartName()}`;
+  potatoHeadApp.setAccent = potatoHeadApp.getCSSVarValue(accentToBeSaved);
+}
+
 
 //returns the current parts Bin (eyesBin, noseBin)
 potatoHeadApp.getCurrentBin = function() {
@@ -194,8 +217,7 @@ potatoHeadApp.paintColor = function() {
     //save the color in memory
     potatoHeadApp.currentColor = colorCode;
     //find which body part is currently being shown to paint
-    const partName = potatoHeadApp.getCurrentBin()
-      .slice(0, potatoHeadApp.getCurrentBin().length - 3);
+    const partName = potatoHeadApp.getCurrentPartName();
     //did user only want the accents to be painted?
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
@@ -214,9 +236,16 @@ potatoHeadApp.setColor = function() {
     potatoHeadApp.currentColor === "" ?
     colorSetting = "default" :
     colorSetting = "custom";
-
+    const partName = potatoHeadApp.getCurrentPartName();
+    const property = `--${colorSetting}-${detail}-${partName}`;
+    console.log("setColor : " + property);
 
   });
+}
+
+//helper function that gets the name of the current part shown
+potatoHeadApp.getCurrentPartName = function() {
+  return potatoHeadApp.getCurrentBin().slice(0, potatoHeadApp.getCurrentBin().length - 3);
 }
 
 //helper function that checks which detail is pressed (primary or accent)

@@ -226,18 +226,18 @@ main {
     @include makeCircle($eyeWidth, $eyeHeight, white, 10px, 10px);
     top: 5px;
     left: 5px;
-    border-top: 12px solid $eyeLid;
+    border-top: 12px solid var(--preview-primary-eyes);
 }
 .eyes1:after {
         content: '';
-        @include makeCircle($pupilWidth, $pupilHeight, $eyeBlack, 10px, 10px);
+        @include makeCircle($pupilWidth, $pupilHeight, var(--preview-accent-eyes), 10px, 10px);
         top: 33%;
         left: 36%;
     }
 
 .eyes1:before {
     content: '';
-        @include makeRectangle($eyeWidth, $eyeBrowHeight, $eyeBlack, 10px, 10px);
+        @include makeRectangle($eyeWidth, $eyeBrowHeight, #272727, 10px, 10px);
         top: -65%;
         left: 0;
         border-radius: 5px;
@@ -288,7 +288,7 @@ main {
 
 
     .nose1 {
-    @include makeCircle($nose1Width, $nose1Height, #ff8c1a, 10px, 10px);
+    @include makeCircle($nose1Width, $nose1Height, var(--preview-primary-nose), 10px, 10px);
     top: 5px;
     left: 0;
     margin-left: calc((#{$noseContainerWidth} - #{$nose1Width}) / 2);
@@ -296,7 +296,7 @@ main {
 
     .nose1::before {
         content: '';
-        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), var(--preview-primary-nose), 10px, 10px);
         transform: rotate(45deg);
         top: 38%;
         left: -30%;
@@ -304,7 +304,7 @@ main {
 
     .nose1::after {
         content: '';
-        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), #ff8c1a, 10px, 10px);
+        @include makeCircle(calc(0.15 * #{$bodyWidth}), calc(0.6 * #{$nose1Height}), var(--preview-primary-nose), 10px, 10px);
         transform: rotate(-45deg);
         top: 38%;
         left: 50%;
@@ -328,21 +328,21 @@ main {
 
     .leftEar1::before, .leftEar2::before {
         content: '';
-        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
+        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), var(--preview-primary-ears), 10px, 10px);
         top: 13%;
         left: 12%;
     }
 
     .rightEar1::before, .rightEar2::before {
         content: '';
-        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), salmon, 10px, 10px);
+        @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), var(--preview-primary-ears), 10px, 10px);
         top: 13%;
         left: 8%;
     }
 
     .leftEar2::after {
         content: '';
-        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), yellow, 10px, 10px);
+        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), var(--preview-accent-ears), 10px, 10px);
         top: 70%;
         left: 30%;
     }
@@ -363,7 +363,7 @@ main {
     }
 
     .loudMouth {
-        @include makeRectangle($loudMouthWidth, $loudMouthHeight, red, 10px, 10px);
+        @include makeRectangle($loudMouthWidth, $loudMouthHeight, var(--preview-primary-mouth), 10px, 10px);
         transform: perspective(8px) rotateX(4deg);
         border-radius: 30%;
         top: 10%;
@@ -377,15 +377,15 @@ main {
         @include centerHorizontalToBody (calc(0.85 * #{$loudMouthWidth}));
         margin-left: calc(0.5 * 0.85 * #{$loudMouthWidth});
         background-color: black;
-        border-top: 10px solid white;
-        border-bottom: 6px solid white;
+        border-top: 10px solid var(--preview-accent-mouth);
+        border-bottom: 6px solid var(--preview-accent-mouth);
         border-radius: 27%;
     }
 
     .smileWithTeeth, .frownWithTeeth {
-        @include makeSemiCircle($loudMouthWidth, $loudMouthHeight, white, 10px, 10px);
+        @include makeSemiCircle($loudMouthWidth, $loudMouthHeight, var(--preview-accent-mouth), 10px, 10px);
         transform: rotate(180deg);
-        border: calc(0.07 * #{$loudMouthWidth}) solid red;
+        border: calc(0.07 * #{$loudMouthWidth}) solid var(--preview-primary-mouth);
         top: 10%;
         border-bottom-left-radius: 13%;
         border-bottom-right-radius: 13%;

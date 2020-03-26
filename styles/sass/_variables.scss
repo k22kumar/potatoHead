@@ -90,6 +90,38 @@
     --preview-primary-shoes: var(--default-primary-shoes);
     --preview-accent-shoes: var(--default-accent-shoes);
 
+    /* EYES */
+    --default-primary-eyes: #b06523;
+    --default-accent-eyes:  #272727;
+    --custom-primary-eyes: var(--default-primary-eyes);
+    --custom-accent-eyes: var(--default-accent-eyes);
+    --preview-primary-eyes: var(--default-primary-eyes);
+    --preview-accent-eyes: var(--default-accent-eyes);
+
+    /* NOSE */
+    --default-primary-nose: #ff8c1a;
+    --default-accent-nose:  #272727;
+    --custom-primary-nose: var(--default-primary-nose);
+    --custom-accent-nose: var(--default-accent-nose);
+    --preview-primary-nose: var(--default-primary-nose);
+    --preview-accent-nose: var(--default-accent-nose);
+
+    /* EARS */
+    --default-primary-ears: salmon;
+    --default-accent-ears:  yellow;
+    --custom-primary-ears: var(--default-primary-ears);
+    --custom-accent-ears: var(--default-accent-ears);
+    --preview-primary-ears: var(--default-primary-ears);
+    --preview-accent-ears: var(--default-accent-ears);
+
+    /* MOUTH */
+    --default-primary-mouth: red;
+    --default-accent-mouth:  white;
+    --custom-primary-mouth: var(--default-primary-mouth);
+    --custom-accent-mouth: var(--default-accent-mouth);
+    --preview-primary-mouth: var(--default-primary-mouth);
+    --preview-accent-mouth: var(--default-accent-mouth);
+
     
 }
 
@@ -105,9 +137,8 @@ $pupilHeight: calc(0.4 * #{$eyeWidth});
 $eyeBrowHeight: calc(0.3 * #{$eyeWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
 $eyeContainerHeight: calc( #{$eyeHeight} + 10px);
-$eyeBlack: #272727;
 
-$eyeLid: #b06523;
+
 
 $armsWidth: calc(0.35 * #{$bodyWidth});
 
