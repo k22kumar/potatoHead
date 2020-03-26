@@ -101,7 +101,7 @@
     font-size: 2.5rem;
 }
 
-.next, .previous, {
+.next, .previous {
     font-size: 3rem;
 }
 
@@ -112,7 +112,9 @@
 button {
     /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
     
-	display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 	color: white;
 	border-radius: 6px;
 	text-align: center;

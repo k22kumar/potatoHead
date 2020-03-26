@@ -39,6 +39,13 @@
   --custom-accent-hats: var(--default-accent-hats);
   --preview-primary-hats: var(--default-primary-hats);
   --preview-accent-hats: var(--default-accent-hats);
+  /* SHOES */
+  --default-primary-shoes: #2d97e5;
+  --default-accent-shoes:  darkBlue;
+  --custom-primary-shoes: var(--default-primary-shoes);
+  --custom-accent-shoes: var(--default-accent-shoes);
+  --preview-primary-shoes: var(--default-primary-shoes);
+  --preview-accent-shoes: var(--default-accent-shoes);
 }
 
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
@@ -982,24 +989,23 @@ main {
 .runningShoe {
   width: calc(0.35 * 21.6vw);
   height: calc(0.25 * 21.6vw);
-  background-color: #2d97e5;
+  background-color: var(--preview-primary-shoes);
   position: absolute;
   top: calc(50% - (calc(0.35 * 21.6vw) / 2));
   top: 0;
   -webkit-transform: perspective(8px) rotateX(4deg);
           transform: perspective(8px) rotateX(4deg);
   border-radius: 27% 27% 42% 47%;
-  border-bottom: 4px solid darkblue;
+  border-bottom: 4px solid var(--preview-accent-shoes);
 }
 
 .runningShoe::before {
   content: "";
   width: calc(0.5 * calc(0.35 * 21.6vw));
   height: calc(0.12 * calc(0.25 * 21.6vw));
-  background-color: #2d97e5;
+  background-color: var(--preview-accent-shoes);
   position: absolute;
   top: calc(50% - (calc(0.5 * calc(0.35 * 21.6vw)) / 2));
-  background-color: darkblue;
   top: 20%;
   left: calc(0.25 * calc(0.35 * 21.6vw));
   border-radius: 9px;
@@ -1009,10 +1015,9 @@ main {
   content: "";
   width: calc(0.5 * calc(0.35 * 21.6vw));
   height: calc(0.12 * calc(0.25 * 21.6vw));
-  background-color: #2d97e5;
+  background-color: var(--preview-accent-shoes);
   position: absolute;
   top: calc(50% - (calc(0.5 * calc(0.35 * 21.6vw)) / 2));
-  background-color: darkblue;
   top: 60%;
   left: calc(0.25 * calc(0.35 * 21.6vw));
   border-radius: 9px;
@@ -1135,7 +1140,15 @@ main {
 
 button {
   /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   border-radius: 6px;
   text-align: center;

@@ -406,17 +406,16 @@ main {
     /* SHOES */
 
     .runningShoe {
-        @include makeRectangle($runningShoeWidth, $runningShoeHeight, #2d97e5, 10px, 10px);
+        @include makeRectangle($runningShoeWidth, $runningShoeHeight, var(--preview-primary-shoes), 10px, 10px);
         top: 0;
         transform: perspective(8px) rotateX(4deg);
         border-radius: 27% 27% 42% 47%;
-        border-bottom: 4px solid darkblue;
+        border-bottom: 4px solid var(--preview-accent-shoes);
     }
 
     .runningShoe::before {
         content: "";
-        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
-        background-color: darkblue;
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), var(--preview-accent-shoes), 10px, 10px);
         top: 20%;
         left: calc(0.25 * #{$runningShoeWidth});
         border-radius: 9px;
@@ -424,8 +423,7 @@ main {
 
     .runningShoe::after {
         content: "";
-        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), #2d97e5, 10px, 10px);
-        background-color: darkblue;
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), var(--preview-accent-shoes), 10px, 10px);
         top: 60%;
         left: calc(0.25 * #{$runningShoeWidth});
         border-radius: 9px;

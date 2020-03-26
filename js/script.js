@@ -3,10 +3,11 @@ const potatoHeadApp = {
   //keeps track of which part is currently being shown
   partsCounter: 0,
   partsArray: $(".partBin"),
-  $drawer: $(".drawer"),
 
   //paint variables
   paintPressed: false,
+  accentPressed:false,
+  currentColor: '',
 
   //all dropzones act as the containers for the dragabble parts
   eyeDropzones: document.querySelectorAll(".eye"),
@@ -20,15 +21,16 @@ const potatoHeadApp = {
 };
 
 potatoHeadApp.init = function () {
-    potatoHeadApp.makeEyes();
+    potatoHeadApp.makeBodyParts();
     potatoHeadApp.showNextPart();
     potatoHeadApp.showPrevPart();
     potatoHeadApp.primaryColor();
     potatoHeadApp.openToolBox();
     potatoHeadApp.paintColor();
+    potatoHeadApp.accentPainter();
 }
 
-potatoHeadApp.makeEyes = function () {
+potatoHeadApp.makeBodyParts = function () {
     //notes to self - in order for swappable to work, there needs to be an EXISTING element to swap WITH. OTHERWISE nothing will happen. possible fix, create an invisble element on body to swap WITH that user wont notice.
     let droppableEye = new Draggable.Swappable(
         potatoHeadApp.eyeDropzones,
@@ -105,6 +107,8 @@ potatoHeadApp.makeEyes = function () {
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
 potatoHeadApp.showNextPart = function() {
     $('#next').on('click', function () {
+        //reset the current color if switching parts
+        potatoHeadApp.currentColor = "";
         potatoHeadApp.partsCounter > (potatoHeadApp.partsArray.length - 2) ?
         potatoHeadApp.partsCounter = 0 :
         potatoHeadApp.partsCounter++;
@@ -114,6 +118,8 @@ potatoHeadApp.showNextPart = function() {
 
 potatoHeadApp.showPrevPart = function() {
   $("#previous").on("click", function() {
+    //reset the current color if switching parts
+    potatoHeadApp.currentColor = "";
     potatoHeadApp.partsCounter === 0 ? 
     potatoHeadApp.partsCounter = potatoHeadApp.partsArray.length - 1 : 
     potatoHeadApp.partsCounter--;
@@ -123,13 +129,16 @@ potatoHeadApp.showPrevPart = function() {
 
 //this function updates the currentBin container to show only the part corresponding to currentPart
 potatoHeadApp.showBin = function(partIndex) {
-    const currentBin = potatoHeadApp.partsArray[partIndex].classList[1];
-    console.log(currentBin);
     potatoHeadApp.partsArray.each( function() {
-        $(this).hasClass(`${currentBin}`) ?
-        $(this).removeClass('hide') :
-        $(this).addClass('hide');
+        $(this).hasClass(`${potatoHeadApp.getCurrentBin()}`)
+          ? $(this).removeClass("hide")
+          : $(this).addClass("hide");
     });
+}
+
+//returns the current parts Bin (eyesBin, noseBin)
+potatoHeadApp.getCurrentBin = function() {
+    return potatoHeadApp.partsArray[potatoHeadApp.partsCounter].classList[1];;
 }
 
 potatoHeadApp.primaryColor = function() {
@@ -175,15 +184,55 @@ potatoHeadApp.openToolBox = function() {
     });
 }
 
+
+//this function paints a specfic part of a body part (primary or accent portions) when a color is pressed. the paint is only a preview and can be undoed if user does not like it.
 potatoHeadApp.paintColor = function() {
   $('.paintColor').on('click', function() {
+    //get the color selected through the id of the button clicked
     const selectedColor = $(this).attr("id");
     const colorCode = potatoHeadApp.getCSSVarValue(`--current-${selectedColor}`);
-    const currentBin = potatoHeadApp.partsArray[potatoHeadApp.partsCounter].classList[1];
-    const partName = currentBin.slice(0, currentBin.length - 3);
-    const property = `--preview-primary-${partName}`;
+    //save the color in memory
+    potatoHeadApp.currentColor = colorCode;
+    //find which body part is currently being shown to paint
+    const partName = potatoHeadApp.getCurrentBin()
+      .slice(0, potatoHeadApp.getCurrentBin().length - 3);
+    //did user only want the accents to be painted?
+    const detail = potatoHeadApp.getDetail();
+    const property = `--preview-${detail}-${partName}`;
     console.log("painter: " + property + " : " + colorCode);
+    //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, colorCode);
+  });
+}
+
+//this function sets a color for the current body part shown. this so that if the user wants to exeperiment with different colours and liked a certain color scheme, they can go back to this color
+potatoHeadApp.setColor = function() {
+  $('.setColor').on('click', function() {
+    //check which detail is being set
+    const detail = potatoHeadApp.getDetail();
+    let colorSetting ="";
+    potatoHeadApp.currentColor === "" ?
+    colorSetting = "default" :
+    colorSetting = "custom";
+
+
+  });
+}
+
+//helper function that checks which detail is pressed (primary or accent)
+potatoHeadApp.getDetail = function() {
+  let detail ="";
+  potatoHeadApp.accentPressed ?
+    detail = "accent" :
+    detail = "primary";
+    return detail;
+}
+
+//this function will apply paint to any accents on a body part, to indicate the change the main tools will also change color to show that to viewer.
+potatoHeadApp.accentPainter = function() {
+  $('.accent').on('click', function() {
+    $('.paintTools').toggleClass('paintToolsAccent');
+    potatoHeadApp.accentPressed = !potatoHeadApp.accentPressed;
   });
 }
 
@@ -197,7 +246,7 @@ potatoHeadApp.getCSSVarValue = function (property) {
   return cssValue;
 }
 
-// this generic function recieves the name of a CSS variable plus a value and sets that property to that value 
+// this generic function recieves the name of a CSS variable plus a value and sets that property to that value var(--main-color2)
 potatoHeadApp.setCSSVarValue = function(property, cssValue) {
 $("body")
   .get(0)
@@ -206,8 +255,6 @@ $("body")
 }
 
 potatoHeadApp.defaultLoad = function() {
-    
-    console.log("startup parts: " + potatoHeadApp.partsArray);
 }
 
 $(document).ready(function() {
