@@ -349,7 +349,7 @@ main {
 
     .rightEar2::after {
         content: '';
-        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), yellow, 10px, 10px);
+        @include makeCircle(calc(0.4 * #{$earWidth}), calc(0.4 * #{$earWidth}), var(--preview-accent-ears), 10px, 10px);
         top: 70%;
         right: 30%;
     }

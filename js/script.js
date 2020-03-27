@@ -31,6 +31,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.openToolBox();
     potatoHeadApp.paintColor();
     potatoHeadApp.setColor();
+    potatoHeadApp.resetToDefault();
     potatoHeadApp.accentPainter();
     potatoHeadApp.savePrimary();
     potatoHeadApp.saveAccent();
@@ -224,6 +225,19 @@ potatoHeadApp.paintColor = function() {
     console.log("painter: " + property + " : " + colorCode);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, colorCode);
+  });
+}
+
+//this function resets the primary or secondary 
+potatoHeadApp.resetToDefault = function() {
+  $('.defaultColor').on('click', function() {
+    //find which body part is currently being shown to paint
+    const partName = potatoHeadApp.getCurrentPartName();
+    //did user only want the accents to be painted?
+    const detail = potatoHeadApp.getDetail();
+    const property = `--preview-${detail}-${partName}`;
+    const defaultValue = `var(--default-${detail}-${partName})`;
+    potatoHeadApp.setCSSVarValue(property, defaultValue);
   });
 }
 
