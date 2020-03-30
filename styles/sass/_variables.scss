@@ -41,7 +41,7 @@
     /* base colours */
 
     --base-black: #3d3d3d;
-    --base-rose: grey;
+    --base-grey: grey;
     --base-white: white;
     --base-red: #ff0000;
     --base-brown: brown;
@@ -57,7 +57,7 @@
     --base-magenta: #ff00ff;
 
     --current-black: #3d3d3d;
-    --current-rose: grey;
+    --current-grey: grey;
     --current-white: white;
     --current-red: #ff0000;
     --current-brown: #b06523;
@@ -113,7 +113,7 @@
     --preview-accent-nose: var(--default-accent-nose);
 
     /* EARS */
-    --default-primary-ears: salmon;
+    --default-primary-ears: pink;
     --default-accent-ears:  yellow;
     --custom-primary-ears: var(--default-primary-ears);
     --custom-accent-ears: var(--default-accent-ears);

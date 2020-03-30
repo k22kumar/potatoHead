@@ -32,7 +32,7 @@
                 <!-- hat -->
                 <div class="hatOnBody">
                     <div class="hat dropzone">
-                        <div class="draggable bowlerHat"></div>
+                        <div class="draggable clearPart"></div>
                     </div>
                 </div>
                 <!-- eyes -->
@@ -92,9 +92,9 @@
                     </button>
                 </li>
                 <li class="partPainter">
-                            <button class="paintButton">
-                                <i class="fas fa-paint-brush"></i>
-                            </button>
+                    <button class="paintButton">
+                        <i class="fas fa-paint-brush"></i>
+                    </button>
                 </li>
                 <li class="next">
                     <button id="next">
@@ -109,7 +109,8 @@
                     <!-- paint bin -->
                     <div class="paintBin hide">
                         <button id="hslColors" class="paintOptions paintTools hslColors paintToolsPrimary">
-                            <div class="colorWheel"></div>
+                            <img src="./assets/colorwheel.png"
+                                alt="color wheel displaying all colours of rainbow in a circle">
                         </button>
                         <button id="defaultColor" class="paintOptions paintTools defaultColor paintToolsPrimary">
                             <i class="fas fa-tint-slash"></i>
@@ -138,21 +139,24 @@
                         <button id="blue" class="paintOptions paintColor blue"></button>
                         <button id="violet" class="paintOptions paintColor violet"></button>
                         <button id="magenta" class="paintOptions paintColor magenta"></button>
-                        
+
                         <fieldset class="hslField hueBar hide">
                             <label for="hslColorValue">Color</label>
-                            <input type="range" min="0" max="360" id="hslColorValue" step="1" value="0" class="hslColorValue hslInput" autocomplete="off">
+                            <input type="range" min="0" max="360" id="hslColorValue" step="1" value="0"
+                                class="hslColorValue hslInput" autocomplete="off">
                             <output for="hslColorValue" id="hslColorValueOut">0</output>
                             <div class="rainbowBar"></div>
                         </fieldset>
                         <fieldset class="hslField hide">
                             <label for="brightness">Brightness</label>
-                            <input type="range" min="0" max="100" id="brightness" step="1" value="50" class="hslInput" autocomplete="off">
+                            <input type="range" min="0" max="100" id="brightness" step="1" value="50" class="hslInput"
+                                autocomplete="off">
                             <output for="brightness" id="brightnessOut">50</output>
                         </fieldset>
                         <fieldset class="hslField hide">
                             <label for="saturation">Saturation</label>
-                            <input type="range" min="0" max="100" id="saturation" step="1" value="100" class="hslInput" autocomplete="off">
+                            <input type="range" min="0" max="100" id="saturation" step="1" value="100" class="hslInput"
+                                autocomplete="off">
                             <output for="saturation" id="saturationOut">100</output>
                         </fieldset>
                     </div>

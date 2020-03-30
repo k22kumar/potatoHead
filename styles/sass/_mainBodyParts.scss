@@ -320,7 +320,8 @@ main {
 
     /* EARS */
     .leftEar1, .rightEar1, .leftEar2, .rightEar2 {
-    @include makeCircle($earWidth, $earHeight, pink, 10px, 10px);
+    @include makeCircle($earWidth, $earHeight, var(--preview-primary-ears), 10px, 10px);
+    
     top: 5px;
     left: 0;
     margin-left: calc((#{$earContainerWidth} - #{$earWidth}) / 2);
@@ -329,6 +330,7 @@ main {
     .leftEar1::before, .leftEar2::before {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), var(--preview-primary-ears), 10px, 10px);
+        filter: brightness(80%);
         top: 13%;
         left: 12%;
     }
@@ -336,6 +338,7 @@ main {
     .rightEar1::before, .rightEar2::before {
         content: '';
         @include makeCircle(calc(0.8 * #{$earWidth}), calc(0.8 * #{$earHeight}), var(--preview-primary-ears), 10px, 10px);
+        filter: brightness(80%);
         top: 13%;
         left: 8%;
     }

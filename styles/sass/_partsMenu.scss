@@ -68,11 +68,7 @@
 .paintToolsPrimary {
     background-color: white;
     color: black;
-    box-shadow: 0 0 0 1px black inset,
-        0 0 0 2px rgba(255,255,255,0.15) inset,
-        0 8px 0 0 black,
-        0 8px 0 1px rgba(0,0,0,0.4),
-                0 8px 8px 1px rgba(0,0,0,0.5);
+    
 }
 
 .paintToolsAccent {
@@ -212,8 +208,14 @@ button:active {
                 width: calc(0.275 * #{$bodyWidth});
                 height: calc(0.275 * #{$bodyWidth});
                 padding: 0;
+                box-shadow: 0 0 0 1px black inset,
+                    0 0 0 2px rgba(255,255,255,0.15) inset,
+                    0 8px 0 0 black,
+                    0 8px 0 1px rgba(0,0,0,0.4),
+                    0 8px 8px 1px rgba(0,0,0,0.5);
+
                 .colorWheel {
-                    background-color: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+                    background: conic-gradient(from -28deg, white,black 180deg,white);
                     width: 85%;
                     height: 85%;
                     border-radius: 50%;

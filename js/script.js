@@ -43,6 +43,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.updateRangeValue();
     potatoHeadApp.updateBrightness(potatoHeadApp.brightness);
     potatoHeadApp.updateSaturation(potatoHeadApp.saturation);
+    potatoHeadApp.undo();
     // potatoHeadApp.updateHSLValue();
 }
 
@@ -231,7 +232,7 @@ potatoHeadApp.paintColor = function() {
     //did user only want the accents to be painted?
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
-    console.log("painter: " + property + " : " + colorCode);
+    // console.log("painter: " + property + " : " + colorCode);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, colorCode);
   });
@@ -254,12 +255,14 @@ potatoHeadApp.updateRangeValue = function(){
   const changedOutput = "#" + inputThatWasChanged.attr("id") + "Out";
   $(changedOutput).html(inputThatWasChanged.val());
   // check which input that was changed and call the specfic updater function
-  console.log(inputThatWasChanged.attr("id"));
+  // console.log(inputThatWasChanged.attr("id"));
   inputThatWasChanged.attr("id") === "hslColorValue"
     ? potatoHeadApp.updateHue(inputThatWasChanged.val())
     : inputThatWasChanged.attr("id") === "brightness"
     ? potatoHeadApp.updateBrightness(inputThatWasChanged.val())
     : potatoHeadApp.updateSaturation(inputThatWasChanged.val());
+    //grab the current hsl value and store in currentColor if they want to save it
+    potatoHeadApp.currentColor = potatoHeadApp.getCSSVarValue(`--current-saturation`);
     potatoHeadApp.paintHSL();
   });
 }
@@ -295,7 +298,7 @@ potatoHeadApp.paintHSL = function() {
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
     const hslColor = `hsl(${potatoHeadApp.hue},${potatoHeadApp.saturation}%,${potatoHeadApp.brightness}%)`;
-    console.log("painter: " + property + " : " + hslColor);
+    // console.log("painter: " + property + " : " + hslColor);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, hslColor);
 }
@@ -310,6 +313,7 @@ potatoHeadApp.resetToDefault = function() {
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
     const defaultValue = `var(--default-${detail}-${partName})`;
+    potatoHeadApp.currentColor = "";
     potatoHeadApp.setCSSVarValue(property, defaultValue);
   });
 }
@@ -325,8 +329,19 @@ potatoHeadApp.setColor = function() {
     colorSetting = "custom";
     const partName = potatoHeadApp.getCurrentPartName();
     const property = `--${colorSetting}-${detail}-${partName}`;
-    console.log("setColor : " + property);
+    // console.log("setColor : " + property + " " + potatoHeadApp.currentColor);
+    //set custom to a color
+    potatoHeadApp.setCSSVarValue(property, potatoHeadApp.currentColor);
+    // console.log("setColorGET: " + potatoHeadApp.getCSSVarValue(property));
+  });
+}
 
+potatoHeadApp.undo = function() {
+  $('.undo').on('click', function() {
+    const property = `--preview-${potatoHeadApp.getDetail()}-${potatoHeadApp.getCurrentPartName()}`;
+    const value = `var(--custom-${potatoHeadApp.getDetail()}-${potatoHeadApp.getCurrentPartName()})`;
+    // console.log('undo: ' + property + " "+ value)    
+    potatoHeadApp.setCSSVarValue(property, value);
   });
 }
 
@@ -358,7 +373,7 @@ potatoHeadApp.getCSSVarValue = function (property) {
   //not sure if trim is required but saw it on another post.
   let rootStyles = window.getComputedStyle(document.body);
   let cssValue = rootStyles.getPropertyValue(`${property}`).trim();
-  console.log("getter: " + property + " : " + cssValue);
+  // console.log("getter: " + property + " : " + cssValue);
   return cssValue;
 }
 
@@ -367,7 +382,7 @@ potatoHeadApp.setCSSVarValue = function(property, cssValue) {
 $("body")
   .get(0)
   .style.setProperty(property, cssValue);
-  console.log("setter: " + property + " : " + cssValue);
+  // console.log("setter: " + property + " : " + cssValue);
 }
 
 potatoHeadApp.defaultLoad = function() {

@@ -2,7 +2,7 @@
 :root {
   /* base colours */
   --base-black: #3d3d3d;
-  --base-rose: grey;
+  --base-grey: grey;
   --base-white: white;
   --base-red: #ff0000;
   --base-brown: brown;
@@ -17,7 +17,7 @@
   --base-violet: #7f00ff;
   --base-magenta: #ff00ff;
   --current-black: #3d3d3d;
-  --current-rose: grey;
+  --current-grey: grey;
   --current-white: white;
   --current-red: #ff0000;
   --current-brown: #b06523;
@@ -64,7 +64,7 @@
   --preview-primary-nose: var(--default-primary-nose);
   --preview-accent-nose: var(--default-accent-nose);
   /* EARS */
-  --default-primary-ears: salmon;
+  --default-primary-ears: pink;
   --default-accent-ears:  yellow;
   --custom-primary-ears: var(--default-primary-ears);
   --custom-accent-ears: var(--default-accent-ears);
@@ -892,7 +892,7 @@ main {
 .leftEar1, .rightEar1, .leftEar2, .rightEar2 {
   width: calc(0.27 * 21.6vw);
   height: calc(0.35 * 21.6vw);
-  background-color: pink;
+  background-color: var(--preview-primary-ears);
   position: absolute;
   top: calc(50% - (calc(0.27 * 21.6vw) / 2));
   border-radius: 50%;
@@ -909,6 +909,8 @@ main {
   position: absolute;
   top: calc(50% - (calc(0.8 * calc(0.27 * 21.6vw)) / 2));
   border-radius: 50%;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
   top: 13%;
   left: 12%;
 }
@@ -921,6 +923,8 @@ main {
   position: absolute;
   top: calc(50% - (calc(0.8 * calc(0.27 * 21.6vw)) / 2));
   border-radius: 50%;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
   top: 13%;
   left: 8%;
 }
@@ -1132,8 +1136,6 @@ main {
 .paintToolsPrimary {
   background-color: white;
   color: black;
-  -webkit-box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 .paintToolsAccent {
@@ -1286,10 +1288,12 @@ button:active {
   width: calc(0.275 * 21.6vw);
   height: calc(0.275 * 21.6vw);
   padding: 0;
+  -webkit-box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 .paintBin .paintOptions .colorWheel {
-  background-color: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  background: conic-gradient(from -28deg, white, black 180deg, white);
   width: 85%;
   height: 85%;
   border-radius: 50%;
