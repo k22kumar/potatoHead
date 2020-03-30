@@ -1285,6 +1285,14 @@ button:active {
   margin: 10px;
   width: calc(0.275 * 21.6vw);
   height: calc(0.275 * 21.6vw);
+  padding: 0;
+}
+
+.paintBin .paintOptions .colorWheel {
+  background-color: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
 }
 
 .paintBin .hslField {
@@ -1330,7 +1338,7 @@ button:active {
   background-color: var(--current-hue);
 }
 
-.paintBin .hslField #hslColorValue::-moz-slider-thumb {
+.paintBin .hslField #hslColorValue::-moz-range-thumb {
   background-color: var(--current-hue);
 }
 
@@ -1338,7 +1346,7 @@ button:active {
   background-color: var(--current-brightness);
 }
 
-.paintBin .hslField #brightness::-moz-slider-thumb {
+.paintBin .hslField #brightness::-moz-range-thumb {
   background-color: var(--current-brightness);
 }
 
@@ -1346,7 +1354,7 @@ button:active {
   background-color: var(--current-saturation);
 }
 
-.paintBin .hslField #saturation::-moz-slider-thumb {
+.paintBin .hslField #saturation::-moz-range-thumb {
   background-color: var(--current-saturation);
 }
 

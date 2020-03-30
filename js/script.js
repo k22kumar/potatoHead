@@ -9,8 +9,8 @@ const potatoHeadApp = {
   accentPressed:false,
   currentColor: "",
   hue: "0",
-  saturation: "100%",
-  brightness: "50%",
+  saturation: "100",
+  brightness: "50",
 
   //saved paint color values of items
   setPrimary: "",
@@ -41,6 +41,8 @@ potatoHeadApp.init = function () {
     potatoHeadApp.saveAccent();
     potatoHeadApp.hslColors();
     potatoHeadApp.updateRangeValue();
+    potatoHeadApp.updateBrightness(potatoHeadApp.brightness);
+    potatoHeadApp.updateSaturation(potatoHeadApp.saturation);
     // potatoHeadApp.updateHSLValue();
 }
 
@@ -267,17 +269,19 @@ potatoHeadApp.updateHue = function(hueValue) {
   const cssValue = `hsl(${hueValue}, 100%, 50%)`;
   potatoHeadApp.setCSSVarValue(`--current-hue`, cssValue);
   potatoHeadApp.hue = hueValue;
+  potatoHeadApp.updateBrightness(potatoHeadApp.brightness);
+  potatoHeadApp.updateSaturation(potatoHeadApp.saturation);
 };
 
 potatoHeadApp.updateBrightness = function(brightValue) {
-  potatoHeadApp.brightness = brightValue+"%";
-  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}, ${potatoHeadApp.brightness})`;
+  potatoHeadApp.brightness = brightValue;
+  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}%, ${potatoHeadApp.brightness}%)`;
   potatoHeadApp.setCSSVarValue(`--current-brightness`, cssValue);
 };
 
 potatoHeadApp.updateSaturation = function(satValue) {
-  potatoHeadApp.saturation = satValue + "%";
-  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}, ${potatoHeadApp.brightness})`;
+  potatoHeadApp.saturation = satValue;
+  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}%, ${potatoHeadApp.brightness}%)`;
   potatoHeadApp.setCSSVarValue(`--current-saturation`, cssValue);
 };
 
@@ -290,7 +294,7 @@ potatoHeadApp.paintHSL = function() {
     //did user only want the accents to be painted?
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
-    const hslColor = `hsl(${potatoHeadApp.hue},${potatoHeadApp.saturation},${potatoHeadApp.brightness})`;
+    const hslColor = `hsl(${potatoHeadApp.hue},${potatoHeadApp.saturation}%,${potatoHeadApp.brightness}%)`;
     console.log("painter: " + property + " : " + hslColor);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, hslColor);

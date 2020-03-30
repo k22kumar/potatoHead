@@ -211,6 +211,13 @@ button:active {
                 margin: 10px;
                 width: calc(0.275 * #{$bodyWidth});
                 height: calc(0.275 * #{$bodyWidth});
+                padding: 0;
+                .colorWheel {
+                    background-color: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+                    width: 85%;
+                    height: 85%;
+                    border-radius: 50%;
+                }
             }
         
             
@@ -251,21 +258,21 @@ button:active {
             #hslColorValue::-webkit-slider-thumb {
                 background-color: var(--current-hue);
             }
-            #hslColorValue::-moz-slider-thumb {
+            #hslColorValue::-moz-range-thumb {
                 background-color: var(--current-hue);
             }
 
             #brightness::-webkit-slider-thumb {
                 background-color: var(--current-brightness);
             }
-            #brightness::-moz-slider-thumb {
+            #brightness::-moz-range-thumb {
                 background-color: var(--current-brightness);
             }
 
             #saturation::-webkit-slider-thumb {
                 background-color: var(--current-saturation);
             }
-            #saturation::-moz-slider-thumb {
+            #saturation::-moz-range-thumb {
                 background-color: var(--current-saturation);
             }
         }
