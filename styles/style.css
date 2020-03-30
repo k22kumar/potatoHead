@@ -32,6 +32,8 @@
   --current-violet: #7f00ff;
   --current-magenta: #ff00ff;
   --current-hue: hsl(0,100%,50%);
+  --current-brightness: hsl(0,100%,50%);
+  --current-saturation: hsl(0,100%,50%);
   /* Component Variables */
   /* HATS */
   --default-primary-hats: #3d3d3d;
@@ -1309,19 +1311,43 @@ button:active {
 .paintBin .hslField input::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
-  background-color: var(--current-hue);
   height: 30px;
   border-radius: 50%;
+  background-color: var(--current-hue);
   cursor: pointer;
 }
 
 .paintBin .hslField input::-moz-range-thumb {
   -webkit-appearance: none;
   width: 30px;
-  background-color: var(--current-hue);
   height: 30px;
   border-radius: 50%;
+  background-color: var(--current-hue);
   cursor: pointer;
+}
+
+.paintBin .hslField #hslColorValue::-webkit-slider-thumb {
+  background-color: var(--current-hue);
+}
+
+.paintBin .hslField #hslColorValue::-moz-slider-thumb {
+  background-color: var(--current-hue);
+}
+
+.paintBin .hslField #brightness::-webkit-slider-thumb {
+  background-color: var(--current-brightness);
+}
+
+.paintBin .hslField #brightness::-moz-slider-thumb {
+  background-color: var(--current-brightness);
+}
+
+.paintBin .hslField #saturation::-webkit-slider-thumb {
+  background-color: var(--current-saturation);
+}
+
+.paintBin .hslField #saturation::-moz-slider-thumb {
+  background-color: var(--current-saturation);
 }
 
 .paintBin #black {

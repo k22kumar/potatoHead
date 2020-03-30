@@ -8,6 +8,10 @@ const potatoHeadApp = {
   paintPressed: false,
   accentPressed:false,
   currentColor: "",
+  hue: "0",
+  saturation: "100%",
+  brightness: "50%",
+
   //saved paint color values of items
   setPrimary: "",
   setAccent: "",
@@ -27,7 +31,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.makeBodyParts();
     potatoHeadApp.showNextPart();
     potatoHeadApp.showPrevPart();
-    potatoHeadApp.primaryColor();
+    potatoHeadApp.paintPanelToggle();
     potatoHeadApp.openToolBox();
     potatoHeadApp.paintColor();
     potatoHeadApp.setColor();
@@ -36,7 +40,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.savePrimary();
     potatoHeadApp.saveAccent();
     potatoHeadApp.hslColors();
-    potatoHeadApp.updateHue();
+    potatoHeadApp.updateRangeValue();
     // potatoHeadApp.updateHSLValue();
 }
 
@@ -168,7 +172,7 @@ potatoHeadApp.getCurrentBin = function() {
     return potatoHeadApp.partsArray[potatoHeadApp.partsCounter].classList[1];;
 }
 
-potatoHeadApp.primaryColor = function() {
+potatoHeadApp.paintPanelToggle = function() {
     $('.paintButton').on('click', function() {
         //starts off as false
         potatoHeadApp.paintPressed ?
@@ -231,6 +235,7 @@ potatoHeadApp.paintColor = function() {
   });
 }
 
+//this function toggles the hslPanel
 potatoHeadApp.hslColors = function() {
   $('.hslColors').on('click', function() {
     $('.paintColor').toggleClass('hide');
@@ -238,47 +243,58 @@ potatoHeadApp.hslColors = function() {
   });
 }
 
-//function to update multiple input values at once. Adapted from Sean Stopnik codepen https://codepen.io/seanstopnik/pen/CeLqA
-// potatoHeadApp.updateHSLValue = function() {
-//   let value = $('output'),
-//   slider = $('.hslField'),
-//   range = $('.slider');
-// slider.each(function() {
-//   value.each(function() {
-//     let value = $(this).prev().attr('value');
-//     $(this).html(value);
-//   });
 
-//   range.on('input', function() {
-//     $(this).next(value).html(this.value);
-//   })
-// });
-// }
 
-potatoHeadApp.updateHue = function() {
-  $('#hslColorValue').on('input', function() {
-    potatoHeadApp.updateRangeValue($(this));
-    const hueValue = $(this).val();
-    const cssValue =  `hsl(${hueValue}, 100%, 50%)`;
-    const proprty = potatoHeadApp.setCSSVarValue(`--current-hue`, cssValue);
-  })
-}
-
-potatoHeadApp.updateBrightness = function() {
-  $('#brightness').on('input', function() {
-    potatoHeadApp.updateRangeValue($(this));
-    const brightnessValue = $(this).val();
-    const cssValue = `hsl(${hueValue}, 100%, 50%)`;
+//this function updates the changed input's output and calls input specific functions to update 
+potatoHeadApp.updateRangeValue = function(){
+  $('.hslInput').on('input', function() {
+  const inputThatWasChanged = $(this);
+  const changedOutput = "#" + inputThatWasChanged.attr("id") + "Out";
+  $(changedOutput).html(inputThatWasChanged.val());
+  // check which input that was changed and call the specfic updater function
+  console.log(inputThatWasChanged.attr("id"));
+  inputThatWasChanged.attr("id") === "hslColorValue"
+    ? potatoHeadApp.updateHue(inputThatWasChanged.val())
+    : inputThatWasChanged.attr("id") === "brightness"
+    ? potatoHeadApp.updateBrightness(inputThatWasChanged.val())
+    : potatoHeadApp.updateSaturation(inputThatWasChanged.val());
+    potatoHeadApp.paintHSL();
   });
 }
 
 
-//this function updates the recieved range input's output upon change 
-potatoHeadApp.updateRangeValue = function(inputThatWasChanged){
-  const changedOutput = "#" + inputThatWasChanged.attr("id") + "Out";
-  $(changedOutput).html(inputThatWasChanged.val());
-}
+potatoHeadApp.updateHue = function(hueValue) {
+  const cssValue = `hsl(${hueValue}, 100%, 50%)`;
+  potatoHeadApp.setCSSVarValue(`--current-hue`, cssValue);
+  potatoHeadApp.hue = hueValue;
+};
 
+potatoHeadApp.updateBrightness = function(brightValue) {
+  potatoHeadApp.brightness = brightValue+"%";
+  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}, ${potatoHeadApp.brightness})`;
+  potatoHeadApp.setCSSVarValue(`--current-brightness`, cssValue);
+};
+
+potatoHeadApp.updateSaturation = function(satValue) {
+  potatoHeadApp.saturation = satValue + "%";
+  const cssValue = `hsl(${potatoHeadApp.hue}, ${potatoHeadApp.saturation}, ${potatoHeadApp.brightness})`;
+  potatoHeadApp.setCSSVarValue(`--current-saturation`, cssValue);
+};
+
+//this function takes care of painting  the body part using hsl
+potatoHeadApp.paintHSL = function() {
+   //save the color in memory
+    // potatoHeadApp.currentColor = colorCode;
+    //find which body part is currently being shown to paint
+    const partName = potatoHeadApp.getCurrentPartName();
+    //did user only want the accents to be painted?
+    const detail = potatoHeadApp.getDetail();
+    const property = `--preview-${detail}-${partName}`;
+    const hslColor = `hsl(${potatoHeadApp.hue},${potatoHeadApp.saturation},${potatoHeadApp.brightness})`;
+    console.log("painter: " + property + " : " + hslColor);
+    //set the PREVIEW to the desired color
+    potatoHeadApp.setCSSVarValue(property, hslColor);
+}
 
 
 //this function resets the primary or secondary 
