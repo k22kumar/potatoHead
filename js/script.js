@@ -362,7 +362,7 @@ potatoHeadApp.getDetail = function() {
 //this function will apply paint to any accents on a body part, to indicate the change the main tools will also change color to show that to viewer.
 potatoHeadApp.accentPainter = function() {
   $('.accent').on('click', function() {
-    $('.paintTools').toggleClass('paintToolsAccent');
+    $('.paintOptions').toggleClass('paintAccent');
     potatoHeadApp.accentPressed = !potatoHeadApp.accentPressed;
   });
 }

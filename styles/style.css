@@ -1133,12 +1133,14 @@ main {
   height: 100%;
 }
 
-.paintToolsPrimary {
+.paintPrimary {
   background-color: white;
   color: black;
+  -webkit-box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
-.paintToolsAccent {
+.paintAccent {
   background-color: black;
   color: white;
   -webkit-box-shadow: 0 0 0 1px white inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 white, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
@@ -1288,8 +1290,6 @@ button:active {
   width: calc(0.275 * 21.6vw);
   height: calc(0.275 * 21.6vw);
   padding: 0;
-  -webkit-box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 black, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 .paintBin .paintOptions .colorWheel {
