@@ -105,7 +105,7 @@
     font-size: 3rem;
 }
 
-.brightness, .defaultColor, .undo, .setColor, .accent {
+.hslColors, .defaultColor, .undo, .setColor, .accent {
     font-size: 2rem;
 }
 
@@ -188,6 +188,15 @@ button:active {
     
 }
 
+.rainBowBar {
+                position: absolute;
+                display: flex;
+                background-color: black;
+                width: 100%;
+                height: 25px;
+                top: 0;
+            }
+
 .paintBin {
             
             display: grid;
@@ -204,12 +213,48 @@ button:active {
                 height: calc(0.275 * #{$bodyWidth});
             }
         
-
-        .brightness {
+            
+        .hslField {
+            .hueBar {
+                position: relative;
+                
+            }
+            margin: auto;
+            width: 90%;
+            color: white;
+            font-size: 1.5rem;
+            grid-column-start: span 5;
+            input {
+                height: 10px;
+                width: 100%;
+                -webkit-appearance: none;
+                border-radius: 7px;
+                outline: none;
+            }
+            input::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 30px;
+                background-color: var(--current-hue);
+                height: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            input::-moz-range-thumb {
+                -webkit-appearance: none;
+                width: 30px;
+                background-color: var(--current-hue);
+                height: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
         }
 
         #black {
             background-color: black;
+        }
+
+        #grey {
+            background-color: grey;
         }
 
         #white {
@@ -221,7 +266,7 @@ button:active {
         }
 
         #brown {
-            background-color: brown;
+            background-color: #b06523;
         }
 
         #orange {
@@ -262,10 +307,6 @@ button:active {
 
         #magenta {
             background-color: #ff00ff;
-        }
-
-        #rose {
-            background-color: #ff007f;
         }
         }
 

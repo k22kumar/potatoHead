@@ -41,6 +41,7 @@
     /* base colours */
 
     --base-black: #3d3d3d;
+    --base-rose: grey;
     --base-white: white;
     --base-red: #ff0000;
     --base-brown: brown;
@@ -54,12 +55,12 @@
     --base-blue: #0000ff;
     --base-violet: #7f00ff;
     --base-magenta: #ff00ff;
-    --base-rose: #ff007f;
 
     --current-black: #3d3d3d;
+    --current-rose: grey;
     --current-white: white;
     --current-red: #ff0000;
-    --current-brown: brown;
+    --current-brown: #b06523;
     --current-orange: #ff7f00;
     --current-yellow: #ffff00;
     --current-chartGreen: #7fff00;
@@ -70,7 +71,10 @@
     --current-blue: #0000ff;
     --current-violet: #7f00ff;
     --current-magenta: #ff00ff;
-    --current-rose: #ff007f;
+    
+    --current-hue: hsl(0,100%,50%);
+    
+    
 
     /* Component Variables */
 

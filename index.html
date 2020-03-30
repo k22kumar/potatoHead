@@ -108,8 +108,8 @@
                 <div class="currentPart">
                     <!-- paint bin -->
                     <div class="paintBin hide">
-                        <button id="brightness" class="paintOptions paintTools brightness paintToolsPrimary">
-                            <i class="far fa-lightbulb"></i>
+                        <button id="hslColors" class="paintOptions paintTools hslColors paintToolsPrimary">
+                            HUE
                         </button>
                         <button id="defaultColor" class="paintOptions paintTools defaultColor paintToolsPrimary">
                             <i class="fas fa-tint-slash"></i>
@@ -124,6 +124,7 @@
                             <i class="fas fa-adjust"></i>
                         </button>
                         <button id="black" class="paintOptions paintColor  black"></button>
+                        <button id="grey" class="paintOptions paintColor grey"></button>
                         <button id="white" class="paintOptions paintColor white"></button>
                         <button id="red" class="paintOptions paintColor red"></button>
                         <button id="brown" class="paintOptions paintColor brown"></button>
@@ -137,7 +138,23 @@
                         <button id="blue" class="paintOptions paintColor blue"></button>
                         <button id="violet" class="paintOptions paintColor violet"></button>
                         <button id="magenta" class="paintOptions paintColor magenta"></button>
-                        <button id="rose" class="paintOptions paintColor rose"></button>
+                        
+                        <fieldset class="hslField hueBar hide">
+                            <label for="hslColorValue">Color</label>
+                            <input type="range" min="0" max="360" id="hslColorValue" step="1" value="0" class="hslColorValue slider" autocomplete="off">
+                            <output for="hslColorValue" id="hslColorValueOut">0</output>
+                            <div class="rainbowBar"></div>
+                        </fieldset>
+                        <fieldset class="hslField hide">
+                            <label for="brightness">Brightness</label>
+                            <input type="range" min="0" max="100" id="brightness" step="1" value="50" class="slider" autocomplete="off">
+                            <output for="brightness" id="brightnessOut">50</output>
+                        </fieldset>
+                        <fieldset class="hslField hide">
+                            <label for="saturation">Saturation</label>
+                            <input type="range" min="0" max="100" id="saturation" step="1" value="100" class="slider" autocomplete="off">
+                            <output for="saturation" id="saturationOut">100</output>
+                        </fieldset>
                     </div>
                     <!-- parts bins -->
                     <div class="partBin hatsBin">

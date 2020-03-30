@@ -2,6 +2,7 @@
 :root {
   /* base colours */
   --base-black: #3d3d3d;
+  --base-rose: grey;
   --base-white: white;
   --base-red: #ff0000;
   --base-brown: brown;
@@ -15,11 +16,11 @@
   --base-blue: #0000ff;
   --base-violet: #7f00ff;
   --base-magenta: #ff00ff;
-  --base-rose: #ff007f;
   --current-black: #3d3d3d;
+  --current-rose: grey;
   --current-white: white;
   --current-red: #ff0000;
-  --current-brown: brown;
+  --current-brown: #b06523;
   --current-orange: #ff7f00;
   --current-yellow: #ffff00;
   --current-chartGreen: #7fff00;
@@ -30,7 +31,7 @@
   --current-blue: #0000ff;
   --current-violet: #7f00ff;
   --current-magenta: #ff00ff;
-  --current-rose: #ff007f;
+  --current-hue: hsl(0,100%,50%);
   /* Component Variables */
   /* HATS */
   --default-primary-hats: #3d3d3d;
@@ -1162,7 +1163,7 @@ main {
   font-size: 3rem;
 }
 
-.brightness, .defaultColor, .undo, .setColor, .accent {
+.hslColors, .defaultColor, .undo, .setColor, .accent {
   font-size: 2rem;
 }
 
@@ -1254,6 +1255,17 @@ button:active {
   border-radius: 50%;
 }
 
+.rainBowBar {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 25px;
+  top: 0;
+}
+
 .paintBin {
   display: -ms-grid;
   display: grid;
@@ -1273,8 +1285,51 @@ button:active {
   height: calc(0.275 * 21.6vw);
 }
 
+.paintBin .hslField {
+  margin: auto;
+  width: 90%;
+  color: white;
+  font-size: 1.5rem;
+  -ms-grid-column: span 5;
+      grid-column-start: span 5;
+}
+
+.paintBin .hslField .hueBar {
+  position: relative;
+}
+
+.paintBin .hslField input {
+  height: 10px;
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 7px;
+  outline: none;
+}
+
+.paintBin .hslField input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  background-color: var(--current-hue);
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.paintBin .hslField input::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  background-color: var(--current-hue);
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .paintBin #black {
   background-color: black;
+}
+
+.paintBin #grey {
+  background-color: grey;
 }
 
 .paintBin #white {
@@ -1286,7 +1341,7 @@ button:active {
 }
 
 .paintBin #brown {
-  background-color: brown;
+  background-color: #b06523;
 }
 
 .paintBin #orange {
@@ -1327,10 +1382,6 @@ button:active {
 
 .paintBin #magenta {
   background-color: #ff00ff;
-}
-
-.paintBin #rose {
-  background-color: #ff007f;
 }
 
 .hide {

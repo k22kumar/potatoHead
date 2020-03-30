@@ -35,6 +35,9 @@ potatoHeadApp.init = function () {
     potatoHeadApp.accentPainter();
     potatoHeadApp.savePrimary();
     potatoHeadApp.saveAccent();
+    potatoHeadApp.hslColors();
+    potatoHeadApp.updateHue();
+    // potatoHeadApp.updateHSLValue();
 }
 
 potatoHeadApp.makeBodyParts = function () {
@@ -227,6 +230,56 @@ potatoHeadApp.paintColor = function() {
     potatoHeadApp.setCSSVarValue(property, colorCode);
   });
 }
+
+potatoHeadApp.hslColors = function() {
+  $('.hslColors').on('click', function() {
+    $('.paintColor').toggleClass('hide');
+    $('.hslField').toggleClass('hide');
+  });
+}
+
+//function to update multiple input values at once. Adapted from Sean Stopnik codepen https://codepen.io/seanstopnik/pen/CeLqA
+// potatoHeadApp.updateHSLValue = function() {
+//   let value = $('output'),
+//   slider = $('.hslField'),
+//   range = $('.slider');
+// slider.each(function() {
+//   value.each(function() {
+//     let value = $(this).prev().attr('value');
+//     $(this).html(value);
+//   });
+
+//   range.on('input', function() {
+//     $(this).next(value).html(this.value);
+//   })
+// });
+// }
+
+potatoHeadApp.updateHue = function() {
+  $('#hslColorValue').on('input', function() {
+    potatoHeadApp.updateRangeValue($(this));
+    const hueValue = $(this).val();
+    const cssValue =  `hsl(${hueValue}, 100%, 50%)`;
+    const proprty = potatoHeadApp.setCSSVarValue(`--current-hue`, cssValue);
+  })
+}
+
+potatoHeadApp.updateBrightness = function() {
+  $('#brightness').on('input', function() {
+    potatoHeadApp.updateRangeValue($(this));
+    const brightnessValue = $(this).val();
+    const cssValue = `hsl(${hueValue}, 100%, 50%)`;
+  });
+}
+
+
+//this function updates the recieved range input's output upon change 
+potatoHeadApp.updateRangeValue = function(inputThatWasChanged){
+  const changedOutput = "#" + inputThatWasChanged.attr("id") + "Out";
+  $(changedOutput).html(inputThatWasChanged.val());
+}
+
+
 
 //this function resets the primary or secondary 
 potatoHeadApp.resetToDefault = function() {
