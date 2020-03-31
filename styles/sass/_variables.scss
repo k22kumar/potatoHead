@@ -135,12 +135,13 @@
 $bodyWidth: 21.6vw; 
 $bodyHeight: 30.4vw;
 
-
+/* original values WIDTH: 0.24 HEIGHT: 0.33  */
 $eyeWidth: calc(0.24 * #{$bodyWidth});
-$eyeHeight: calc(0.33 * #{$bodyWidth});
+$eyeHeight: calc(0.394 * #{$bodyWidth});
+$eyeWhiteHeight: calc(0.33 * #{$bodyWidth});
 $pupilWidth: calc(0.3 * #{$eyeWidth});
 $pupilHeight: calc(0.4 * #{$eyeWidth});
-$eyeBrowHeight: calc(0.3 * #{$eyeWidth});
+$eyeBrowHeight: calc(0.064 * #{$bodyWidth});
 $eyeContainerWidth: calc( #{$eyeWidth} + 10px);
 $eyeContainerHeight: calc( #{$eyeHeight} + 10px);
 

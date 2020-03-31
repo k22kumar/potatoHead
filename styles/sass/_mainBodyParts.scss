@@ -70,6 +70,8 @@ main {
     width: 50%;
 }
 
+
+
 /* CANVAS styles */
 
 .canvas {
@@ -156,7 +158,7 @@ main {
     .eyesOnFace {
         justify-content: center;
         height: $eyeContainerHeight;
-        top: calc(0.2 * #{$bodyHeight});
+        top: calc(0.15 * #{$bodyHeight});
     }
 
     .rightEarOnBody {
@@ -220,28 +222,96 @@ main {
 .eye {
     width: $eyeContainerWidth;
     height: $eyeContainerHeight;
+    display: flex;
+    justify-content: center;
 }
 
-.eyes1 {
-    @include makeCircle($eyeWidth, $eyeHeight, white, 10px, 10px);
-    top: 5px;
-    left: 5px;
-    border-top: 12px solid var(--preview-primary-eyes);
+.curvedBrow, .eyelash {
+    @include makeCircle(calc(0.34 * 21.6vw), calc(0.2 * 21.6vw), transparent, 10px, 10px);
+    left: -9%;
+    top: 0;
+    border: calc(0.05 * #{$bodyWidth}) solid #272727;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
 }
-.eyes1:after {
-        content: '';
+
+
+
+.eyelashes {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: -4%;
+    width: $eyeWidth;
+}
+
+
+.eyelash {
+width: calc(0.1 * 21.6vw);
+height: calc(0.1 * 21.6vw);
+position: static;
+border-top: calc(0.02 * 21.6vw) solid #272727;
+z-index: 20;
+transform: rotate(40deg);
+position: absolute;
+}
+
+.el1 {
+    left: 0;
+}
+
+.el2 {
+    left: 25%;
+}
+
+.el3 {
+    left: 50%;
+}
+
+.rightEye .normalEye .eyelashes{
+    left: 36%;
+    .eyelash {
+        transform: rotate(-40deg);
+    }
+}
+
+.eyeBrowAngledLeft {
+    transform: rotate(-14deg);
+}
+.eyeBrowAngledRight {
+    transform: rotate(14deg);
+}
+
+
+
+.eyeBrow {
+    @include makeRectangle($eyeWidth, $eyeBrowHeight, #272727, 10px, 10px);
+    border-radius: 5px;
+    top: 0;
+    left: 10%;
+}
+.eyeLid {
+    @include makeRectangle($eyeWidth, $eyeHeight, var(--preview-primary-eyes), 10px, 10px);
+    top: -100%;
+}
+.eyeShape {
+
+    @include makeCircle($eyeWidth, $eyeWhiteHeight, white, 10px, 10px);
+    overflow: hidden;
+    position: absolute;
+    left: 10%;
+}
+
+.pupil {
         @include makeCircle($pupilWidth, $pupilHeight, var(--preview-accent-eyes), 10px, 10px);
         top: 33%;
         left: 36%;
     }
 
-.eyes1:before {
-    content: '';
-        @include makeRectangle($eyeWidth, $eyeBrowHeight, #272727, 10px, 10px);
-        top: -65%;
-        left: 0;
-        border-radius: 5px;
-}
+
 
 .angledLeft::before {
     transform: rotate(15deg);
