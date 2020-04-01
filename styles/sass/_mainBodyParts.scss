@@ -283,7 +283,7 @@ main {
     border-bottom-color: transparent;
 }
 
-.curvedBrow {
+.curvedBrow, {
     left: 50%;
     margin-left: calc(-0.72 * #{$eyeWidth});
 }
@@ -360,7 +360,8 @@ position: absolute;
     @include makeRectangle($eyeWidth, $eyeBrowHeight, #272727, 10px, 10px);
     border-radius: 5px;
     top: 0;
-    left: 10%;
+    left: 50%;
+    margin-left: calc(-0.5 * #{$eyeWidth});
 }
 
 

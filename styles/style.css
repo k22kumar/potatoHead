@@ -999,7 +999,8 @@ main {
   top: calc(50% - (calc(0.24 * 21.6vw) / 2));
   border-radius: 5px;
   top: 0;
-  left: 10%;
+  left: 50%;
+  margin-left: calc(-0.5 * calc(0.24 * 21.6vw));
 }
 
 @-webkit-keyframes blinking {
