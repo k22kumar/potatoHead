@@ -285,7 +285,7 @@ main {
 
 .curvedBrow {
     left: 50%;
-    margin-left: calc(-0.6 * #{$eyeWidth});
+    margin-left: calc(-0.72 * #{$eyeWidth});
 }
 
 @keyframes eyelashBlink {

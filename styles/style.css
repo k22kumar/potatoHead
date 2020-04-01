@@ -900,7 +900,7 @@ main {
 
 .curvedBrow {
   left: 50%;
-  margin-left: calc(-0.6 * calc(0.24 * 21.6vw));
+  margin-left: calc(-0.72 * calc(0.24 * 21.6vw));
 }
 
 @-webkit-keyframes eyelashBlink {
