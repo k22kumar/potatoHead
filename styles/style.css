@@ -527,6 +527,29 @@ textarea {
   overflow: hidden;
 }
 
+/* header styles */
+header {
+  height: 100vh;
+  background-color: azure;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4rem;
+}
+
+header p a:visited {
+  color: none;
+}
+
 /* general styles */
 html {
   font-size: 62.5%;
@@ -559,15 +582,9 @@ main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .r
           align-items: center;
 }
 
-/* header styles */
-header h1 {
-  font-size: 2rem;
-  text-align: center;
-}
-
 /* main styles */
 main {
-  height: calc(100vh - 20px);
+  height: calc(100vh);
 }
 
 .dropzone {
@@ -1103,8 +1120,8 @@ main {
   border-radius: 50%;
   -webkit-box-shadow: calc(0.05 * 21.6vw) calc(0.056 * 21.6vw) var(--preview-accent-hats), calc(-0.05 * 21.6vw) calc(0.056 * 21.6vw) var(--preview-accent-hats), calc(-0.073 * 21.6vw) calc(-0.023 * 21.6vw) var(--preview-accent-hats), 0 calc(-0.073 * 21.6vw) var(--preview-accent-hats), calc(0.073 * 21.6vw) calc(-0.023 * 21.6vw) var(--preview-accent-hats);
           box-shadow: calc(0.05 * 21.6vw) calc(0.056 * 21.6vw) var(--preview-accent-hats), calc(-0.05 * 21.6vw) calc(0.056 * 21.6vw) var(--preview-accent-hats), calc(-0.073 * 21.6vw) calc(-0.023 * 21.6vw) var(--preview-accent-hats), 0 calc(-0.073 * 21.6vw) var(--preview-accent-hats), calc(0.073 * 21.6vw) calc(-0.023 * 21.6vw) var(--preview-accent-hats);
-  -webkit-animation: swirl 6s infinite linear;
-          animation: swirl 6s infinite linear;
+  -webkit-animation: swirl 12s infinite linear;
+          animation: swirl 12s infinite linear;
 }
 
 .bowlerHat {
@@ -1553,8 +1570,8 @@ main {
 }
 
 .hslColors img {
-  -webkit-animation: swirl 2s infinite linear;
-          animation: swirl 2s infinite linear;
+  -webkit-animation: swirl 6s infinite linear;
+          animation: swirl 6s infinite linear;
 }
 
 button {

@@ -1,0 +1,22 @@
+/* header styles */
+
+header {
+    height: 100vh;
+    background-color: azure;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    h1 {
+        font-size: 4rem;
+        
+    }
+
+    p {
+        a:visited {
+            color: none;
+        }
+        
+    }
+
+}

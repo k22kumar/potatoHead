@@ -28,20 +28,10 @@ main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .r
     align-items: center;
 }
 
-/* header styles */
-
-header {
-    h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-}
-
 /* main styles */
 
 main {
-    height: calc(100vh - 20px);
-
+    height: calc(100vh);
 }
 
 .dropzone {
@@ -385,7 +375,6 @@ position: absolute;
     animation: blinking 4s ease-in-out infinite;
 }
 .eyeShape {
-
     @include makeCircle($eyeWidth, $eyeWhiteHeight, white, 10px, 10px);
     overflow: hidden;
     position: absolute;
@@ -440,7 +429,7 @@ position: absolute;
         calc(-0.073 * #{$bodyWidth}) calc(-0.023 * #{$bodyWidth}) var(--preview-accent-hats),
         0 calc(-0.073 * #{$bodyWidth}) var(--preview-accent-hats),
         calc(0.073 * #{$bodyWidth}) calc(-0.023 * #{$bodyWidth}) var(--preview-accent-hats);
-        animation: swirl 6s infinite linear;
+        animation: swirl 12s infinite linear;
     }
 
     .bowlerHat {
