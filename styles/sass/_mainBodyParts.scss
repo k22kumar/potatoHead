@@ -373,7 +373,7 @@ position: absolute;
 .eyeLid {
     @include makeRectangle($eyeWidth, $eyeHeight, var(--preview-primary-eyes), 10px, 10px);
     top: -100%;
-    animation: blinking 4s ease-in-out infinite;
+    
 }
 .eyeShape {
     @include makeCircle($eyeWidth, $eyeWhiteHeight, white, 10px, 10px);
