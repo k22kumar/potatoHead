@@ -630,7 +630,6 @@ main {
 .canvas .test {
   left: 173%;
   z-index: 1;
-  background-color: transparent;
   top: 35%;
   left: 44%;
   position: absolute;
