@@ -142,9 +142,58 @@ main {
         left: calc(-0.8 * #{$armsWidth});
     }
 
+
+    @keyframes wave {
+        0% , 50% {
+            transform: rotate(0deg);
+        }
+
+        60% {
+            transform: rotate(-75deg);
+        }
+
+        65% {
+            transform: rotate(-55deg);
+        }
+
+        70% {
+            transform: rotate(-75deg);
+        }
+
+        75% {
+            transform: rotate(-55deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
     .rightArm {
         right: calc(-0.8 * #{$armsWidth});
+        animation: wave 4s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+        transform-origin: top left;
     }
+
+    @keyframes idle {
+        0%  {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(-10deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .leftArm {
+        animation: idle 4s ease-out infinite;
+        transform-origin: top right;
+    }
+
 
     .hatOnBody, .eyesOnFace, .noseOnBody ,.mouthOnBody, .shoesOnBody, .leftEarOnBody, .rightEarOnBody, .leftShoeOnBody, .rightShoeOnBody{
         position: absolute;
@@ -237,7 +286,22 @@ main {
     border-bottom-color: transparent;
 }
 
+@keyframes eyelashBlink {
+    0% {
+        top: 30%
+    }
 
+    80% {
+        top: 30%
+    }
+    90% {
+        top: 85%;
+    }
+
+    100% {
+        top: 30%;
+    }
+}
 
 .eyelashes {
     display: flex;
@@ -246,7 +310,9 @@ main {
     top: 30%;
     left: -4%;
     width: $eyeWidth;
+    animation: eyelashBlink 4s ease-in-out infinite;
 }
+
 
 
 .eyelash {
@@ -293,9 +359,30 @@ position: absolute;
     top: 0;
     left: 10%;
 }
+
+
+
+@keyframes blinking {
+    0% {
+        top: -100%
+    }
+
+    80% {
+        top: -100%
+    }
+    90% {
+        top: -17%;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
 .eyeLid {
     @include makeRectangle($eyeWidth, $eyeHeight, var(--preview-primary-eyes), 10px, 10px);
     top: -100%;
+    animation: blinking 4s ease-in-out infinite;
 }
 .eyeShape {
 
@@ -329,6 +416,32 @@ position: absolute;
     }
 
     /* HATS  */
+
+    .flowerHatBase {
+        @include makeSemiCircle($bowlerBrimWidth, $hatHeight, var(--preview-primary-hats), 10px, 10px);
+        
+        top: 0;
+        margin-left: 5px;
+        border-radius: calc(1.2 * #{$hatHeight}) calc(1.2 * #{$hatHeight}) 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    @keyframes swirl {
+        0% {transform: rotate(0)};
+	    100% {transform: rotate(360deg)};
+    }
+
+    .flower {
+        @include makeCircle(calc(0.4 * #{$nose1Height}), calc(0.4 * #{$nose1Height}), var(--default-primary-nose), 10px, 10px);
+        border-radius: 50%;
+        box-shadow:calc(0.05 * #{$bodyWidth}) calc(0.056 * #{$bodyWidth}) var(--preview-accent-hats),
+        calc(-0.05 * #{$bodyWidth}) calc(0.056 * #{$bodyWidth}) var(--preview-accent-hats),
+        calc(-0.073 * #{$bodyWidth}) calc(-0.023 * #{$bodyWidth}) var(--preview-accent-hats),
+        0 calc(-0.073 * #{$bodyWidth}) var(--preview-accent-hats),
+        calc(0.073 * #{$bodyWidth}) calc(-0.023 * #{$bodyWidth}) var(--preview-accent-hats);
+        animation: swirl 6s infinite linear;
+    }
 
     .bowlerHat {
     @include makeSemiCircle($bowlerHatWidth, $bowlerHatHeight, var(--preview-primary-hats), 10px, 10px);
@@ -442,6 +555,27 @@ position: absolute;
         top: 10%;
     }
 
+    @keyframes talking {
+    0% {
+        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+    }
+
+    50% {
+        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+    }
+    75% {
+        border-top: calc(0.16 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.19 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+    }
+
+    100% {
+        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+    }
+}
+
     .loudMouth::after {
         content: '';
         @include makeRectangle(calc(0.85 * #{$loudMouthWidth}), calc(0.32 * #{$loudMouthWidth}), black, 10px, 10px);
@@ -450,11 +584,33 @@ position: absolute;
         @include centerHorizontalToBody (calc(0.85 * #{$loudMouthWidth}));
         margin-left: calc(0.5 * 0.85 * #{$loudMouthWidth});
         background-color: black;
-        border-top: 10px solid var(--preview-accent-mouth);
-        border-bottom: 6px solid var(--preview-accent-mouth);
+        border-top: calc(0.12 * #{$loudMouthWidth}) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * #{$loudMouthWidth}) solid var(--preview-accent-mouth);
         border-radius: 27%;
+        animation: talking 0.5s ease-in-out infinite;
     }
 
+    @keyframes mouthMove {
+    0% {
+        width: calc(0.6 * 21.6vw);
+        height: calc(0.25 * 21.6vw);
+    }
+
+    50% {
+        width: calc(0.6 * 21.6vw);
+        height: calc(0.25 * 21.6vw);
+    }
+    75% {
+        width: calc(0.8 * 21.6vw);
+        height: calc(0.2 * 21.6vw);
+    }
+
+    100% {
+        width: calc(0.6 * 21.6vw);
+        height: calc(0.25 * 21.6vw);
+    }
+}
+    
     .smileWithTeeth, .frownWithTeeth {
         @include makeSemiCircle($loudMouthWidth, $loudMouthHeight, var(--preview-accent-mouth), 10px, 10px);
         transform: rotate(180deg);
@@ -462,6 +618,7 @@ position: absolute;
         top: 10%;
         border-bottom-left-radius: 13%;
         border-bottom-right-radius: 13%;
+        animation: mouthMove 6s ease-in-out infinite;
     }
 
     .frownWithTeeth {

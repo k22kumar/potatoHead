@@ -109,6 +109,12 @@
     font-size: 2rem;
 }
 
+.hslColors img{
+                    animation: swirl 2s infinite linear;
+}
+
+
+
 button {
     /*This styling was created by FELIPE MARCOS from this codepen: https://codepen.io/FelipeMarcos/pen/tfhEg*/
     
@@ -212,14 +218,6 @@ button:active {
                 width: calc(0.275 * #{$bodyWidth});
                 height: calc(0.275 * #{$bodyWidth});
                 padding: 0;
-                
-
-                .colorWheel {
-                    background: conic-gradient(from -28deg, white,black 180deg,white);
-                    width: 85%;
-                    height: 85%;
-                    border-radius: 50%;
-                }
             }
         
             

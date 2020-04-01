@@ -58,7 +58,7 @@ potatoHeadApp.makeBodyParts = function () {
         }
     );
 
-    let droppableHat = new Draggable.Droppable(
+    let droppableHat = new Draggable.Swappable(
         potatoHeadApp.hatDropzones,
         {
             draggable: '.draggable',
