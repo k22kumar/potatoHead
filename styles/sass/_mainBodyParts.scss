@@ -387,8 +387,8 @@ position: absolute;
 }
 .eyeShape {
     @include makeCircle($eyeWidth, $eyeWhiteHeight, white, 10px, 10px);
+    position: relative;
     overflow: hidden;
-    position: absolute;
     left: 10%;
 }
 
