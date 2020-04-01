@@ -14,7 +14,7 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body,  .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
+main, .canvas, .partsContainer, .earsBin, ,  .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
     display: flex;
 }
 
@@ -75,8 +75,12 @@ main {
     align-items: center;
 
     .test {
-        top: 5%;
-        left: 5%;
+        left: 173%;
+        z-index: 1;
+        background-color: transparent;
+        top: 35%;
+        left: 44%;
+        position: absolute;
     }
 
     .toolbox {
@@ -201,7 +205,7 @@ main {
         justify-content: center;
     }
 
-    .onFaceLeft, .onFaceRight {
+    .onFaceLeft, .onFaceRight, .test {
         top: calc(0.15 * #{$bodyHeight});
     }
 
@@ -387,7 +391,7 @@ position: absolute;
 }
 .eyeShape {
     @include makeCircle($eyeWidth, $eyeWhiteHeight, white, 10px, 10px);
-    position: relative;
+    position: absolute;
     overflow: hidden;
     left: 10%;
 }

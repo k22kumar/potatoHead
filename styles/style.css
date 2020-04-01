@@ -563,7 +563,7 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
+main, .canvas, .partsContainer, .earsBin, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,8 +628,12 @@ main {
 }
 
 .canvas .test {
-  top: 5%;
-  left: 5%;
+  left: 173%;
+  z-index: 1;
+  background-color: transparent;
+  top: 35%;
+  left: 44%;
+  position: absolute;
 }
 
 .canvas .toolbox {
@@ -811,7 +815,7 @@ main {
           justify-content: center;
 }
 
-.body .onFaceLeft, .body .onFaceRight {
+.body .onFaceLeft, .body .onFaceRight, .body .test {
   top: calc(0.15 * 30.4vw);
 }
 
@@ -1043,7 +1047,7 @@ main {
   position: absolute;
   top: calc(50% - (calc(0.24 * 21.6vw) / 2));
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   left: 10%;
 }
