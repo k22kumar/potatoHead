@@ -812,9 +812,6 @@ main {
 }
 
 .body .eyesOnFace {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: calc( calc(0.394 * 21.6vw) + 10px);
   top: calc(0.15 * 30.4vw);
 }
