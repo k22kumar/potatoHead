@@ -14,7 +14,7 @@ img {
     text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
+main, .canvas, .partsContainer, .earsBin, .body,  .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
     display: flex;
 }
 
@@ -199,6 +199,10 @@ main {
     .hatOnBody {
         top: calc(-0.2 * #{$bodyHeight});
         justify-content: center;
+    }
+
+    .onFaceLeft, .onFaceRight {
+        top: calc(0.15 * #{$bodyHeight});
     }
 
     .eyesOnFace {

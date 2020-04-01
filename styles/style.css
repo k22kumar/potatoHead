@@ -563,7 +563,7 @@ img {
   text-transform: uppercase;
 }
 
-main, .canvas, .partsContainer, .earsBin, .body, .eyesOnFace, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
+main, .canvas, .partsContainer, .earsBin, .body, .leftEarOnBody, .rightEarOnBody, .hatOnBody, .noseOnBody, .mouthOnBody, .mouth, .shoesOnBody, .hat, .hatsBin, .noseBin, .mouthBin, .eyesBin, .shoesBin, .shoe, .mouthPiece {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -809,6 +809,10 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.body .onFaceLeft, .body .onFaceRight {
+  top: calc(0.15 * 30.4vw);
 }
 
 .body .eyesOnFace {
