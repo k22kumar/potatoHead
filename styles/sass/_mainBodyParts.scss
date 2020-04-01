@@ -233,14 +233,13 @@ main {
 
     .leftShoeOnBody {
         left: 10%;
-        transform: rotate(12deg);
     }
 
     .rightShoeOnBody {
         right: 10%;
-        transform: rotate(-12deg);
     }
 
+    
 
     
     /* body part dropzone styles  */
@@ -642,11 +641,11 @@ position: absolute;
 
     /* SHOES */
 
-    .runningShoe {
+    .runningShoe, .basketballShoe {
         @include makeRectangle($runningShoeWidth, $runningShoeHeight, var(--preview-primary-shoes), 10px, 10px);
-        top: 0;
+        position: static;
         transform: perspective(8px) rotateX(4deg);
-        border-radius: 27% 27% 42% 47%;
+        border-radius: 27% 27% 47% 47%;
         border-bottom: 4px solid var(--preview-accent-shoes);
     }
 
@@ -664,5 +663,22 @@ position: absolute;
         top: 60%;
         left: calc(0.25 * #{$runningShoeWidth});
         border-radius: 9px;
+    }
+
+    .basketballShoe::after {
+        content: "";
+        @include makeRectangle(calc(0.5 * #{$runningShoeWidth}), calc(0.12 * #{$runningShoeHeight}), var(--preview-accent-shoes), 10px, 10px);
+        top: 38%;
+        left: calc(0.25 * #{$runningShoeWidth});
+        border-radius: 9px;
+        border: calc(0.1 * #{$runningShoeWidth}) solid var(--preview-accent-shoes);
+        border-top-left-radius: 29px;
+        border-top-right-radius: 29px;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        width: calc(0.5 * #{$runningShoeWidth});
+        height: calc(0.4 * #{$runningShoeWidth});
+        background-color: white;
     }
    

@@ -21,8 +21,8 @@ const potatoHeadApp = {
   hatDropzones: document.querySelectorAll(".hat"),
   noseDropzones: document.querySelectorAll(".nose"),
   mouthDropzones: document.querySelectorAll(".mouth"),
-  leftShoeDropzones: document.querySelectorAll(".leftShoe"),
-  rightShoeDropzones: document.querySelectorAll(".rightShoe"),
+  shoeDropzones: document.querySelectorAll(".shoe"),
+  // rightShoeDropzones: document.querySelectorAll(".rightShoe"),
   leftEarDropzones: document.querySelectorAll(".leftEar"),
   rightEarDropzones: document.querySelectorAll(".rightEar")
 };
@@ -102,23 +102,23 @@ potatoHeadApp.makeBodyParts = function () {
         }
     );
 
-       let droppableLeftShoe = new Draggable.Swappable(
-         potatoHeadApp.leftShoeDropzones,
+       let droppableShoe = new Draggable.Swappable(
+         potatoHeadApp.shoeDropzones,
          {
            draggable: ".draggable",
-           dropzone: ".leftShoe",
+           dropzone: ".shoe",
            mirror: { constrainDimensions: true }
          }
        );
 
-       let droppableRightShoe = new Draggable.Swappable(
-         potatoHeadApp.rightShoeDropzones,
-         {
-           draggable: ".draggable",
-           dropzone: ".rightShoe",
-           mirror: { constrainDimensions: true }
-         }
-       );
+      //  let droppableRightShoe = new Draggable.Swappable(
+      //    potatoHeadApp.rightShoeDropzones,
+      //    {
+      //      draggable: ".draggable",
+      //      dropzone: ".rightShoe",
+      //      mirror: { constrainDimensions: true }
+      //    }
+      //  );
 }
 
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter
