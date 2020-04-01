@@ -617,6 +617,7 @@ main {
 .canvas {
   position: relative;
   background-image: url(../assets/backdrop.jpg);
+  background-position-y: 80%;
   background-size: cover;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
