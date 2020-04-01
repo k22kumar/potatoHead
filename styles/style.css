@@ -898,6 +898,11 @@ main {
   border-bottom-color: transparent;
 }
 
+.curvedBrow {
+  left: 50%;
+  margin-left: calc(-0.6 * calc(0.24 * 21.6vw));
+}
+
 @-webkit-keyframes eyelashBlink {
   0% {
     top: 30%;
@@ -1035,6 +1040,8 @@ main {
   top: -100%;
   -webkit-animation: blinking 4s ease-in-out infinite;
           animation: blinking 4s ease-in-out infinite;
+  left: 50%;
+  margin-left: calc(-0.5 * calc(0.24 * 21.6vw));
 }
 
 .eyeShape {
@@ -1046,7 +1053,8 @@ main {
   border-radius: 50%;
   overflow: hidden;
   position: absolute;
-  left: 10%;
+  left: 50%;
+  margin-left: calc(-0.5 * calc(0.24 * 21.6vw));
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
