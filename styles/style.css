@@ -627,6 +627,11 @@ main {
           align-items: center;
 }
 
+.canvas .test {
+  top: 5%;
+  left: 5%;
+}
+
 .canvas .toolbox {
   -webkit-transition: all .6s;
   transition: all .6s;

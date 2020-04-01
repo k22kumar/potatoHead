@@ -34,6 +34,7 @@ main {
     height: calc(100vh);
 }
 
+
 .dropzone {
     background-color: lightgrey;
     
@@ -72,6 +73,11 @@ main {
     background-size: cover;
     justify-content: center;
     align-items: center;
+
+    .test {
+        top: 5%;
+        left: 5%;
+    }
 
     .toolbox {
         transition: all .6s;
