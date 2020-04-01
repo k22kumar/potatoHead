@@ -942,7 +942,8 @@ main {
           justify-content: center;
   position: absolute;
   top: 30%;
-  left: -4%;
+  left: 37%;
+  margin-left: calc(-0.5 * calc(0.24 * 21.6vw));
   width: calc(0.24 * 21.6vw);
   -webkit-animation: eyelashBlink 4s ease-in-out infinite;
           animation: eyelashBlink 4s ease-in-out infinite;
@@ -972,7 +973,7 @@ main {
 }
 
 .rightEye .normalEye .eyelashes {
-  left: 36%;
+  left: 69%;
 }
 
 .rightEye .normalEye .eyelashes .eyelash {

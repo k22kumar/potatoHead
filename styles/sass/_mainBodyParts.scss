@@ -310,7 +310,8 @@ main {
     justify-content: center;
     position: absolute;
     top: 30%;
-    left: -4%;
+    left: 37%;
+    margin-left: calc(-0.5 * #{$eyeWidth});
     width: $eyeWidth;
     animation: eyelashBlink 4s ease-in-out infinite;
 }
@@ -340,7 +341,7 @@ position: absolute;
 }
 
 .rightEye .normalEye .eyelashes{
-    left: 36%;
+    left: 69%;
     .eyelash {
         transform: rotate(-40deg);
     }
