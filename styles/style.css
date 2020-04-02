@@ -833,6 +833,7 @@ main {
 
 .body .noseOnBody {
   top: calc(0.41 * 30.4vw);
+  z-index: 2;
 }
 
 .body .mouthOnBody {
@@ -1183,6 +1184,7 @@ main {
   top: 5px;
   left: 0;
   margin-left: calc((calc(calc(0.4 * 21.6vw) + 10px) - calc(0.2 * 21.6vw)) / 2);
+  position: relative;
 }
 
 .nose1::before {
@@ -1211,6 +1213,84 @@ main {
           transform: rotate(-45deg);
   top: 38%;
   left: 50%;
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  80% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  85% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  90% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  95% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  80% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  85% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  90% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  95% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.moustache {
+  width: calc(0.6 * 21.6vw);
+  height: calc(0.19 * 21.6vw);
+  background-color: var(--preview-accent-nose);
+  position: absolute;
+  top: calc(50% - (calc(0.6 * 21.6vw) / 2));
+  border-radius: 50%;
+  border-radius: 50% 50% 0 0;
+  top: 60%;
+  left: 50%;
+  border-radius: 50% 50% 15px 15px;
+  margin-left: calc(-0.5 * calc(0.6 * 21.6vw));
+  -webkit-animation: wiggle 4s ease-in-out infinite;
+          animation: wiggle 4s ease-in-out infinite;
 }
 
 /* EARS container */

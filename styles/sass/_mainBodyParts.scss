@@ -221,6 +221,7 @@ main {
 
     .noseOnBody {
         top: calc(0.41 * #{$bodyHeight});
+        z-index: 2;
     }
 
     .mouthOnBody {
@@ -282,7 +283,7 @@ main {
     border-bottom-color: transparent;
 }
 
-.curvedBrow, {
+.curvedBrow {
     left: 50%;
     margin-left: calc(-0.72 * #{$eyeWidth});
 }
@@ -481,6 +482,7 @@ position: absolute;
     top: 5px;
     left: 0;
     margin-left: calc((#{$noseContainerWidth} - #{$nose1Width}) / 2);
+    position: relative;
     }
 
     .nose1::before {
@@ -497,6 +499,25 @@ position: absolute;
         transform: rotate(-45deg);
         top: 38%;
         left: 50%;
+    }
+
+    @keyframes wiggle {
+        0% {transform: rotate(0);}
+        75% {transform: rotate(0);}
+        80% {transform: rotate(15deg);}
+        85% {transform: rotate(-15deg);}
+        90% {transform: rotate(15deg);}
+        95% {transform: rotate(-15deg);}
+        100% {transform: rotate(0);}
+    }
+
+    .moustache {
+        @include makeSemiCircle($loudMouthWidth, calc(0.19 * #{$bodyWidth}), var(--preview-accent-nose), 10px, 10px);
+        top: 60%;
+        left: 50%;
+        border-radius: 50% 50% 15px 15px;
+        margin-left: calc(-0.5 * #{$loudMouthWidth});
+        animation: wiggle 4s ease-in-out infinite;
     }
     
 
