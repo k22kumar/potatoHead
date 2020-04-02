@@ -2062,6 +2062,7 @@ button:active {
   -webkit-appearance: none;
   border-radius: 7px;
   outline: none;
+  background-color: black;
 }
 
 .paintBin .hslField input::-webkit-slider-thumb {
