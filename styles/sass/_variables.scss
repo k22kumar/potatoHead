@@ -37,6 +37,11 @@
 /* CSS color variables  */
 
 :root {
+    /* base size */
+
+    --base-width: 21.6vw;
+    --base-height: 30.4vw;
+    
 
     /* base colours */
 
@@ -132,8 +137,8 @@
 }
 
 /* original values WIDTH: 27vw HEIGHT: 38vw  */
-$bodyWidth: 21.6vw; 
-$bodyHeight: 30.4vw;
+$bodyWidth: var(--base-width); 
+$bodyHeight: var(--base-height);
 
 /* original values WIDTH: 0.24 HEIGHT: 0.33  */
 $eyeWidth: calc(0.24 * #{$bodyWidth});

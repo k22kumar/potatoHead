@@ -273,7 +273,7 @@ main {
 }
 
 .curvedBrow, .eyelash {
-    @include makeCircle(calc(0.34 * 21.6vw), calc(0.2 * 21.6vw), transparent, 10px, 10px);
+    @include makeCircle(calc(0.34 * #{$bodyWidth}), calc(0.2 * #{$bodyWidth}), transparent, 10px, 10px);
     left: -9%;
     top: 0;
     border: calc(0.05 * #{$bodyWidth}) solid #272727;
@@ -319,10 +319,10 @@ main {
 
 
 .eyelash {
-width: calc(0.1 * 21.6vw);
-height: calc(0.1 * 21.6vw);
+width: calc(0.1 * #{$bodyWidth});
+height: calc(0.1 * #{$bodyWidth});
 position: static;
-border-top: calc(0.02 * 21.6vw) solid #272727;
+border-top: calc(0.02 * #{$bodyWidth}) solid #272727;
 z-index: 20;
 transform: rotate(40deg);
 position: absolute;
@@ -513,7 +513,7 @@ position: absolute;
 
     .moustache {
         @include makeSemiCircle($loudMouthWidth, calc(0.19 * #{$bodyWidth}), var(--preview-accent-nose), 10px, 10px);
-        top: 60%;
+        top: 66%;
         left: 50%;
         border-radius: 50% 50% 15px 15px;
         margin-left: calc(-0.5 * #{$loudMouthWidth});
@@ -584,22 +584,22 @@ position: absolute;
 
     @keyframes talking {
     0% {
-        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
-        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-top: calc(0.12 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
     }
 
     50% {
-        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
-        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-top: calc(0.12 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
     }
     75% {
-        border-top: calc(0.16 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
-        border-bottom: calc(0.19 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-top: calc(0.16 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.19 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
     }
 
     100% {
-        border-top: calc(0.12 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
-        border-bottom: calc(0.07 * calc(0.6 * 21.6vw)) solid var(--preview-accent-mouth);
+        border-top: calc(0.12 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
+        border-bottom: calc(0.07 * calc(0.6 * #{$bodyWidth})) solid var(--preview-accent-mouth);
     }
 }
 
@@ -619,22 +619,22 @@ position: absolute;
 
     @keyframes mouthMove {
     0% {
-        width: calc(0.6 * 21.6vw);
-        height: calc(0.25 * 21.6vw);
+        width: calc(0.6 * #{$bodyWidth});
+        height: calc(0.25 * #{$bodyWidth});
     }
 
     50% {
-        width: calc(0.6 * 21.6vw);
-        height: calc(0.25 * 21.6vw);
+        width: calc(0.6 * #{$bodyWidth});
+        height: calc(0.25 * #{$bodyWidth});
     }
     75% {
-        width: calc(0.8 * 21.6vw);
-        height: calc(0.2 * 21.6vw);
+        width: calc(0.8 * #{$bodyWidth});
+        height: calc(0.2 * #{$bodyWidth});
     }
 
     100% {
-        width: calc(0.6 * 21.6vw);
-        height: calc(0.25 * 21.6vw);
+        width: calc(0.6 * #{$bodyWidth});
+        height: calc(0.25 * #{$bodyWidth});
     }
 }
     
@@ -700,6 +700,6 @@ position: absolute;
         border-right: none;
         width: calc(0.5 * #{$runningShoeWidth});
         height: calc(0.4 * #{$runningShoeWidth});
-        background-color: white;
+        background-color: var(--preview-accent-shoes);
     }
    
