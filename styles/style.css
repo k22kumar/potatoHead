@@ -553,6 +553,23 @@ header {
   height: 100vh;
 }
 
+header section {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 header .description, header h1, header .toolTipContainer {
   margin-bottom: 30px;
 }
@@ -2138,9 +2155,6 @@ button:active {
   .wrapper {
     width: 95%;
   }
-  header {
-    height: auto;
-  }
   header .description, header h1, header .toolTipContainer {
     margin-bottom: 15px;
   }
@@ -2152,6 +2166,10 @@ button:active {
   }
   header .toolTipContainer li {
     margin: 6px;
+    padding: 6px;
+  }
+  header .icon {
+    width: 50px;
   }
   .paintOptions {
     min-width: 25px;
@@ -2179,6 +2197,15 @@ button:active {
   }
   main .openToolBox {
     height: 50%;
+  }
+}
+
+@media (max-width: 520px) {
+  header h1, header .icon i {
+    font-size: 1.5rem;
+  }
+  header .description, header .toolTip {
+    font-size: 1.2rem;
   }
 }
 

@@ -7,7 +7,6 @@
         width: 95%;
     }
     header {
-        height: auto;
         .description, h1, .toolTipContainer {
             margin-bottom: 15px;
         }
@@ -19,6 +18,10 @@
         }
         .toolTipContainer li{
             margin: 6px;
+            padding: 6px;
+        }
+        .icon {
+            width: 50px;
         }
     }
 
@@ -48,6 +51,17 @@
         
         .openToolBox{
         height: 50%;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    header {
+        h1, .icon i {
+            font-size: 1.5rem;
+        }
+        .description, .toolTip {
+            font-size: 1.2rem;
         }
     }
 }
