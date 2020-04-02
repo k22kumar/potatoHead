@@ -3,6 +3,24 @@
         --base-width: 38.88vw; 
     --base-height: 54.72vw;
     }
+    .wrapper {
+        width: 95%;
+    }
+    header {
+        height: auto;
+        .description, h1, .toolTipContainer {
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .description, .toolTip {
+            font-size: 1.6rem;
+        }
+        .toolTipContainer li{
+            margin: 6px;
+        }
+    }
 
     .paintOptions{
         min-width: 25px;

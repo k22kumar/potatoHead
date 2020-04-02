@@ -531,6 +531,13 @@ textarea {
 }
 
 /* header styles */
+/* header styles */
+.wrapper {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 80%;
+}
+
 header {
   padding: 40px 0;
   background-color: #6083ad;
@@ -544,6 +551,10 @@ header {
   color: white;
   text-align: center;
   height: 100vh;
+}
+
+header .description, header h1, header .toolTipContainer {
+  margin-bottom: 30px;
 }
 
 header .description {
@@ -562,9 +573,14 @@ header .toolTipContainer {
 }
 
 header .toolTipContainer li {
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+  min-width: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -587,7 +603,7 @@ header .toolTipContainer .icon {
           justify-content: center;
   width: 45px;
   font-size: 3.5rem;
-  margin: 10px;
+  margin-right: 10px;
 }
 
 header h1 {
@@ -601,6 +617,7 @@ header p a:visited {
 /* general styles */
 html {
   font-size: 62.5%;
+  font-family: 'PT Serif', serif;
 }
 
 img {
@@ -766,7 +783,7 @@ main {
 .canvas .getStarted {
   position: absolute;
   left: 50px;
-  width: 200px;
+  width: 210px;
   font-weight: bold;
   font-size: 2.5rem;
   color: white;
@@ -2117,6 +2134,24 @@ button:active {
   :root {
     --base-width: 38.88vw;
     --base-height: 54.72vw;
+  }
+  .wrapper {
+    width: 95%;
+  }
+  header {
+    height: auto;
+  }
+  header .description, header h1, header .toolTipContainer {
+    margin-bottom: 15px;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  header .description, header .toolTip {
+    font-size: 1.6rem;
+  }
+  header .toolTipContainer li {
+    margin: 6px;
   }
   .paintOptions {
     min-width: 25px;
