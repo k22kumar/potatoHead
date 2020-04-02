@@ -33,6 +33,7 @@ potatoHeadApp.init = function () {
     potatoHeadApp.showPrevPart();
     potatoHeadApp.paintPanelToggle();
     potatoHeadApp.openToolBox();
+    potatoHeadApp.controlSound();
     potatoHeadApp.paintColor();
     potatoHeadApp.setColor();
     potatoHeadApp.resetToDefault();
@@ -289,6 +290,21 @@ potatoHeadApp.openToolBox = function() {
       $('.canvas').toggleClass('openToolBox');
       $('.availableParts').toggleClass('openToolBox');
     });
+}
+
+potatoHeadApp.controlSound = function() {
+  $(".soundInput").on("click", function() {
+    $('.volUp').toggleClass('hide');
+    $('.volOff').toggleClass('hide');
+    $('.volOff').hasClass('hide') ?
+    $("#intro")[0].pause() :
+    potatoHeadApp.restartSong();
+  });
+}
+
+potatoHeadApp.restartSong = function() {
+  $('#intro')[0].currentTime = 0;
+  $('#intro')[0].play()
 }
 
 

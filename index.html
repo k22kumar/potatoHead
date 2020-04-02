@@ -15,13 +15,29 @@
 
     <main>
         <section class="canvas">
-            <div class="nav-container">
-                <nav class="toolbox">
-                    <label class="toolBoxLabel" for="toggle"><i class="fas fa-tools"></i></label>
-                    <input class="toolBoxInput" type="checkbox" autocomplete="off" id="toggle" name="toggle">
-                </nav>
-                <p class="getStarted"> <i class="fas fa-arrow-left"></i> Open ToolBox! </p>
-            </div>
+            <nav class="navContainer">
+                <ul class="navOptions">
+                    <li class="toolboxContainer">
+                        <div class="toolbox">
+                            <label class="toolBoxLabel" for="toggle"><i class="fas fa-tools"></i>
+                            </label>
+                            <input class="toolBoxInput" type="checkbox" autocomplete="off" id="toggle" name="toggle">
+                        </div>
+                        <p class="getStarted"> <i class="fas fa-arrow-left"></i> Open ToolBox! </p>
+                    </li>
+                    <li class="sound">
+                        <label class="soundLabel" for="sound">
+                            <div class="volUp">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <div class="volOff hide">
+                                <i class="fas fa-volume-off hide"></i>
+                            </div>
+                        </label>
+                        <input class="soundInput" type="checkbox" autocomplete="off" id="sound" name="sound">
+                    </li>
+                </ul>
+            </nav>
             <div class="body">
                 <!-- arms -->
                 <div class="arms leftArm">
@@ -362,8 +378,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
-    <audio id="intro">
-        <source src="./assets/toyStory.mp3" type="audio/mpeg">
+    <audio id="intro" loop>
+        <source src="./assets/toyStory.mp3" type="audio/mpeg" >
     </audio>
 </body>
 

@@ -623,15 +623,19 @@ main {
           align-items: center;
 }
 
-.canvas .test {
-  top: 5%;
-  left: 5%;
-}
-
-.canvas .nav-container {
+.canvas .navContainer {
   position: absolute;
   top: 5%;
   left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.canvas .toolboxContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -686,7 +690,38 @@ main {
   }
 }
 
+.canvas .navOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.canvas .navOptions input[type="checkbox"] {
+  /* This is much better than display none*/
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.canvas .toolbox, .canvas .sound {
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  font-size: 3rem;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
 .canvas .getStarted {
+  position: absolute;
+  left: 50px;
+  width: 200px;
   font-weight: bold;
   font-size: 2.5rem;
   color: white;
@@ -696,24 +731,7 @@ main {
           animation: sideToSide 1.3s ease-in-out infinite;
 }
 
-.canvas .toolbox {
-  -webkit-transition: all .6s;
-  transition: all .6s;
-  font-size: 3rem;
-  padding: 10px;
-  color: black;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.canvas .toolbox input[type="checkbox"] {
-  /* This is much better than display none*/
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.canvas .toolbox :active, .canvas .toolbox:hover {
+.canvas .toolbox :active, .canvas .toolbox:hover, .canvas .toolbox:focus, .canvas .sound :active, .canvas .sound:hover, .canvas .sound:focus {
   background-color: black;
   color: white;
   scale: 1.1;
