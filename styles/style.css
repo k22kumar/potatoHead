@@ -625,16 +625,39 @@ header .toolTipContainer .icon {
 
 header h1 {
   font-size: 4rem;
+  font-weight: 700;
 }
 
 header p a:visited {
   color: none;
 }
 
+header .startPotato {
+  color: black;
+  font-weight: 700;
+  font-size: 2rem;
+  background: #fad7a0;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+header .startPotato:hover, header .startPotato:focus {
+  scale: 1.1;
+  background-color: #af601a;
+  color: white;
+}
+
 /* general styles */
 html {
   font-size: 62.5%;
   font-family: 'PT Serif', serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {

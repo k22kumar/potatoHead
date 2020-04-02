@@ -58,14 +58,29 @@ header {
     
     h1 {
         font-size: 4rem;
-        
+        font-weight: 700;
     }
 
     p {
         a:visited {
             color: none;
         }
-        
+    }
+    .startPotato {
+        color: black;
+        font-weight: 700;
+        font-size: 2rem;
+        background:  #fad7a0;
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+        transition: all 0.3s ease 0s;
+    }
+
+    .startPotato:hover, .startPotato:focus {
+        scale: 1.1;
+        background-color: #af601a ;
+        color: white;
     }
 
 }

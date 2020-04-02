@@ -45,7 +45,20 @@ potatoHeadApp.init = function () {
     potatoHeadApp.updateBrightness(potatoHeadApp.brightness);
     potatoHeadApp.updateSaturation(potatoHeadApp.saturation);
     potatoHeadApp.undo();
+    potatoHeadApp.hideApp();
+    potatoHeadApp.startApp();
     // potatoHeadApp.updateHSLValue();
+}
+
+potatoHeadApp.hideApp = function() {
+  $('main').hide();
+}
+potatoHeadApp.startApp = function() {
+  $('.startPotato').on('click', function() {
+    $("header").fadeOut(1000).delay(4000);
+    $("#intro")[0].play();
+    $("main").fadeIn(4000);
+  });
 }
 
 potatoHeadApp.makeBodyParts = function () {
@@ -304,7 +317,7 @@ potatoHeadApp.controlSound = function() {
 
 potatoHeadApp.restartSong = function() {
   $('#intro')[0].currentTime = 0;
-  $('#intro')[0].play()
+  $('#intro')[0].play();
 }
 
 
