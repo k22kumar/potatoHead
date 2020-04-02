@@ -310,8 +310,8 @@ potatoHeadApp.controlSound = function() {
     $('.volUp').toggleClass('hide');
     $('.volOff').toggleClass('hide');
     $('.volOff').hasClass('hide') ?
-    $("#intro")[0].pause() :
-    potatoHeadApp.restartSong();
+    potatoHeadApp.restartSong():
+    $("#intro")[0].pause();
   });
 }
 
