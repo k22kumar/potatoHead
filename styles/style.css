@@ -1941,12 +1941,12 @@ button:active {
 
 @media (max-width: 600px) {
   :root {
-    --base-width: 27vw;
-    --base-height: 38vw;
+    --base-width: 43.2vw;
+    --base-height: 60.8vw;
   }
   .paintOptions {
-    min-width: 35px;
-    min-height: 35px;
+    min-width: 30px;
+    min-height: 30px;
     max-width: 37.05px;
     max-height: 37.05px;
   }
@@ -1960,8 +1960,8 @@ button:active {
     width: 100%;
   }
   main .canvas {
-    background-position: bottom;
-    background-repeat: no-repeat;
+    background-position-y: 130%;
+    background-repeat: repeat;
   }
   main .canvas {
     height: 100%;
