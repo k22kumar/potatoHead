@@ -1941,12 +1941,12 @@ button:active {
 
 @media (max-width: 600px) {
   :root {
-    --base-width: 43.2vw;
-    --base-height: 60.8vw;
+    --base-width: 38.88vw;
+    --base-height: 54.72vw;
   }
   .paintOptions {
-    min-width: 30px;
-    min-height: 30px;
+    min-width: 25px;
+    min-height: 25px;
     max-width: 37.05px;
     max-height: 37.05px;
   }
