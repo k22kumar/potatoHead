@@ -690,12 +690,15 @@ position: absolute;
 
     /* SHOES */
 
+    
     .runningShoe, .basketballShoe {
         @include makeRectangle($runningShoeWidth, $runningShoeHeight, var(--preview-primary-shoes), 10px, 10px);
         position: static;
         transform: perspective(8px) rotateX(4deg);
         border-radius: 27% 27% 47% 47%;
         border-bottom: 4px solid var(--preview-accent-shoes);
+        transform-origin: top;
+        animation: wiggle 6s ease-in-out infinite;
     }
 
     .runningShoe::before {

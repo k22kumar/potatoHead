@@ -1629,6 +1629,10 @@ main {
           transform: perspective(8px) rotateX(4deg);
   border-radius: 27% 27% 47% 47%;
   border-bottom: 4px solid var(--preview-accent-shoes);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-animation: wiggle 6s ease-in-out infinite;
+          animation: wiggle 6s ease-in-out infinite;
 }
 
 .runningShoe::before {
