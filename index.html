@@ -12,9 +12,56 @@
 
 <body>
 
-
+    <header>
+        <h1>Potato Head Maker</h1>
+        <p class="description">Inspired by Toy Story, make your own Potato Head character! This is a demo project for Juno College to showcase
+            my understanding of the <a href="https://shopify.github.io/draggable/">Draggable JS</a> Library. Made using
+            HTML, CSS, Jquery, and love.</p>
+        <ul class="toolTipContainer">
+            <li>
+                <div class="icon">
+                    <img src="./assets/colorwheel.png" alt="color wheel displaying all colours of rainbow in a circle">
+                </div>
+                <p class="toolTip">Tap to change colour options.</p>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fas fa-tint-slash"></i>
+                </div>
+                <p class="toolTip">
+                    Tap to reset to primary or secondary default colours.
+                </p>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <p class="toolTip">
+                    Tap to save a primary or secondary colour.
+                </p>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <p class="toolTip">
+                    Tap to undo a primary or secondary colour back to a previously saved color.
+                </p>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <p class="toolTip">
+                    Tap to switch between primary or secondary colours.
+                </p>
+            </li>
+        </ul>
+    
+        <a href="#canvas" class="toUpper">get started!</a>
+    </header>
     <main>
-        <section class="canvas">
+        <section class="canvas" id="canvas">
             <nav class="navContainer">
                 <ul class="navOptions">
                     <li class="toolboxContainer">
