@@ -96,11 +96,15 @@ potatoHeadApp.makeBodyParts = function () {
     droppableLeftEar.on("drag:start", function() {
       $(".leftEar").toggleClass("transparentBG");
       $(".leftEar").toggleClass("correct");
+      $(".leftEar1").toggleClass("spin");
+      $(".leftEar2").toggleClass("spin");
     });
 
     droppableLeftEar.on("drag:stop", function() {
       $(".leftEar").toggleClass("transparentBG");
       $(".leftEar").toggleClass("correct");
+      $(".leftEar1").toggleClass("spin");
+      $(".leftEar2").toggleClass("spin");
     });
 
     let droppableRightEar = new Draggable.Swappable(potatoHeadApp.rightEarDropzones,
@@ -114,11 +118,15 @@ potatoHeadApp.makeBodyParts = function () {
       droppableRightEar.on("drag:start", function() {
         $(".rightEar").toggleClass("transparentBG");
         $(".rightEar").toggleClass("correct");
+        $(".rightEar1").toggleClass("spin");
+        $('.rightEar2').toggleClass('spin');
       });
 
       droppableRightEar.on("drag:stop", function() {
         $(".rightEar").toggleClass("transparentBG");
         $(".rightEar").toggleClass("correct");
+        $(".rightEar1").toggleClass("spin");
+        $(".rightEar2").toggleClass("spin");
       });
 
     

@@ -1364,6 +1364,43 @@ main {
 }
 
 /* EARS */
+@-webkit-keyframes spinZAxis {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  80% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  90% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
+}
+@keyframes spinZAxis {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  80% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  90% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
+}
+
 .leftEar1, .rightEar1, .leftEar2, .rightEar2 {
   width: calc(0.27 * var(--base-width));
   height: calc(0.35 * var(--base-width));
@@ -1374,6 +1411,11 @@ main {
   top: 5px;
   left: 0;
   margin-left: calc((calc(calc(0.27 * var(--base-width)) + 10px) - calc(0.27 * var(--base-width))) / 2);
+}
+
+.spin {
+  -webkit-animation: spinZAxis 5s ease-in-out infinite;
+          animation: spinZAxis 5s ease-in-out infinite;
 }
 
 .leftEar1::before, .leftEar2::before {
@@ -2025,7 +2067,6 @@ button:active {
     width: 100%;
   }
   main .canvas {
-    background-position-y: 130%;
     background-repeat: repeat;
   }
   main .canvas {

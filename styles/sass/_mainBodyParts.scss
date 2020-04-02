@@ -539,19 +539,30 @@ position: absolute;
     
 
     /* EARS container */
-
     .ear {
         width: $earContainerWidth;
         height: $earContainerHeight;
     }
 
     /* EARS */
+
+    @keyframes spinZAxis {
+        0%{transform: rotateX(0deg)}
+        80%{transform: rotateX(0deg)}
+        90%{transform: rotateX(360deg)}
+        100%{transform: rotateX(-360deg)}
+    }
+
     .leftEar1, .rightEar1, .leftEar2, .rightEar2 {
     @include makeCircle($earWidth, $earHeight, var(--preview-primary-ears), 10px, 10px);
     
     top: 5px;
     left: 0;
     margin-left: calc((#{$earContainerWidth} - #{$earWidth}) / 2);
+    }
+
+    .spin{
+        animation: spinZAxis 5s ease-in-out infinite;
     }
 
     .leftEar1::before, .leftEar2::before {
