@@ -58,6 +58,18 @@ potatoHeadApp.makeBodyParts = function () {
         }
     );
 
+    droppableEye.on("drag:start", function() {
+      $(".eye").toggleClass("transparentBG");
+      $(".eye").toggleClass("correct");
+      console.log("sup");
+    });
+
+    droppableEye.on("drag:stop", function() {
+      $(".eye").toggleClass("transparentBG");
+      $(".eye").toggleClass("correct");
+      console.log("bye");
+    });
+
     let droppableHat = new Draggable.Swappable(
         potatoHeadApp.hatDropzones,
         {
@@ -67,10 +79,34 @@ potatoHeadApp.makeBodyParts = function () {
         }
     );
 
+    droppableHat.on("drag:start", function() {
+      $(".hat").toggleClass("transparentBG");
+      $(".hat").toggleClass("correct");
+      console.log("sup");
+    });
+
+    droppableHat.on("drag:stop", function() {
+      $(".hat").toggleClass("transparentBG");
+      $(".hat").toggleClass("correct");
+      console.log("bye");
+    });
+
     let droppableLeftEar = new Draggable.Swappable(potatoHeadApp.leftEarDropzones, {
       draggable: ".draggable",
       dropzone: ".leftEar",
       mirror: { constrainDimensions: true,}
+    });
+
+    droppableLeftEar.on("drag:start", function() {
+      $(".leftEar").toggleClass("transparentBG");
+      $(".leftEar").toggleClass("correct");
+      console.log("sup");
+    });
+
+    droppableLeftEar.on("drag:stop", function() {
+      $(".leftEar").toggleClass("transparentBG");
+      $(".leftEar").toggleClass("correct");
+      console.log("bye");
     });
 
     let droppableRightEar = new Draggable.Swappable(potatoHeadApp.rightEarDropzones,
@@ -81,7 +117,17 @@ potatoHeadApp.makeBodyParts = function () {
       }
     );
 
+      droppableRightEar.on("drag:start", function() {
+        $(".rightEar").toggleClass("transparentBG");
+        $(".rightEar").toggleClass("correct");
+        console.log("sup");
+      });
 
+      droppableRightEar.on("drag:stop", function() {
+        $(".rightEar").toggleClass("transparentBG");
+        $(".rightEar").toggleClass("correct");
+        console.log("bye");
+      });
 
     
     let droppableNose = new Draggable.Swappable(
@@ -93,6 +139,18 @@ potatoHeadApp.makeBodyParts = function () {
         }
     );
 
+    droppableNose.on("drag:start", function() {
+      $(".nose").toggleClass("transparentBG");
+      $(".nose").toggleClass("correct");
+      console.lognose
+    });
+
+    droppableNose.on("drag:stop", function() {
+      $(".nose").toggleClass("transparentBG");
+      $(".nose").toggleClass("correct");
+      
+    });
+
     let droppableMouth = new Draggable.Swappable(
         potatoHeadApp.mouthDropzones,
         {
@@ -101,6 +159,17 @@ potatoHeadApp.makeBodyParts = function () {
             mirror: { constrainDimensions: true }
         }
     );
+
+    droppableMouth.on("drag:start", function() {
+      $(".mouth").toggleClass("transparentBG");
+      $(".mouth").toggleClass("correct");
+      console.lognose;
+    });
+
+    droppableMouth.on("drag:stop", function() {
+      $(".mouth").toggleClass("transparentBG");
+      $(".mouth").toggleClass("correct");
+    });
 
        let droppableShoe = new Draggable.Swappable(
          potatoHeadApp.shoeDropzones,
@@ -111,14 +180,18 @@ potatoHeadApp.makeBodyParts = function () {
          }
        );
 
-      //  let droppableRightShoe = new Draggable.Swappable(
-      //    potatoHeadApp.rightShoeDropzones,
-      //    {
-      //      draggable: ".draggable",
-      //      dropzone: ".rightShoe",
-      //      mirror: { constrainDimensions: true }
-      //    }
-      //  );
+       droppableShoe.on("drag:start", function() {
+         $(".shoe").toggleClass("transparentBG");
+         $(".shoe").toggleClass("correct");
+         console.lognose;
+       });
+
+       droppableShoe.on("drag:stop", function() {
+         $(".shoe").toggleClass("transparentBG");
+         $(".shoe").toggleClass("correct");
+       });
+
+
 }
 
 //this function shows the next partOption by incrementing the partCounter and showing the partArray @ partCounter

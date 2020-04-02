@@ -32,16 +32,6 @@ main {
     height: calc(100vh);
 }
 
-
-.dropzone {
-    background-color: lightgrey;
-    
-}
-
-.dropzone:hover{
-    background-color: green;
-}
-
 .canvas, .availableParts {
     height: 100%;
     transition: all 0.4s;
@@ -109,14 +99,17 @@ main {
 .hide{
     display: none;
 }
-
+.dropzone:hover, .dropzone:focus {
+        background-color: lightgrey;
+    }
 .body {
     justify-content: center;
-    .dropzone {
-        background-color: transparent;
-    }
-    .dropzone:hover, .dropzone:focus {
+    
+    .correct {
         background-color: lightgreen;
+    }
+    .transparentBG {
+        background-color: transparent;
     }
     @include makeEgg($bodyWidth, $bodyHeight, #db8336, 90px, 30px);
     justify-content: center;
@@ -703,3 +696,4 @@ position: absolute;
         background-color: var(--preview-accent-shoes);
     }
    
+    

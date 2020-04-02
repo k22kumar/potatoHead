@@ -25,6 +25,9 @@
         height: 80%;
         align-items: center;
         
+        .dropzone {
+        background-color: lightgrey;
+            }
         
         .currentPart {
             background-image: url(../assets/wood-pattern-horizontal.png);
@@ -43,9 +46,7 @@
                 font-weight: bold;
             }
 
-            .paintBin {
-                
-            }
+            
 
             .partBin {
             width: 90%;
