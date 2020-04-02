@@ -35,3 +35,12 @@
         }
     }
 }
+
+@media (max-width: 420px) {
+    .paintOptions{
+        min-width: 15px;
+        min-height: 15px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}

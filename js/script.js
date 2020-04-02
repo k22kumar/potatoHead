@@ -61,13 +61,11 @@ potatoHeadApp.makeBodyParts = function () {
     droppableEye.on("drag:start", function() {
       $(".eye").toggleClass("transparentBG");
       $(".eye").toggleClass("correct");
-      console.log("sup");
     });
 
     droppableEye.on("drag:stop", function() {
       $(".eye").toggleClass("transparentBG");
       $(".eye").toggleClass("correct");
-      console.log("bye");
     });
 
     let droppableHat = new Draggable.Swappable(
@@ -82,13 +80,11 @@ potatoHeadApp.makeBodyParts = function () {
     droppableHat.on("drag:start", function() {
       $(".hat").toggleClass("transparentBG");
       $(".hat").toggleClass("correct");
-      console.log("sup");
     });
 
     droppableHat.on("drag:stop", function() {
       $(".hat").toggleClass("transparentBG");
       $(".hat").toggleClass("correct");
-      console.log("bye");
     });
 
     let droppableLeftEar = new Draggable.Swappable(potatoHeadApp.leftEarDropzones, {
@@ -100,13 +96,11 @@ potatoHeadApp.makeBodyParts = function () {
     droppableLeftEar.on("drag:start", function() {
       $(".leftEar").toggleClass("transparentBG");
       $(".leftEar").toggleClass("correct");
-      console.log("sup");
     });
 
     droppableLeftEar.on("drag:stop", function() {
       $(".leftEar").toggleClass("transparentBG");
       $(".leftEar").toggleClass("correct");
-      console.log("bye");
     });
 
     let droppableRightEar = new Draggable.Swappable(potatoHeadApp.rightEarDropzones,
@@ -120,13 +114,11 @@ potatoHeadApp.makeBodyParts = function () {
       droppableRightEar.on("drag:start", function() {
         $(".rightEar").toggleClass("transparentBG");
         $(".rightEar").toggleClass("correct");
-        console.log("sup");
       });
 
       droppableRightEar.on("drag:stop", function() {
         $(".rightEar").toggleClass("transparentBG");
         $(".rightEar").toggleClass("correct");
-        console.log("bye");
       });
 
     
@@ -142,7 +134,6 @@ potatoHeadApp.makeBodyParts = function () {
     droppableNose.on("drag:start", function() {
       $(".nose").toggleClass("transparentBG");
       $(".nose").toggleClass("correct");
-      console.lognose
     });
 
     droppableNose.on("drag:stop", function() {
@@ -163,7 +154,6 @@ potatoHeadApp.makeBodyParts = function () {
     droppableMouth.on("drag:start", function() {
       $(".mouth").toggleClass("transparentBG");
       $(".mouth").toggleClass("correct");
-      console.lognose;
     });
 
     droppableMouth.on("drag:stop", function() {
@@ -183,7 +173,6 @@ potatoHeadApp.makeBodyParts = function () {
        droppableShoe.on("drag:start", function() {
          $(".shoe").toggleClass("transparentBG");
          $(".shoe").toggleClass("correct");
-         console.lognose;
        });
 
        droppableShoe.on("drag:stop", function() {
@@ -286,8 +275,11 @@ potatoHeadApp.showParts = function() {
 
 potatoHeadApp.openToolBox = function() {
     $('.toolBoxInput').on('click', function() {
-      $(".canvas").toggleClass("openToolBox");
-      $(".availableParts").toggleClass("openToolBox");
+      if(!$('.getStarted').hasClass('hide')){
+          $('.getStarted').addClass('hide');
+      }
+      $('.canvas').toggleClass('openToolBox');
+      $('.availableParts').toggleClass('openToolBox');
     });
 }
 
@@ -305,7 +297,6 @@ potatoHeadApp.paintColor = function() {
     //did user only want the accents to be painted?
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
-    // console.log("painter: " + property + " : " + colorCode);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, colorCode);
   });
@@ -328,7 +319,6 @@ potatoHeadApp.updateRangeValue = function(){
   const changedOutput = "#" + inputThatWasChanged.attr("id") + "Out";
   $(changedOutput).html(inputThatWasChanged.val());
   // check which input that was changed and call the specfic updater function
-  // console.log(inputThatWasChanged.attr("id"));
   inputThatWasChanged.attr("id") === "hslColorValue"
     ? potatoHeadApp.updateHue(inputThatWasChanged.val())
     : inputThatWasChanged.attr("id") === "brightness"
@@ -371,7 +361,6 @@ potatoHeadApp.paintHSL = function() {
     const detail = potatoHeadApp.getDetail();
     const property = `--preview-${detail}-${partName}`;
     const hslColor = `hsl(${potatoHeadApp.hue},${potatoHeadApp.saturation}%,${potatoHeadApp.brightness}%)`;
-    // console.log("painter: " + property + " : " + hslColor);
     //set the PREVIEW to the desired color
     potatoHeadApp.setCSSVarValue(property, hslColor);
 }
@@ -402,10 +391,8 @@ potatoHeadApp.setColor = function() {
     colorSetting = "custom";
     const partName = potatoHeadApp.getCurrentPartName();
     const property = `--${colorSetting}-${detail}-${partName}`;
-    // console.log("setColor : " + property + " " + potatoHeadApp.currentColor);
     //set custom to a color
     potatoHeadApp.setCSSVarValue(property, potatoHeadApp.currentColor);
-    // console.log("setColorGET: " + potatoHeadApp.getCSSVarValue(property));
   });
 }
 
@@ -413,7 +400,6 @@ potatoHeadApp.undo = function() {
   $('.undo').on('click', function() {
     const property = `--preview-${potatoHeadApp.getDetail()}-${potatoHeadApp.getCurrentPartName()}`;
     const value = `var(--custom-${potatoHeadApp.getDetail()}-${potatoHeadApp.getCurrentPartName()})`;
-    // console.log('undo: ' + property + " "+ value)    
     potatoHeadApp.setCSSVarValue(property, value);
   });
 }
@@ -446,7 +432,6 @@ potatoHeadApp.getCSSVarValue = function (property) {
   //not sure if trim is required but saw it on another post.
   let rootStyles = window.getComputedStyle(document.body);
   let cssValue = rootStyles.getPropertyValue(`${property}`).trim();
-  // console.log("getter: " + property + " : " + cssValue);
   return cssValue;
 }
 
@@ -455,7 +440,6 @@ potatoHeadApp.setCSSVarValue = function(property, cssValue) {
 $("body")
   .get(0)
   .style.setProperty(property, cssValue);
-  // console.log("setter: " + property + " : " + cssValue);
 }
 
 potatoHeadApp.defaultLoad = function() {

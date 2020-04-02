@@ -68,6 +68,30 @@ main {
         left: 5%;
     }
 
+    .nav-container {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        display: flex;
+        align-items: center;
+    }
+    @keyframes sideToSide{
+        20% {transform:translatex(0)}
+        40% {transform:translatex(0)}
+        60%{transform:translatex(15px)}
+        
+        80%{transform:translatex(-15px)}
+        100%{transform:translatex(0)}
+    }
+    .getStarted {
+            font-weight: bold;
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            margin-left: 25px;
+            animation: sideToSide 1.3s ease-in-out infinite;
+        }
+
     .toolbox {
         transition: all .6s;
         font-size: 3rem;
@@ -75,9 +99,7 @@ main {
         color: black;
         background-color: white;
         border-radius: 50%;
-        position: absolute;
-        top: 5%;
-        left: 5%;
+        
         input[type="checkbox"] {
             /* This is much better than display none*/
             opacity: 0;
@@ -90,6 +112,8 @@ main {
         color: white;
         scale: 1.1;
     }
+
+    
 
     
 
