@@ -57,7 +57,7 @@ potatoHeadApp.startApp = function() {
   $('.startPotato').on('click', function() {
     $("header").fadeOut(1000).delay(4000);
     $("#intro")[0].play();
-    // $("#intro")[0].volume = 0.45;
+    $("#intro")[0].volume = 0.45;
     $("main").fadeIn(4000);
   });
 }
